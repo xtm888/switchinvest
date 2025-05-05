@@ -1,0 +1,191 @@
+{
+  "type": "FeatureCollection",
+  "name": "belgium_regions",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name_nl": "Antwerpen",
+        "name_fr": "Anvers",
+        "name_de": "Antwerpen",
+        "area_km2": 2860,
+        "population": 1867000,
+        "capital": "Antwerpen",
+        "color": "#87CEEB"
+      },
+
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [4.35, 51.22],
+            [4.75, 51.22],
+            [4.75, 51.45],
+            [4.35, 51.45],
+            [4.35, 51.22]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_nl": "Limburg",
+        "name_fr": "Limbourg",
+        "name_de": "Limburg"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [5.45, 50.85],
+            [5.75, 50.85],
+            [5.75, 51.15],
+            [5.45, 51.15],
+            [5.45, 50.85]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_nl": "Oost-Vlaanderen",
+        "name_fr": "Flandre-Orientale",
+        "name_de": "Ostflandern"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [3.55, 50.95],
+            [3.85, 50.95],
+            [3.85, 51.25],
+            [3.55, 51.25],
+            [3.55, 50.95]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_nl": "West-Vlaanderen",
+        "name_fr": "Flandre-Occidentale",
+        "name_de": "Westflandern"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [2.55, 50.75],
+            [2.85, 50.75],
+            [2.85, 51.05],
+            [2.55, 51.05],
+            [2.55, 50.75]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_nl": "Brabant Wallon",
+        "name_fr": "Brabant Wallon",
+        "name_de": "Wallonisch-Brabant"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [4.35, 50.45],
+            [4.65, 50.45],
+            [4.65, 50.75],
+            [4.35, 50.75],
+            [4.35, 50.45]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_nl": "Henegouwen",
+        "name_fr": "Hainaut",
+        "name_de": "Hennegau"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [3.55, 50.35],
+            [3.85, 50.35],
+            [3.85, 50.65],
+            [3.55, 50.65],
+            [3.55, 50.35]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_nl": "Luik",
+        "name_fr": "Liège",
+        "name_de": "Lüttich"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [5.45, 50.45],
+            [5.75, 50.45],
+            [5.75, 50.75],
+            [5.45, 50.75],
+            [5.45, 50.45]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_nl": "Luxemburg",
+        "name_fr": "Luxembourg",
+        "name_de": "Luxemburg"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [5.25, 49.75],
+            [5.55, 49.75],
+            [5.55, 50.05],
+            [5.25, 50.05],
+            [5.25, 49.75]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_nl": "Namen",
+        "name_fr": "Namur",
+        "name_de": "Namur"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [4.75, 50.25],
+            [5.05, 50.25],
+            [5.05, 50.55],
+            [4.75, 50.55],
+            [4.75, 50.25]
+          ]
+        ]
+      }
+    }
+  ]
+}
