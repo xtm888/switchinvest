@@ -43,7 +43,7 @@ export function Navigation() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-neutral-white py-4 border-b border-neutral-light/50 shadow-sm`}
     >
-      <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
+      <div className="container mx-auto px-4 md:px-6 flex items-center justify-center md:justify-between relative">
         <Link href="/" className="flex items-center">
           <div 
             className="relative transition-all duration-300 w-[240px] h-[60px]"
@@ -84,7 +84,7 @@ export function Navigation() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-brand-teal"
+          className="md:hidden absolute right-4 top-1/2 -translate-y-1/2 text-brand-teal"
           onClick={() => setIsOpen(!isOpen)}
           aria-label={isOpen ? "Close menu" : "Open menu"}
         >

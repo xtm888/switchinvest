@@ -114,7 +114,7 @@ export default function RootLayout({
           <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
             <CustomCursor />
             <Navigation />
-            <main className="pt-16 flex-grow">
+            <main className="pt-24 flex-grow">
               {children}
             </main>
             <Footer />

@@ -4,9 +4,11 @@ import Link from "next/link"
 import Image from "next/image"
 import { Globe, Shield, Lock } from "lucide-react"
 import { useTranslation } from "@/hooks/use-translation"
+import { useLanguage } from "@/contexts/language-context"
 
 export function Footer() {
   const { t } = useTranslation()
+  const { setLanguage } = useLanguage()
 
   return (
     <footer className="bg-brand-teal text-brand-beige/80 pt-16 pb-8">
@@ -118,34 +120,38 @@ export function Footer() {
               <span>{t("footer.belgium")}</span>
             </div>
             <div className="flex gap-3">
-              <Link
-                href="#"
-                className="text-xs hover-reveal"
+              <button
+                type="button"
+                onClick={() => setLanguage("nl")}
+                className="text-xs hover-reveal cursor-pointer"
                 title={`${t("languages.nl")} (${t("languages.regions.flanders")}, ${t("languages.regions.brussels")})`}
               >
                 NL
-              </Link>
-              <Link
-                href="#"
-                className="text-xs hover-reveal"
+              </button>
+              <button
+                type="button"
+                onClick={() => setLanguage("fr")}
+                className="text-xs hover-reveal cursor-pointer"
                 title={`${t("languages.fr")} (${t("languages.regions.wallonia")}, ${t("languages.regions.brussels")})`}
               >
                 FR
-              </Link>
-              <Link
-                href="#"
-                className="text-xs hover-reveal"
+              </button>
+              <button
+                type="button"
+                onClick={() => setLanguage("de")}
+                className="text-xs hover-reveal cursor-pointer"
                 title={`${t("languages.de")} (${t("languages.regions.german")})`}
               >
                 DE
-              </Link>
-              <Link
-                href="#"
-                className="text-xs hover-reveal"
+              </button>
+              <button
+                type="button"
+                onClick={() => setLanguage("en")}
+                className="text-xs hover-reveal cursor-pointer"
                 title={`${t("languages.en")} (${t("languages.regions.international")})`}
               >
                 EN
-              </Link>
+              </button>
             </div>
           </div>
         </div>

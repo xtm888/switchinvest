@@ -64,13 +64,13 @@ export default function AboutPage() {
               
               {/* Right Column: Image */}
               <motion.div
-                className="relative h-64 md:h-full bg-white/5 p-2 rounded-lg"
+                className="relative bg-white/5 p-2 rounded-lg"
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
                 {/* Use aspect-video for 16:9 ratio */}
-                <div className="aspect-video relative overflow-hidden rounded-lg shadow-lg h-full border border-brand-gold/20">
+                <div className="relative w-full aspect-video overflow-hidden rounded-lg shadow-lg border border-brand-gold/20">
                   <Image
                     src="/images/about/oficeclass.jpg"
                     alt="Our Office"
