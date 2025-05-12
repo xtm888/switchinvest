@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hide Simplemaps trial link - temporary workaround (more forceful) */
+#map a[href="https://simplemaps.com"][title="For evaluation use only"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important; /* Prevent clicking */
+}
+
+/* Hide Simplemaps Trial Link (More Specific) */
+#map a[href="https://simplemaps.com"][title="For evaluation use only."] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: theme('fontFamily.sans'); /* Apply base sans-serif font */
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: theme('fontFamily.serif'); /* Apply serif font for headings */
+  }
+}
+
+/* Custom cursor */
+.custom-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: transform 0.2s ease;
+}
+
+/* Asymmetric layouts */
+.asymmetric-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+}
+
+/* Micro-animations */
+.hover-reveal {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.hover-reveal::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: theme("colors.brand-gold");
+  transition: width 0.3s ease;
+}
+
+.hover-reveal:hover::after {
+  width: 100%;
+}
