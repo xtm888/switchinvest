@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react"
+import { useState, Suspense } from "react"
 import { motion } from "framer-motion"
 import { useTranslation } from "@/hooks/use-translation"
 import { Send, CheckCircle } from "lucide-react"
@@ -111,7 +111,9 @@ export default function ContactPage() {
       <section className="py-16 md:py-28 bg-brand-beige border-b border-brand-gold/20">
         <div className="container mx-auto px-4 max-w-5xl">
           <h2 className="text-3xl md:text-4xl font-bold text-brand-teal mb-10 text-center font-serif">{t("valuation.cta") || "Evaluate Your Property"}</h2>
-          <PropertyValuationWidget />
+          <Suspense fallback={<div>Loading valuation widget...</div>}>
+            <PropertyValuationWidget />
+          </Suspense>
         </div>
       </section>
       
