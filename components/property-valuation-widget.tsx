@@ -239,16 +239,40 @@ export default function PropertyValuationWidget() {
       {step === 5 && (
         <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
           <label className='block'>
-            Nom *
-            <input name='name' type='text' value={form.name} onChange={handleChange} required className='mt-1 block w-full border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-brand-gold' />
+            {t('valuation.name')} *
+            <input
+              name='name'
+              type='text'
+              placeholder={t('valuation.namePlaceholder')}
+              value={form.name}
+              onChange={handleChange}
+              required
+              className='mt-1 block w-full border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-brand-gold'
+            />
           </label>
           <label className='block'>
-            Email *
-            <input name='email' type='email' value={form.email} onChange={handleChange} required className='mt-1 block w-full border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-brand-gold' />
+            {t('valuation.email')} *
+            <input
+              name='email'
+              type='email'
+              placeholder={t('valuation.emailPlaceholder')}
+              value={form.email}
+              onChange={handleChange}
+              required
+              className='mt-1 block w-full border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-brand-gold'
+            />
           </label>
           <label className='md:col-span-2 block'>
-            Téléphone *
-            <input name='phone' type='tel' value={form.phone} onChange={handleChange} required className='mt-1 block w-full border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-brand-gold' />
+            {t('valuation.phone')} *
+            <input
+              name='phone'
+              type='tel'
+              placeholder={t('valuation.phonePlaceholder')}
+              value={form.phone}
+              onChange={handleChange}
+              required
+              className='mt-1 block w-full border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-brand-gold'
+            />
           </label>
         </div>
       )}
