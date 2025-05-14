@@ -56,7 +56,7 @@ export const fr: Translation = {
     thankYou: "Merci ! Votre estimation est de {{estimate}} €",
     newEvaluation: "Nouvelle évaluation",
     error: "Une erreur s'est produite, veuillez réessayer.",
-    thankContact: "Nous vous contacterons sous peu. Merci !",
+    thankContact: "Nous vous contacterons bientôt. Merci !",
     cta: "Évaluer maintenant"
   },
   common: {
@@ -151,7 +151,7 @@ export const fr: Translation = {
     title: "Comment ça fonctionne",
     steps: [
       { title: "Étape 1 : Donnez-nous les détails de votre bien", description: "Remplissez notre formulaire en ligne rapide ou appelez-nous avec les détails de votre bien : adresse, type, superficie et état." },
-      { title: "Étape 2 : Recevez votre offre rapide en espèces", description: "Recevez sous 24 à 48 heures une offre en espèces transparente, basée sur des données réelles du marché et sans déductions cachées." },
+      { title: "Étape 2 : Recevez votre offre rapide en espèces", description: "Recevez sous 24 à 48 heures une offre transparente, basée sur des données réelles du marché et sans déductions cachées." },
       { title: "Étape 3 : Choisissez votre date de clôture", description: "Choisissez une date de clôture dès 7 jours ou jusqu’à 30 jours – selon votre convenance. Nous nous occupons de toutes les formalités légales et des frais de notaire." },
       { title: "Étape 4 : Nous gérons tout", description: "Nous achetons votre bien en l’état, gérons les rénovations et versons les fonds – sans agents, sans surprises." }
     ]

@@ -464,7 +464,7 @@ export const nl: Translation = {
     title: "Hoe het werkt",
     steps: [
       { title: "Stap 1: Geef uw pandgegevens door", description: "Vul ons snelle online formulier in of bel ons met uw pandgegevens—adres, type, grootte en staat." },
-      { title: "Stap 2: Ontvang uw snelle contante aanbieding", description: "Ontvang binnen 24–48 uur een transparant, all-cash bod op basis van echte marktdata, zonder verborgen aftrekposten." },
+      { title: "Stap 2: Ontvang uw snelle contante aanbieding", description: "Ontvang binnen 24–48 uur een transparant bod op basis van echte marktdata, zonder verborgen aftrekposten." },
       { title: "Stap 3: Kies uw sluitingsdatum", description: "Kies een sluitingsdatum (vanaf 7 dagen tot 30 dagen)—wat voor u werkt. Wij regelen alle juridische documenten en notariskosten." },
       { title: "Stap 4: Wij regelen de rest", description: "We kopen uw pand in de staat-as-is, verzorgen de renovaties en zetten het geld op uw rekening—geen makelaars, geen reparaties, geen verborgen kosten." }
     ]

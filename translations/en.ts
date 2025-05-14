@@ -138,7 +138,7 @@ export const en: Translation = {
     title: "How It Works",
     steps: [
       { title: "Step 1: Tell Us About Your Property", description: "Fill out our quick online form or call us with your property details—address, type, size, and condition." },
-      { title: "Step 2: Get Your Fast Cash Offer", description: "Receive a transparent, all-cash offer within 24–48 hours based on real market data—no hidden fees." },
+      { title: "Step 2: Get Your Fast Cash Offer", description: "Receive a transparent offer within 24–48 hours based on real market data—no hidden fees." },
       { title: "Step 3: Choose Your Closing Date", description: "Pick a closing date that works for you (7–30 days). We handle all legal paperwork and notary fees." },
       { title: "Step 4: We Handle the Rest", description: "We purchase your property as-is, manage renovations, and put cash in your hands—no agents, no surprises." }
     ]

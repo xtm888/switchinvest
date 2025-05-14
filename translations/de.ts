@@ -162,7 +162,7 @@ export const de: Translation = {
     title: "So funktioniert es",
     steps: [
       { title: "Schritt 1: Details zu Ihrer Immobilie", description: "Füllen Sie unser kurzes Online-Formular aus oder rufen Sie uns an – Adresse, Immobilientyp, Größe und Zustand." },
-      { title: "Schritt 2: Erhalten Sie Ihr Barangebot", description: "Erhalten Sie innerhalb von 24–48 Stunden ein transparentes All-Cash-Angebot basierend auf echten Marktdaten und ohne versteckte Abzüge." },
+      { title: "Schritt 2: Erhalten Sie Ihr Barangebot", description: "Erhalten Sie innerhalb von 24–48 Stunden ein transparentes Angebot basierend auf echten Marktdaten und ohne versteckte Abzüge." },
       { title: "Schritt 3: Wählen Sie Ihr Abschlussdatum", description: "Wählen Sie ein Abschlussdatum von 7 bis 30 Tagen – ganz nach Ihrem Zeitplan. Wir übernehmen alle rechtlichen Formalitäten und Notarkosten." },
       { title: "Schritt 4: Wir kümmern uns um den Rest", description: "Wir kaufen Ihre Immobilie im Ist-Zustand, kümmern uns um Renovierungen und zahlen aus – keine Makler, keine Überraschungen." }
     ]
