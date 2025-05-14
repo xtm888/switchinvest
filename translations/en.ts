@@ -97,7 +97,7 @@ export const en: Translation = {
       title: "Quick Cash Purchase",
       description: "Get a transparent, all-cash offer within 24–48 hours and close in as little as 7 days—no agents, no hidden fees.",
       features: [
-        "All-cash offer in 24–48 hours",
+        "Offer in 24–48 hours",
         "Choose your closing date (7–30 days)",
         "As-is purchase—no staging or inspections",
         "No hidden fees"

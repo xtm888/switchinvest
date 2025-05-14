@@ -110,7 +110,7 @@ export const fr: Translation = {
       title: "Achat rapide en espèces",
       description: "Obtenez une offre en espèces transparente sous 24–48 heures et concluez en seulement 7 jours—sans agents, sans frais cachés.",
       features: [
-        "Offre en espèces sous 24–48 heures",
+        "Offre sous 24–48 heures",
         "Choisissez votre date de clôture (7–30 jours)",
         "Achat en l’état—pas de mise en scène ni d’inspections",
         "Pas de frais cachés"

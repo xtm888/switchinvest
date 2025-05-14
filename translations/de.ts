@@ -120,7 +120,7 @@ export const de: Translation = {
       title: "Schneller Barankauf",
       description: "Erhalten Sie innerhalb von 24–48 Stunden ein transparentes Barangebot und schließen Sie schon nach 7 Tagen ab—ohne Makler, ohne versteckte Gebühren.",
       features: [
-        "Barangebot in 24–48 Stunden",
+        "Angebot in 24–48 Stunden",
         "Wählen Sie Ihr Abschlussdatum (7–30 Tage)",
         "Kauf im Ist-Zustand—keine Inszenierung oder Inspektionen",
         "Keine versteckten Gebühren"

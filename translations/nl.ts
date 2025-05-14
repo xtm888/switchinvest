@@ -117,7 +117,7 @@ export const nl: Translation = {
       title: "Snelle contante aankoop",
       description: "Ontvang binnen 24–48 uur een transparant, contant bod en sluit al binnen 7 dagen af—geen makelaars, geen verborgen kosten.",
       features: [
-        "Contant bod binnen 24–48 uur",
+        "Bod binnen 24–48 uur",
         "Kies uw sluitingsdatum (7–30 dagen)",
         "Aankoop in huidige staat—geen staging of inspecties",
         "Geen verborgen kosten"
