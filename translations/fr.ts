@@ -151,7 +151,7 @@ export const fr: Translation = {
     title: "Comment ça fonctionne",
     steps: [
       { title: "Étape 1 : Donnez-nous les détails de votre bien", description: "Remplissez notre formulaire en ligne rapide ou appelez-nous avec les détails de votre bien : adresse, type, superficie et état." },
-      { title: "Étape 2 : Recevez votre offre rapide en espèces", description: "Recevez sous 24 à 48 heures une offre transparente, basée sur des données réelles du marché et sans déductions cachées." },
+      { title: "Étape 2 : Recevez votre offre rapide", description: "Recevez sous 24 à 48 heures une offre transparente, basée sur des données réelles du marché et sans déductions cachées." },
       { title: "Étape 3 : Choisissez votre date de clôture", description: "Choisissez une date de clôture dès 7 jours ou jusqu’à 30 jours – selon votre convenance. Nous nous occupons de toutes les formalités légales et des frais de notaire." },
       { title: "Étape 4 : Nous gérons tout", description: "Nous achetons votre bien en l’état, gérons les rénovations et versons les fonds – sans agents, sans surprises." }
     ]
@@ -183,9 +183,9 @@ export const fr: Translation = {
     ]
   },
   cta: {
-    title: "Prêt à libérer la valeur de votre maison ? Obtenez votre offre en espèces sans obligation dès maintenant !",
+    title: "Prêt à libérer la valeur de votre maison ? Obtenez votre offre sans obligation dès maintenant !",
     tagline: "Rapide. Juste. Sans tracas.",
-    subtitle: "Recevez une offre en espèces claire et concluez selon votre calendrier — sans agents, sans réparations, sans frais cachés.",
+    subtitle: "Recevez une offre claire et concluez selon votre calendrier — sans agents, sans réparations, sans frais cachés.",
     primaryButton: "Soumettez votre adresse en 2 minutes →",
     secondaryText: "Des questions ? Appelez-nous au +32 2 123 45 67 ou envoyez un email à info@switchinvest.be",
     consultation: "Planifiez votre consultation",
@@ -389,7 +389,7 @@ export const fr: Translation = {
   },
   about: {
     title: "À propos de nous",
-    description: "Depuis 2010, SwitchInvest permet aux propriétaires belges de libérer rapidement et sans effort la valeur de leur bien. Nous achetons en l’état avec des offres claires en espèces sous 24–48 heures, gérons des rénovations clés en main et apportons une gestion stratégique des actifs—assurant conformité, exécution fluide et rendements maximaux pour nos clients.",
+    description: "Depuis 2010, SwitchInvest permet aux propriétaires belges de libérer rapidement et sans effort la valeur de leur bien. Nous achetons en l’état avec des offres claires sous 24–48 heures, gérons des rénovations clés en main et apportons une gestion stratégique des actifs—assurant conformité, exécution fluide et rendements maximaux pour nos clients.",
     mission: "Offrir à notre clientèle d’exception une gestion immobilière intégrale et irréprochable, optimisant les performances et cimentant la confiance.",
     vision: "Devenir la référence incontestée en gestion immobilière premium, reconnue pour notre intégrité inébranlable, notre vision stratégique et notre excellence discrète.",
     values: {

@@ -95,7 +95,7 @@ export const en: Translation = {
     learnMore: "Learn More",
     real_estate: {
       title: "Quick Cash Purchase",
-      description: "Get a transparent, all-cash offer within 24–48 hours and close in as little as 7 days—no agents, no hidden fees.",
+      description: "Get a transparent offer within 24–48 hours and close in as little as 7 days—no agents, no hidden fees.",
       features: [
         "Offer in 24–48 hours",
         "Choose your closing date (7–30 days)",
@@ -138,7 +138,7 @@ export const en: Translation = {
     title: "How It Works",
     steps: [
       { title: "Step 1: Tell Us About Your Property", description: "Fill out our quick online form or call us with your property details—address, type, size, and condition." },
-      { title: "Step 2: Get Your Fast Cash Offer", description: "Receive a transparent offer within 24–48 hours based on real market data—no hidden fees." },
+      { title: "Step 2: Get Your Fast Offer", description: "Receive a transparent offer within 24–48 hours based on real market data—no hidden fees." },
       { title: "Step 3: Choose Your Closing Date", description: "Pick a closing date that works for you (7–30 days). We handle all legal paperwork and notary fees." },
       { title: "Step 4: We Handle the Rest", description: "We purchase your property as-is, manage renovations, and put cash in your hands—no agents, no surprises." }
     ]
@@ -168,9 +168,9 @@ export const en: Translation = {
     ]
   },
   cta: {
-    title: "Ready to Unlock Your Home’s Value? Get Your No-Obligation Cash Offer Now!",
+    title: "Ready to Unlock Your Home’s Value? Get Your No-Obligation Offer Now!",
     tagline: "Fast. Fair. Hassle-Free.",
-    subtitle: "Receive a clear, all-cash offer and close on your own timeline—no agents, no repairs, no hidden fees.",
+    subtitle: "Receive a clear offer and close on your own timeline—no agents, no repairs, no hidden fees.",
     primaryButton: "Submit Your Address in 2 Minutes →",
     secondaryText: "Questions? Call us at +32 2 123 45 67 or email info@switchinvest.be",
     consultation: "Schedule Your Consultation",
@@ -374,7 +374,7 @@ export const en: Translation = {
   },
   about: {
     title: "About Us",
-    description: "Since 2010, SwitchInvest has empowered Belgian property owners to unlock their home’s value quickly and effortlessly. We buy as-is with transparent all-cash offers in 24–48 hours, manage turnkey renovations, and provide strategic asset stewardship—ensuring compliance, seamless execution, and maximum returns for our clients.",
+    description: "Since 2010, SwitchInvest has empowered Belgian property owners to unlock their home’s value quickly and effortlessly. We buy as-is with transparent offers in 24–48 hours, manage turnkey renovations, and provide strategic asset stewardship—ensuring compliance, seamless execution, and maximum returns for our clients.",
     mission: "To provide discerning clients with impeccable, full-service property management that optimizes performance and reinforces trust.",
     vision: "To set the benchmark in premium real estate management, renowned for our unwavering integrity, strategic insight, and discreet excellence.",
     values: {

@@ -114,8 +114,8 @@ export const nl: Translation = {
     subtitle: "Turnkey-oplossingen om het potentieel van uw woning te ontsluiten",
     learnMore: "Meer informatie",
     real_estate: {
-      title: "Snelle contante aankoop",
-      description: "Ontvang binnen 24–48 uur een transparant, contant bod en sluit al binnen 7 dagen af—geen makelaars, geen verborgen kosten.",
+      title: "Snelle aankoop",
+      description: "Ontvang binnen 24–48 uur een transparant bod en sluit al binnen 7 dagen af—geen makelaars, geen verborgen kosten.",
       features: [
         "Bod binnen 24–48 uur",
         "Kies uw sluitingsdatum (7–30 dagen)",
@@ -329,7 +329,7 @@ export const nl: Translation = {
   },
   about: {
     title: "Over ons",
-    description: "Sinds 2010 helpt SwitchInvest Belgische huiseigenaren om snel en moeiteloos de waarde van hun woning te ontsluiten. We kopen in de huidige staat met transparante contante biedingen binnen 24–48 uur, verzorgen sleutelklare renovaties en bieden strategisch assetmanagement—met naleving, naadloze uitvoering en maximale rendementen voor onze klanten.",
+    description: "Sinds 2010 helpt SwitchInvest Belgische huiseigenaren om snel en moeiteloos de waarde van hun woning te ontsluiten. We kopen in de huidige staat met transparante biedingen binnen 24–48 uur, verzorgen sleutelklare renovaties en bieden strategisch assetmanagement—met naleving, naadloze uitvoering en maximale rendementen voor onze klanten.",
     mission: "Onze missie is om veeleisende cliënten te voorzien van onberispelijk, full-service vastgoedbeheer dat prestaties optimaliseert en vertrouwen versterkt.",
     vision: "Onze visie is om de lat te leggen in premium vastgoedbeheer, bekend om onze onwrikbare integriteit, strategisch inzicht en discrete uitmuntendheid.",
     values: {
@@ -464,7 +464,7 @@ export const nl: Translation = {
     title: "Hoe het werkt",
     steps: [
       { title: "Stap 1: Geef uw pandgegevens door", description: "Vul ons snelle online formulier in of bel ons met uw pandgegevens—adres, type, grootte en staat." },
-      { title: "Stap 2: Ontvang uw snelle contante aanbieding", description: "Ontvang binnen 24–48 uur een transparant bod op basis van echte marktdata, zonder verborgen aftrekposten." },
+      { title: "Stap 2: Ontvang uw snelle aanbieding", description: "Ontvang binnen 24–48 uur een transparant bod op basis van echte marktdata, zonder verborgen aftrekposten." },
       { title: "Stap 3: Kies uw sluitingsdatum", description: "Kies een sluitingsdatum (vanaf 7 dagen tot 30 dagen)—wat voor u werkt. Wij regelen alle juridische documenten en notariskosten." },
       { title: "Stap 4: Wij regelen de rest", description: "We kopen uw pand in de staat-as-is, verzorgen de renovaties en zetten het geld op uw rekening—geen makelaars, geen reparaties, geen verborgen kosten." }
     ]
@@ -490,7 +490,7 @@ export const nl: Translation = {
     title: "Wie kan profiteren",
     items: [
       { title: "Gepensioneerden", description: "Wilt u downsizen en vermogen vrijmaken voor uw pensioen?" },
-      { title: "Erfgenamen", description: "Een geërfd pand dat u niet wilt beheren? Snel contant maken." },
+      { title: "Erfgenamen", description: "Een geërfd pand dat u niet wilt beheren? Snel middelen vrijmaken." },
       { title: "Fixer-Upper Eigenaren", description: "Heeft u een huis dat reparaties nodig heeft? Wij kopen as-is zodat u niet betaalt voor dure reparaties." },
       { title: "Levensveranderingen", description: "Gebruik de waarde van uw pand om een bedrijf te starten, studie te financieren of te verhuizen." }
     ]

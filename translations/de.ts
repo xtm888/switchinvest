@@ -118,7 +118,7 @@ export const de: Translation = {
     learnMore: "Mehr erfahren",
     real_estate: {
       title: "Schneller Barankauf",
-      description: "Erhalten Sie innerhalb von 24–48 Stunden ein transparentes Barangebot und schließen Sie schon nach 7 Tagen ab—ohne Makler, ohne versteckte Gebühren.",
+      description: "Erhalten Sie innerhalb von 24–48 Stunden ein transparentes Angebot und schließen Sie schon nach 7 Tagen ab—ohne Makler, ohne versteckte Gebühren.",
       features: [
         "Angebot in 24–48 Stunden",
         "Wählen Sie Ihr Abschlussdatum (7–30 Tage)",
@@ -162,7 +162,7 @@ export const de: Translation = {
     title: "So funktioniert es",
     steps: [
       { title: "Schritt 1: Details zu Ihrer Immobilie", description: "Füllen Sie unser kurzes Online-Formular aus oder rufen Sie uns an – Adresse, Immobilientyp, Größe und Zustand." },
-      { title: "Schritt 2: Erhalten Sie Ihr Barangebot", description: "Erhalten Sie innerhalb von 24–48 Stunden ein transparentes Angebot basierend auf echten Marktdaten und ohne versteckte Abzüge." },
+      { title: "Schritt 2: Erhalten Sie Ihr Angebot", description: "Erhalten Sie innerhalb von 24–48 Stunden ein transparentes Angebot basierend auf echten Marktdaten und ohne versteckte Abzüge." },
       { title: "Schritt 3: Wählen Sie Ihr Abschlussdatum", description: "Wählen Sie ein Abschlussdatum von 7 bis 30 Tagen – ganz nach Ihrem Zeitplan. Wir übernehmen alle rechtlichen Formalitäten und Notarkosten." },
       { title: "Schritt 4: Wir kümmern uns um den Rest", description: "Wir kaufen Ihre Immobilie im Ist-Zustand, kümmern uns um Renovierungen und zahlen aus – keine Makler, keine Überraschungen." }
     ]
@@ -221,9 +221,9 @@ export const de: Translation = {
   ],
 
   cta: {
-    title: "Bereit, den Wert Ihrer Immobilie freizusetzen? Erhalten Sie jetzt Ihr unverbindliches Barangebot!",
+    title: "Bereit, den Wert Ihrer Immobilie freizusetzen? Erhalten Sie jetzt Ihr unverbindliches Angebot!",
     tagline: "Schnell. Fair. Ohne Stress.",
-    subtitle: "Erhalten Sie ein klares All-Cash-Angebot und schließen Sie nach Ihrem Zeitplan ab – ohne Makler, ohne Reparaturen, ohne versteckte Kosten.",
+    subtitle: "Erhalten Sie ein klares Angebot und schließen Sie nach Ihrem Zeitplan ab – ohne Makler, ohne Reparaturen, ohne versteckte Kosten.",
     primaryButton: "Geben Sie Ihre Adresse in 2 Minuten ein →",
     secondaryText: "Fragen? Rufen Sie uns an unter +32 2 123 45 67 oder schreiben Sie an info@switchinvest.be",
     consultation: "Vereinbaren Sie Ihre Beratung",
@@ -388,7 +388,7 @@ export const de: Translation = {
   // 9. Über Uns
   about: {
     title: "Über uns",
-    description: "Seit 2010 befähigt SwitchInvest belgische Eigentümer, den Wert ihres Hauses schnell und mühelos freizusetzen. Wir kaufen im Ist-Zustand mit transparenten Barangeboten in 24–48 Stunden, managen schlüsselfertige Renovierungen und bieten strategische Asset-Betreuung—mit Compliance, nahtloser Ausführung und maximalen Renditen für unsere Kunden.",
+    description: "Seit 2010 befähigt SwitchInvest belgische Eigentümer, den Wert ihres Hauses schnell und mühelos freizusetzen. Wir kaufen im Ist-Zustand mit transparenten Angeboten in 24–48 Stunden, managen schlüsselfertige Renovierungen und bieten strategische Asset-Betreuung—mit Compliance, nahtloser Ausführung und maximalen Renditen für unsere Kunden.",
     mission: "Unsere Mission ist es, anspruchsvollen Kunden makelloses Full-Service-Immobilienmanagement zu bieten, das Leistung optimiert und Vertrauen schafft.",
     vision: "Unsere Vision ist es, Maßstab im Premium-Immobilienmanagement zu sein, bekannt für unerschütterliche Integrität, strategische Weitsicht und diskrete Exzellenz.",
     values: {
