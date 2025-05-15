@@ -107,8 +107,8 @@ export const fr: Translation = {
     subtitle: "Solutions clés en main pour libérer le potentiel de votre propriété",
     learnMore: "En savoir plus",
     real_estate: {
-      title: "Achat rapide en espèces",
-      description: "Obtenez une offre en espèces transparente sous 24–48 heures et concluez en seulement 7 jours—sans agents, sans frais cachés.",
+      title: "Achat rapide",
+      description: "Obtenez une offre transparente sous 24–48 heures et concluez en seulement 7 jours—sans agents, sans frais cachés.",
       features: [
         "Offre sous 24–48 heures",
         "Choisissez votre date de clôture (7–30 jours)",

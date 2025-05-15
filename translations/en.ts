@@ -94,7 +94,7 @@ export const en: Translation = {
     subtitle: "Turnkey solutions to unlock your property’s potential",
     learnMore: "Learn More",
     real_estate: {
-      title: "Quick Cash Purchase",
+      title: "Quick Purchase",
       description: "Get a transparent offer within 24–48 hours and close in as little as 7 days—no agents, no hidden fees.",
       features: [
         "Offer in 24–48 hours",

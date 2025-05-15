@@ -117,7 +117,7 @@ export const de: Translation = {
     subtitle: "Schlüsselfertige Lösungen, um das Potenzial Ihrer Immobilie freizusetzen",
     learnMore: "Mehr erfahren",
     real_estate: {
-      title: "Schneller Barankauf",
+      title: "Schneller Ankauf",
       description: "Erhalten Sie innerhalb von 24–48 Stunden ein transparentes Angebot und schließen Sie schon nach 7 Tagen ab—ohne Makler, ohne versteckte Gebühren.",
       features: [
         "Angebot in 24–48 Stunden",
