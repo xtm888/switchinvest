@@ -51,6 +51,7 @@
 }
 
 .hover-reveal::after {
+  
   content: "";
   position: absolute;
   bottom: 0;
