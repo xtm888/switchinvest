@@ -30,6 +30,12 @@ export const en: Translation = {
       old: "Old"
     },
     features: "Features",
+    featuresOptions: {
+      garden: "Garden",
+      terrace: "Terrace",
+      parking: "Parking",
+      elevator: "Elevator",
+    },
     name: "Name",
     namePlaceholder: "Your name",
     email: "Email",
