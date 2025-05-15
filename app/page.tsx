@@ -23,7 +23,7 @@ export default function Home() {
         {/* Add a gold gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-brand-gold/20 to-transparent opacity-70"></div>
         <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
-          <h1 className="text-5xl md:text-7xl font-bold text-brand-beige mb-6 leading-snug font-serif tracking-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-brand-beige leading-tight drop-shadow-md font-serif tracking-tight mb-6">
             {t("hero.title")}
           </h1>
           <p className="text-xl md:text-2xl text-brand-gold italic mb-8 font-serif tracking-wide">{t("hero.tagline")}</p>
