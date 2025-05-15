@@ -501,5 +501,12 @@ export const nl: Translation = {
       { myth: "Snelverkoopbedrijven bieden te lage prijzen.", reality: "Onze aanbiedingen weerspiegelen werkelijke marktwaarde minus renovatiekosten die wij dekken." },
       { myth: "Verkopen aan een bedrijf is ingewikkeld.", reality: "Wij regelen alle documenten en afspraken—u hoeft maar één keer te tekenen." }
     ]
+  },
+  cta: {
+    title: "Klaar om de waarde van uw huis te ontgrendelen? Ontvang nu uw vrijblijvende aanbod!",
+    tagline: "Snel. Eerlijk. Probleemloos.",
+    subtitle: "Ontvang een duidelijk aanbod en sluit af volgens uw schema — zonder makelaars, zonder reparaties, zonder verborgen kosten.",
+    consultation: "Plan uw consultatie",
+    explore: "Ontdek onze diensten"
   }
 };
