@@ -2,27 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Hide Simplemaps trial link - temporary workaround (more forceful) */
-#map a[href="https://simplemaps.com"][title="For evaluation use only"] {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  height: 0 !important;
-  overflow: hidden !important;
-  pointer-events: none !important; /* Prevent clicking */
-}
-
-/* Hide Simplemaps Trial Link (More Specific) */
-#map a[href="https://simplemaps.com"][title="For evaluation use only."] {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
-  height: 0 !important;
-  width: 0 !important;
-  overflow: hidden !important;
-}
-
 @layer base {
   * {
     @apply border-border;

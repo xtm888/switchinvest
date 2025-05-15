@@ -62,7 +62,7 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-geist-sans)"],
         mono: ["var(--font-geist-mono)"],
-        serif: ["Playfair Display", "serif"],
+        serif: ["var(--font-playfair)", "serif"],
       },
       borderRadius: {
         lg: "var(--radius)",

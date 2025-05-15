@@ -46,13 +46,14 @@ export function Navigation() {
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-center md:justify-between relative">
         <Link href="/" className="flex items-center">
           <div 
-            className="relative transition-all duration-300 w-[240px] h-[60px]"
+            className="relative transition-all duration-300 w-[180px] h-[60px]"
           >
             <Image
               alt="SWITCHinvest"
               fill
               style={{ objectFit: "contain" }}
               src="/images/logo.png"
+              sizes="180px"
               priority 
             />
           </div>

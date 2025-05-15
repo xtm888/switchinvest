@@ -1,4 +1,4 @@
-import type React from "react"
+import React from "react";
 import type { Metadata } from "next"
 import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
@@ -8,8 +8,19 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { CookieConsent } from "@/components/cookie-consent"
 import { LanguageProvider } from "@/contexts/language-context"
+import { Playfair_Display } from 'next/font/google';
+import ClientLayoutWrapper from '@/components/client-layout-wrapper';
 import "./globals.css"
 import 'leaflet/dist/leaflet.css'; // Import Leaflet CSS globally
+
+// Configure Playfair Display font
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+  display: 'swap',
+  variable: '--font-playfair', // CSS variable for Tailwind
+});
 
 export const metadata: Metadata = {
   title: {
@@ -70,57 +81,32 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={`${playfair.variable} ${GeistSans.variable} ${GeistMono.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
-          rel="stylesheet"
-        />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              // Comprehensive error handling for ResizeObserver
-              window.addEventListener('error', function(e) {
-                if (e.message === 'ResizeObserver loop limit exceeded' || 
-                    e.message === 'ResizeObserver loop completed with undelivered notifications.') {
-                  e.stopImmediatePropagation();
-                }
-              });
-              
-              // Suppress specific console errors
-              const originalConsoleError = console.error;
-              console.error = function() {
-                if (arguments[0] && 
-                    typeof arguments[0] === 'string' && 
-                    (arguments[0].includes('ResizeObserver') || 
-                     arguments[0].includes('Warning: ReactDOM.render'))) {
-                  return;
-                }
-                originalConsoleError.apply(console, arguments);
-              };
-            `
-          }}
-        />
+        <meta name="theme-color" content="#ffffff" />
       </head>
-      <body className={`${GeistSans.variable} ${GeistMono.variable} bg-white flex flex-col min-h-screen`}>
-        <LanguageProvider>
-          {/* Forcing light theme to fix contrast issues */}
-          <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
-            <CustomCursor />
-            <Navigation />
-            <main className="pt-24 flex-grow">
-              {children}
-            </main>
-            <Footer />
-            <CookieConsent />
-          </ThemeProvider>
-        </LanguageProvider>
+      <body className="bg-white flex flex-col min-h-screen">
+        <ClientLayoutWrapper>
+          <LanguageProvider>
+            {/* Google Tag Manager (noscript) */}
+            <noscript><iframe src={`https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GTM_ID}`}
+              height="0" width="0" style={{ display: 'none', visibility: 'hidden' }}></iframe></noscript>
+            {/* End Google Tag Manager (noscript) */}
+            <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+              <CustomCursor />
+              <Navigation />
+              <main className="pt-24 flex-grow">
+                {children}
+              </main>
+              <Footer />
+              <CookieConsent />
+            </ThemeProvider>
+          </LanguageProvider>
+        </ClientLayoutWrapper>
       </body>
     </html>
   )
