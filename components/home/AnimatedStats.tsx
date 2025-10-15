@@ -27,7 +27,7 @@ function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
   const ref = useRef<HTMLSpanElement>(null)
   const motionValue = useMotionValue(0)
   const springValue = useSpring(motionValue, { duration: 3000 })
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const isInView = useInView(ref, { once: true, margin: "0px", amount: 0.3 })
   const [displayValue, setDisplayValue] = useState(0)
 
   useEffect(() => {
