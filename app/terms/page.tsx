@@ -9,11 +9,14 @@ export default function TermsOfServicePage() {
   
   return (
     <>
-      <section className="pt-32 pb-16 bg-neutral-100">
-        <div className="container mx-auto px-4">
+      {/* Hero Section - Consistent with other pages */}
+      <section className="relative min-h-[40vh] bg-gradient-to-b from-brand-teal to-brand-teal/90 pt-32 pb-16 overflow-hidden text-white">
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-gold/20 to-transparent opacity-70"></div>
+
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
           {/* Breadcrumb navigation */}
-          <div className="flex items-center text-sm mb-8 text-gray-600">
-            <Link href="/" className="hover:text-brand-teal transition-colors group flex items-center">
+          <div className="flex items-center justify-center md:justify-start text-sm mb-6 text-white font-medium">
+            <Link href="/" className="text-white/90 hover:text-white transition-colors group flex items-center">
               <span className="inline-block transform group-hover:-translate-x-1 transition-transform duration-300">
                 {t("common.home") || "Home"}
               </span>
@@ -23,10 +26,19 @@ export default function TermsOfServicePage() {
               {t("terms.title") || "Terms of Service"}
             </span>
           </div>
-          
-          <h1 className="text-4xl md:text-5xl font-serif font-bold mb-8">
-            {t("terms.title") || "Terms of Service"}
-          </h1>
+
+          <div className="text-center max-w-3xl mx-auto mt-12">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 font-serif">
+              {t("terms.title") || "Terms of Service"}
+            </h1>
+            <p className="text-white/90">Please read these terms carefully before using our services</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Content Section */}
+      <section className="py-16 bg-brand-beige">
+        <div className="container mx-auto px-4">
           
           <div className="bg-white rounded-xl shadow-md p-8 mb-12">
             <div className="prose prose-lg max-w-none">
@@ -88,9 +100,9 @@ export default function TermsOfServicePage() {
                 If you have any questions about these Terms of Service, please contact us:
               </p>
               <p>
-                Email: legal@switchinvest.com<br />
-                Address: Boulevard Anspach 1, 1000 Brussels, Belgium<br />
-                Phone: +32 2 123 4567
+                Email: <a href="mailto:info@switchinvest.com" className="text-brand-teal hover:underline font-semibold">info@switchinvest.com</a><br />
+                Address: Avenue Louise 251, 1000 Bruxelles, Belgique<br />
+                Phone: <a href="tel:+32492996561" className="text-brand-teal hover:underline font-semibold">+32 492 996561</a>
               </p>
             </div>
           </div>

@@ -1,0 +1,215 @@
+{
+  "company": {
+    "name": "SwitchInvest",
+    "legal_name": "SwitchInvest SPRL",
+    "founded": "2010",
+    "slogan": {
+      "fr": "Rapide. Juste. Sans tracas.",
+      "nl": "Snel. Eerlijk. Zonder zorgen.",
+      "en": "Fast. Fair. Hassle-free.",
+      "de": "Schnell. Fair. Problemlos."
+    },
+    "website": "https://switchinvest.be",
+    "email": "info@switchinvest.be",
+    "phone": "+32 2 123 45 67",
+    "whatsapp": "+32 2 123 45 67"
+  },
+  "address": {
+    "street": "Avenue Louise 123",
+    "city": "Brussels",
+    "postal_code": "1050",
+    "region": "Brussels-Capital Region",
+    "country": "Belgium",
+    "country_code": "BE"
+  },
+  "social_media": {
+    "linkedin": "https://www.linkedin.com/company/switchinvest",
+    "twitter": "https://twitter.com/switchinvest",
+    "facebook": "https://www.facebook.com/switchinvest",
+    "instagram": "@switchinvest_be"
+  },
+  "business_details": {
+    "industry": "Real Estate",
+    "categories": [
+      "Real Estate Investment",
+      "Property Management",
+      "Real Estate Agent",
+      "Property Renovation",
+      "Asset Management"
+    ],
+    "naics_code": "531210",
+    "company_size": "11-50 employees",
+    "vat_number": "BE0XXX.XXX.XXX",
+    "certifications": [
+      "FEDERA Certified Property Manager",
+      "ISO 9001:2015 Quality Management"
+    ]
+  },
+  "service_areas": [
+    {
+      "city": "Brussels",
+      "region": "Brussels-Capital Region",
+      "radius_km": 30
+    },
+    {
+      "city": "Antwerp",
+      "region": "Flanders",
+      "radius_km": 25
+    },
+    {
+      "city": "Ghent",
+      "region": "Flanders",
+      "radius_km": 25
+    },
+    {
+      "city": "Liège",
+      "region": "Wallonia",
+      "radius_km": 20
+    }
+  ],
+  "services": [
+    {
+      "name": {
+        "fr": "Achat Rapide de Maison",
+        "nl": "Snelle Huisaankoop",
+        "en": "Fast House Purchase",
+        "de": "Schneller Hauskauf"
+      },
+      "description": {
+        "fr": "Offre sous 24-48 heures, clôture en 7 jours. Achat en l'état sans frais cachés.",
+        "nl": "Aanbieding binnen 24-48 uur, afsluiting in 7 dagen. Aankoop in huidige staat zonder verborgen kosten.",
+        "en": "Offer within 24-48 hours, close in 7 days. As-is purchase with no hidden fees.",
+        "de": "Angebot innerhalb von 24-48 Stunden, Abschluss in 7 Tagen. Kauf im Ist-Zustand ohne versteckte Gebühren."
+      },
+      "keywords": ["vente rapide", "achat maison", "7 jours", "sans agent"]
+    },
+    {
+      "name": {
+        "fr": "Investissement Immobilier Stratégique",
+        "nl": "Strategische Vastgoedbelegging",
+        "en": "Strategic Real Estate Investment",
+        "de": "Strategische Immobilieninvestition"
+      },
+      "description": {
+        "fr": "Analyse de marché approfondie et optimisation de portefeuille pour maximiser vos rendements.",
+        "nl": "Diepgaande marktanalyse en portfoliooptimalisatie om uw rendement te maximaliseren.",
+        "en": "In-depth market analysis and portfolio optimization to maximize your returns.",
+        "de": "Eingehende Marktanalyse und Portfolio-Optimierung zur Maximierung Ihrer Rendite."
+      },
+      "keywords": ["investissement", "ROI", "rendement", "portefeuille"]
+    },
+    {
+      "name": {
+        "fr": "Rénovations Clés en Main",
+        "nl": "Sleutelklare Renovaties",
+        "en": "Turnkey Renovations",
+        "de": "Schlüsselfertige Renovierungen"
+      },
+      "description": {
+        "fr": "Gestion complète de projet de rénovation pour maximiser la valeur de votre bien.",
+        "nl": "Volledig projectbeheer voor renovatie om de waarde van uw eigendom te maximaliseren.",
+        "en": "Complete renovation project management to maximize your property value.",
+        "de": "Vollständiges Projektmanagement für Renovierungen zur Maximierung Ihres Immobilienwerts."
+      },
+      "keywords": ["rénovation", "travaux", "valorisation", "projet"]
+    },
+    {
+      "name": {
+        "fr": "Gestion Complète des Actifs",
+        "nl": "Volledig Activabeheer",
+        "en": "Full Asset Management",
+        "de": "Vollständige Vermögensverwaltung"
+      },
+      "description": {
+        "fr": "Gérance globale avec reporting financier transparent et maintenance proactive.",
+        "nl": "Volledig beheer met transparante financiële rapportage en proactief onderhoud.",
+        "en": "Comprehensive management with transparent financial reporting and proactive maintenance.",
+        "de": "Umfassendes Management mit transparenter Finanzberichterstattung und proaktiver Wartung."
+      },
+      "keywords": ["gestion", "location", "maintenance", "reporting"]
+    }
+  ],
+  "business_hours": {
+    "monday": "09:00-18:00",
+    "tuesday": "09:00-18:00",
+    "wednesday": "09:00-18:00",
+    "thursday": "09:00-18:00",
+    "friday": "09:00-18:00",
+    "saturday": "Closed",
+    "sunday": "Closed"
+  },
+  "payment_methods": [
+    "Bank Transfer",
+    "Credit Card",
+    "Cash",
+    "Cryptocurrency (Bitcoin, Ethereum)"
+  ],
+  "languages_spoken": [
+    "French",
+    "Dutch",
+    "English",
+    "German"
+  ],
+  "company_descriptions": {
+    "short_50_words": {
+      "fr": "SwitchInvest offre des solutions immobilières rapides et sans tracas en Belgique. Vendez votre maison en 7 jours, investissez stratégiquement ou bénéficiez d'une gestion complète. Offre sous 24-48h, achat en l'état, sans frais cachés.",
+      "nl": "SwitchInvest biedt snelle en probleemloze vastgoedoplossingen in België. Verkoop uw huis in 7 dagen, investeer strategisch of profiteer van volledig beheer. Aanbieding binnen 24-48 uur, aankoop in huidige staat, geen verborgen kosten.",
+      "en": "SwitchInvest provides fast, hassle-free real estate solutions in Belgium. Sell your house in 7 days, invest strategically, or benefit from full management. Offer within 24-48h, as-is purchase, no hidden fees."
+    },
+    "medium_150_words": {
+      "fr": "Depuis 2010, SwitchInvest révolutionne le marché immobilier belge en offrant des solutions rapides et transparentes aux propriétaires. Nous achetons votre maison en l'état avec une offre sous 24-48 heures et une clôture possible en seulement 7 jours. Pas d'agents, pas de frais cachés, pas de réparations nécessaires.\n\nNos services incluent l'achat rapide de propriétés, l'investissement immobilier stratégique avec analyse de marché approfondie, des rénovations clés en main professionnelles, et une gestion complète d'actifs immobiliers. Nous opérons à Bruxelles, Anvers, Gand et Liège.\n\nQue vous soyez retraité cherchant à réduire votre surface, héritier d'un bien que vous ne souhaitez pas gérer, ou investisseur cherchant à optimiser votre portefeuille, SwitchInvest transforme votre propriété en opportunité. Certifiés FEDERA et ISO 9001:2015, nous garantissons excellence et transparence.",
+      "nl": "Sinds 2010 revolutioneert SwitchInvest de Belgische vastgoedmarkt door snelle en transparante oplossingen aan te bieden aan eigenaars. We kopen uw huis in de huidige staat met een aanbieding binnen 24-48 uur en een mogelijke afsluiting in slechts 7 dagen. Geen makelaars, geen verborgen kosten, geen noodzakelijke reparaties.\n\nOnze diensten omvatten snelle aankoop van eigendommen, strategische vastgoedbelegging met diepgaande marktanalyse, professionele sleutelklare renovaties en volledig beheer van vastgoedactiva. We zijn actief in Brussel, Antwerpen, Gent en Luik.\n\nOf u nu gepensioneerd bent en wilt verkleinen, erfgenaam van een eigendom dat u niet wilt beheren, of belegger die uw portefeuille wilt optimaliseren, SwitchInvest transformeert uw eigendom in een kans. FEDERA-gecertificeerd en ISO 9001:2015, we garanderen uitmuntendheid en transparantie.",
+      "en": "Since 2010, SwitchInvest has been revolutionizing the Belgian real estate market by offering fast, transparent solutions to property owners. We buy your house as-is with an offer within 24-48 hours and closing possible in just 7 days. No agents, no hidden fees, no necessary repairs.\n\nOur services include fast property purchase, strategic real estate investment with in-depth market analysis, professional turnkey renovations, and complete real estate asset management. We operate in Brussels, Antwerp, Ghent, and Liège.\n\nWhether you're a retiree looking to downsize, an heir to a property you don't want to manage, or an investor looking to optimize your portfolio, SwitchInvest transforms your property into opportunity. FEDERA certified and ISO 9001:2015, we guarantee excellence and transparency."
+    },
+    "long_300_words": {
+      "fr": "Fondé en 2010, SwitchInvest est devenu un acteur majeur du marché immobilier belge en offrant des solutions innovantes et transparentes qui transforment la façon dont les Belges vendent, achètent et gèrent leurs propriétés.\n\nNotre mission est simple : libérer la valeur de votre maison sans le stress, les délais et les coûts associés aux méthodes traditionnelles. Que vous ayez hérité d'un bien, possédiez une maison nécessitant des réparations coûteuses, ou souhaitiez simplement débloquer rapidement des liquidités, nous proposons une solution clés en main.\n\n**Achat Rapide de Maison**\nNous achetons votre propriété en l'état, sans nécessité de réparations ou de mise en scène. Vous recevez une offre transparente sous 24-48 heures basée sur des données réelles du marché. Vous choisissez votre date de clôture (de 7 à 30 jours) et nous nous occupons de toutes les formalités légales et des frais de notaire. Zéro frais cachés, zéro commissions d'agent.\n\n**Investissement Immobilier Stratégique**\nNotre équipe d'experts analyse en profondeur le marché belge pour identifier les opportunités à haut rendement. Nous optimisons votre portefeuille immobilier grâce à des stratégies ajustées au risque et à une connaissance approfondie des marchés de Bruxelles, Anvers, Gand et Liège.\n\n**Rénovations et Gestion**\nNous gérons vos projets de rénovation de A à Z, maximisant la valeur de votre bien tout en minimisant votre stress. Notre service de gestion complète d'actifs assure conformité réglementaire, reporting financier transparent et maintenance proactive.\n\n**Certifications et Qualité**\nCertifiés par FEDERA (Fédération Royale du Notariat Belge) et ISO 9001:2015, nous garantissons les plus hauts standards de qualité et d'éthique professionnelle.\n\nRejoignez plus de 127 clients satisfaits qui ont fait confiance à SwitchInvest pour transformer leur propriété en possibilités."
+    }
+  },
+  "seo_keywords": {
+    "primary": [
+      "vente rapide maison Belgique",
+      "achat maison rapide Bruxelles",
+      "investissement immobilier Belgique",
+      "gestion immobilière Bruxelles"
+    ],
+    "secondary": [
+      "vendre maison en l'état",
+      "achat immobilier sans agent",
+      "rénovation immobilière Belgique",
+      "investissement locatif Belgique",
+      "vente maison 7 jours",
+      "héritage maison Belgique"
+    ],
+    "long_tail": [
+      "comment vendre maison rapidement Belgique",
+      "vendre maison sans réparations Bruxelles",
+      "investir dans l'immobilier à Bruxelles 2025",
+      "que faire après avoir hérité d'une maison en Belgique"
+    ]
+  },
+  "target_audience": [
+    "Retraités (60-75 ans) cherchant à réduire leur surface",
+    "Héritiers de propriétés (30-55 ans) ne souhaitant pas gérer un bien",
+    "Propriétaires de biens à rénover (40-65 ans)",
+    "Investisseurs immobiliers (35-60 ans) cherchant à optimiser leur portefeuille",
+    "Entrepreneurs (30-50 ans) ayant besoin de liquidités rapides"
+  ],
+  "unique_selling_points": [
+    "Offre sous 24-48 heures (le plus rapide en Belgique)",
+    "Clôture en 7 jours (vs. 3-6 mois marché traditionnel)",
+    "Achat en l'état - zéro réparations nécessaires",
+    "Aucun frais caché ou commission d'agent",
+    "Expertise locale approfondie (15+ ans d'expérience)",
+    "Service multilingue (FR/NL/EN/DE)",
+    "Certifications FEDERA et ISO 9001:2015"
+  ],
+  "statistics": {
+    "properties_managed": "150+",
+    "square_meters": "45,000+",
+    "years_experience": "15",
+    "satisfied_clients": "127",
+    "average_rating": "5.0/5",
+    "average_closing_days": "12",
+    "client_satisfaction_rate": "98%"
+  }
+}

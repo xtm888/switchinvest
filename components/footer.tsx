@@ -2,156 +2,352 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { Globe, Shield, Lock } from "lucide-react"
+import { motion } from "framer-motion"
+import { Globe, Shield, Lock, Mail, Linkedin, Twitter, Facebook, Send } from "lucide-react"
 import { useTranslation } from "@/hooks/use-translation"
 import { useLanguage } from "@/contexts/language-context"
+import SectionDivider from "@/components/home/SectionDivider"
+import { useState } from "react"
 
 export function Footer() {
   const { t } = useTranslation()
   const { setLanguage } = useLanguage()
+  const [email, setEmail] = useState("")
+
+  const handleNewsletterSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    // Newsletter subscription logic would go here
+    console.log("Newsletter signup:", email)
+    setEmail("")
+  }
 
   return (
-    <footer className="bg-brand-teal text-brand-beige/80 pt-16 pb-8">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
-          <div>
-            <Image
-              src="/images/logo.png"
-              alt="SwitchInvest"
-              width={180}
-              height={60}
-              className="mb-4 object-contain"
-            />
-            <p className="mb-4 font-serif">{t("footer.description")}</p>
-            <div className="flex items-center text-xs">
-              <Shield className="h-4 w-4 mr-1" />
-              <span>{t("footer.security.gdpr")}</span>
-              <Lock className="h-4 w-4 ml-3 mr-1" />
-              <span>{t("footer.security.encryption")}</span>
+    <footer className="relative">
+      {/* Wave Divider */}
+      <SectionDivider variant="wave" />
+
+      {/* Main Footer Content */}
+      <div className="bg-gradient-to-b from-brand-teal to-brand-teal/90 text-brand-beige/80 pt-16 pb-8 relative overflow-hidden">
+        {/* Floating Background Elements */}
+        <motion.div
+          animate={{
+            y: [0, -20, 0],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute top-10 right-10 w-40 h-40 bg-brand-gold/5 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{
+            y: [0, 20, 0],
+            scale: [1, 0.9, 1],
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute bottom-10 left-10 w-48 h-48 bg-white/3 rounded-full blur-3xl"
+        />
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
+          {/* Premium Newsletter Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-16"
+          >
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 md:p-12 border border-white/20">
+              <div className="max-w-3xl mx-auto text-center">
+                <motion.div
+                  animate={{ rotate: [0, 360] }}
+                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                  className="inline-block mb-4"
+                >
+                  <Mail className="w-12 h-12 text-brand-gold" />
+                </motion.div>
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 font-serif">
+                  {t("home.newsletter.title") || "Restez Informé de Nos Opportunités"}
+                </h3>
+                <p className="text-brand-beige/90 mb-6">
+                  {t("home.newsletter.subtitle") || "Recevez en exclusivité nos analyses de marché, opportunités d'investissement et conseils d'experts"}
+                </p>
+                <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder={t("home.newsletter.placeholder") || "votre@email.com"}
+                    required
+                    className="flex-1 px-4 py-3 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-brand-gold"
+                    aria-label="Email address"
+                  />
+                  <motion.button
+                    type="submit"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-brand-gold hover:bg-yellow-500 text-neutral-dark px-6 py-3 rounded-lg font-semibold transition-colors inline-flex items-center justify-center gap-2"
+                  >
+                    <Send className="w-4 h-4" />
+                    {t("home.newsletter.button") || "S'abonner"}
+                  </motion.button>
+                </form>
+                <p className="text-xs text-white/50 mt-4">
+                  {t("home.newsletter.privacy") || "🔒 Vos données sont protégées. Désabonnement possible à tout moment."}
+                </p>
+              </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div>
-            <h4 className="font-bold text-brand-beige mb-4 font-serif">{t("footer.services.title")}</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link href="#" className="hover-reveal">
-                  {t("footer.services.portfolioAdmin")}
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover-reveal">
-                  {t("footer.services.assetEnhancement")}
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover-reveal">
-                  {t("footer.services.proprietaryTech")}
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover-reveal">
-                  {t("footer.services.compliance")}
-                </Link>
-              </li>
-            </ul>
-          </div>
+          {/* Footer Columns */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              <Image
+                src="/images/logo.png"
+                alt="SwitchInvest"
+                width={180}
+                height={60}
+                className="mb-4 object-contain"
+              />
+              <p className="mb-6 font-serif text-brand-beige/90">{t("footer.description")}</p>
 
-          <div>
-            <h4 className="font-bold text-brand-beige mb-4 font-serif">{t("footer.company.title")}</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link href="#" className="hover-reveal">
-                  {t("footer.company.about")}
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover-reveal">
-                  {t("footer.company.leadership")}
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover-reveal">
-                  {t("footer.company.careers")}
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover-reveal">
-                  {t("footer.company.contact")}
-                </Link>
-              </li>
-            </ul>
-          </div>
+              {/* Trust Badges with Glow */}
+              <div className="flex items-center gap-3 mb-6">
+                <motion.div
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  className="p-2 bg-white/10 rounded-lg border border-white/20"
+                >
+                  <Shield className="h-5 w-5 text-brand-gold" />
+                </motion.div>
+                <motion.div
+                  whileHover={{ scale: 1.1, rotate: -5 }}
+                  className="p-2 bg-white/10 rounded-lg border border-white/20"
+                >
+                  <Lock className="h-5 w-5 text-brand-gold" />
+                </motion.div>
+              </div>
 
-          <div>
-            <h4 className="font-bold text-brand-beige mb-4 font-serif">{t("footer.legal.title")}</h4>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/privacy-policy" className="hover-reveal">
-                  {t("footer.legal.privacy")}
-                </Link>
-              </li>
-              <li>
-                <Link href="/terms" className="hover-reveal">
-                  {t("footer.legal.terms")}
-                </Link>
-              </li>
-              <li>
-                <Link href="/privacy-policy#cookies" className="hover-reveal">
-                  {t("footer.legal.cookies")}
-                </Link>
-              </li>
-              <li>
-                <Link href="/privacy-policy#gdpr" className="hover-reveal">
-                  {t("footer.legal.gdpr")}
-                </Link>
-              </li>
-            </ul>
-          </div>
+              {/* Social Media Icons */}
+              <div className="flex items-center gap-3">
+                <motion.a
+                  href="https://linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.2, y: -3 }}
+                  className="p-2 bg-white/10 rounded-full hover:bg-brand-gold/20 transition-colors group"
+                >
+                  <Linkedin className="h-5 w-5 text-brand-beige group-hover:text-brand-gold transition-colors" />
+                </motion.a>
+                <motion.a
+                  href="https://twitter.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.2, y: -3 }}
+                  className="p-2 bg-white/10 rounded-full hover:bg-brand-gold/20 transition-colors group"
+                >
+                  <Twitter className="h-5 w-5 text-brand-beige group-hover:text-brand-gold transition-colors" />
+                </motion.a>
+                <motion.a
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.2, y: -3 }}
+                  className="p-2 bg-white/10 rounded-full hover:bg-brand-gold/20 transition-colors group"
+                >
+                  <Facebook className="h-5 w-5 text-brand-beige group-hover:text-brand-gold transition-colors" />
+                </motion.a>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <h4 className="font-bold text-white mb-4 font-serif">{t("footer.services.title")}</h4>
+              <ul className="space-y-2">
+                <li>
+                  <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                    <Link href="/services/real-estate" className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
+                      {t("services.real_estate.title") || "Quick Purchase"}
+                    </Link>
+                  </motion.div>
+                </li>
+                <li>
+                  <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                    <Link href="/services/investment" className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
+                      {t("services.investment.title") || "Strategic Real Estate Investment"}
+                    </Link>
+                  </motion.div>
+                </li>
+                <li>
+                  <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                    <Link href="/services/development" className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
+                      {t("services.development.title") || "Turnkey Renovations"}
+                    </Link>
+                  </motion.div>
+                </li>
+                <li>
+                  <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                    <Link href="/services/management" className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
+                      {t("services.management.title") || "Comprehensive Asset Management"}
+                    </Link>
+                  </motion.div>
+                </li>
+              </ul>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <h4 className="font-bold text-white mb-4 font-serif">{t("footer.company.title")}</h4>
+              <ul className="space-y-2">
+                <li>
+                  <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                    <Link href="/about" className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
+                      {t("footer.company.about")}
+                    </Link>
+                  </motion.div>
+                </li>
+                <li>
+                  <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                    <Link href="/portfolio" className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
+                      {t("portfolio.title") || "Portfolio"}
+                    </Link>
+                  </motion.div>
+                </li>
+                <li>
+                  <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                    <Link href="/blog" className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
+                      {t("notFound.links.blog") || "Blog"}
+                    </Link>
+                  </motion.div>
+                </li>
+                <li>
+                  <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                    <Link href="/contact" className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
+                      {t("footer.company.contact")}
+                    </Link>
+                  </motion.div>
+                </li>
+              </ul>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <h4 className="font-bold text-white mb-4 font-serif">{t("footer.legal.title")}</h4>
+              <ul className="space-y-2">
+                <li>
+                  <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                    <Link href="/privacy-policy" className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
+                      {t("footer.legal.privacy")}
+                    </Link>
+                  </motion.div>
+                </li>
+                <li>
+                  <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                    <Link href="/terms" className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
+                      {t("footer.legal.terms")}
+                    </Link>
+                  </motion.div>
+                </li>
+                <li>
+                  <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                    <Link href="/privacy-policy#cookies" className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
+                      {t("footer.legal.cookies")}
+                    </Link>
+                  </motion.div>
+                </li>
+                <li>
+                  <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                    <Link href="/privacy-policy#gdpr" className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
+                      {t("footer.legal.gdpr")}
+                    </Link>
+                  </motion.div>
+                </li>
+              </ul>
+            </motion.div>
         </div>
 
-        <div className="border-t border-brand-beige/10 pt-6 flex flex-col md:flex-row justify-between items-center">
-          <div className="text-xs mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} SwitchInvest.be. {t("footer.copyright")}
-          </div>
-          <div className="flex items-center gap-4">
-            <div className="flex items-center text-xs">
-              <Globe className="h-4 w-4 mr-1" />
-              <span>{t("footer.belgium")}</span>
-            </div>
-            <div className="flex gap-3">
-              <button
-                type="button"
-                onClick={() => setLanguage("nl")}
-                className="text-xs hover-reveal cursor-pointer"
-                title={`${t("languages.nl")} (${t("languages.regions.flanders")}, ${t("languages.regions.brussels")})`}
+          <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center">
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="text-xs mb-4 md:mb-0 text-brand-beige/70"
+            >
+              &copy; {new Date().getFullYear()} SwitchInvest.be. {t("footer.copyright")}
+            </motion.div>
+            <div className="flex items-center gap-4">
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                className="flex items-center text-xs text-brand-beige/70"
               >
-                NL
-              </button>
-              <button
-                type="button"
-                onClick={() => setLanguage("fr")}
-                className="text-xs hover-reveal cursor-pointer"
-                title={`${t("languages.fr")} (${t("languages.regions.wallonia")}, ${t("languages.regions.brussels")})`}
-              >
-                FR
-              </button>
-              <button
-                type="button"
-                onClick={() => setLanguage("de")}
-                className="text-xs hover-reveal cursor-pointer"
-                title={`${t("languages.de")} (${t("languages.regions.german")})`}
-              >
-                DE
-              </button>
-              <button
-                type="button"
-                onClick={() => setLanguage("en")}
-                className="text-xs hover-reveal cursor-pointer"
-                title={`${t("languages.en")} (${t("languages.regions.international")})`}
-              >
-                EN
-              </button>
+                <Globe className="h-4 w-4 mr-1" />
+                <span>{t("footer.belgium")}</span>
+              </motion.div>
+              <div className="flex gap-2">
+                <motion.button
+                  type="button"
+                  onClick={() => setLanguage("nl")}
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-3 py-1 text-xs font-semibold bg-white/10 hover:bg-brand-gold hover:text-neutral-dark rounded-md transition-colors cursor-pointer border border-white/20"
+                  title={`${t("languages.nl")} (${t("languages.regions.flanders")}, ${t("languages.regions.brussels")})`}
+                >
+                  NL
+                </motion.button>
+                <motion.button
+                  type="button"
+                  onClick={() => setLanguage("fr")}
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-3 py-1 text-xs font-semibold bg-white/10 hover:bg-brand-gold hover:text-neutral-dark rounded-md transition-colors cursor-pointer border border-white/20"
+                  title={`${t("languages.fr")} (${t("languages.regions.wallonia")}, ${t("languages.regions.brussels")})`}
+                >
+                  FR
+                </motion.button>
+                <motion.button
+                  type="button"
+                  onClick={() => setLanguage("de")}
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-3 py-1 text-xs font-semibold bg-white/10 hover:bg-brand-gold hover:text-neutral-dark rounded-md transition-colors cursor-pointer border border-white/20"
+                  title={`${t("languages.de")} (${t("languages.regions.german")})`}
+                >
+                  DE
+                </motion.button>
+                <motion.button
+                  type="button"
+                  onClick={() => setLanguage("en")}
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-3 py-1 text-xs font-semibold bg-white/10 hover:bg-brand-gold hover:text-neutral-dark rounded-md transition-colors cursor-pointer border border-white/20"
+                  title={`${t("languages.en")} (${t("languages.regions.international")})`}
+                >
+                  EN
+                </motion.button>
+              </div>
             </div>
           </div>
         </div>

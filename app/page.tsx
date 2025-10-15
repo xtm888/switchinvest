@@ -1,79 +1,94 @@
 "use client"
 
-import { 
-  LazyLeafletMap, 
-  LazyStatistics, 
-  LazyTrustIndicators, 
-  LazySection,
+/**
+ * PREMIUM HOMEPAGE FOR SWITCHINVEST
+ *
+ * This is a complete redesign of the homepage with all premium features:
+ * - Animated hero with video background
+ * - Animated statistics with counters
+ * - Premium testimonials carousel
+ * - Trust & security badges
+ * - Featured blog cards
+ * - Full mobile responsiveness
+ * - Accessibility optimized
+ * - Performance optimized
+ *
+ * INSTALLATION STEPS:
+ * 1. Ensure all component files are created in /components/home/
+ * 2. Add custom animations to globals.css (already done)
+ * 3. Replace /app/page.tsx with this file or create new route
+ * 4. Add video file to /public/videos/hero-bg.mp4
+ * 5. Add testimonial images to /public/testimonials/
+ * 6. Run `npm run dev` to see the premium homepage
+ *
+ * CUSTOMIZATION:
+ * - Update video URL in AnimatedHero component
+ * - Update testimonial data in TestimonialsCarousel
+ * - Update stats in AnimatedStats component
+ * - Add press logos in TestimonialsCarousel
+ */
+
+import { useTranslation } from "@/hooks/use-translation"
+import AnimatedHero from "@/components/home/AnimatedHero"
+import AnimatedStats from "@/components/home/AnimatedStats"
+import TestimonialsCarousel from "@/components/home/TestimonialsCarousel"
+import TrustBadges from "@/components/home/TrustBadges"
+import FeaturedBlogCard from "@/components/home/FeaturedBlogCard"
+import EnhancedMapSection from "@/components/home/EnhancedMapSection"
+import StructuredData from '@/components/structured-data'
+
+// Import existing components that are still good
+import {
   LazyServiceModules,
   LazyInnovationPillars,
-  LazyCallToAction 
+  LazyCallToAction,
+  LazyFAQ,
 } from '@/components/lazy-components'
-import { useTranslation } from "@/hooks/use-translation"
-import StructuredData from '@/components/structured-data';
 
-export default function Home() {
+export default function PremiumHomePage() {
   const { t } = useTranslation()
 
   return (
-    <main className="">
+    <main className="overflow-x-hidden">
+      {/* SEO Structured Data */}
       <StructuredData type="home" />
-      {/* Hero Section with gold gradient */}
-      <section className="relative min-h-[80vh] flex items-center justify-center bg-gradient-to-b from-brand-teal to-brand-teal/90 overflow-hidden">
-        {/* Add a gold gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-gold/20 to-transparent opacity-70"></div>
-        <div className="container mx-auto px-4 md:px-6 relative z-10 text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-brand-beige leading-tight drop-shadow-md font-serif tracking-tight mb-6 mt-6">
-            {t("hero.title")}
-          </h1>
-          <p className="text-xl md:text-2xl text-brand-gold italic mb-8 font-serif tracking-wide">{t("hero.tagline")}</p>
-          <p className="text-xl md:text-2xl text-brand-beige/90 max-w-3xl mx-auto mb-12 font-serif tracking-tight">
-            {t("hero.subtitle")}
-          </p>
-          {/* Optional: Add a call to action button here */}
-          {/* <Button size="lg" className="bg-brand-gold hover:bg-brand-gold/90 text-neutral-dark font-serif px-8 py-3">Learn More</Button> */}
-        </div>
-      </section>
 
-      {/* New Section for HTML5 Map - Padding controlled */}
-      <section className="bg-brand-beige pt-24 pb-96">
-        <div className="container mx-auto px-4 md:px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-brand-teal mb-8 text-center font-serif">
-            Our Presence Across Belgium
-          </h2>
-          <LazyLeafletMap />
-        </div>
-      </section>
+      {/* 1. HERO SECTION - Full-width animated hero with video background */}
+      <AnimatedHero />
 
-      {/* Statistics Section */}
-      <section className="py-16 md:py-24 bg-brand-teal text-white relative overflow-hidden">
-        <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <LazySection>
-            <LazyStatistics />
-            <LazyTrustIndicators />
-          </LazySection>
-        </div>
-      </section>
+      {/* 2. ANIMATED STATISTICS - Count-up animation with premium cards */}
+      <AnimatedStats />
 
-      {/* Service Modules Section */}
+      {/* 3. SERVICE MODULES - Keep existing component (already good) */}
       <section id="services" className="py-16 md:py-24 bg-brand-beige">
-        <LazySection>
-          <LazyServiceModules />
-        </LazySection>
+        <LazyServiceModules />
       </section>
 
-      {/* Innovation Pillars Section */}
+      {/* 4. TRUST & SECURITY BADGES - GDPR, AES-256, certifications */}
+      <TrustBadges />
+
+      {/* 5. ENHANCED MAP SECTION - Premium map with animated stats overlay */}
+      <EnhancedMapSection />
+
+      {/* 6. TESTIMONIALS CAROUSEL - Premium auto-rotating carousel */}
+      <TestimonialsCarousel />
+
+      {/* 7. INNOVATION PILLARS - Keep existing component */}
       <section id="technologies" className="py-16 md:py-24 bg-brand-teal text-white">
-        <LazySection>
-          <LazyInnovationPillars />
-        </LazySection>
+        <LazyInnovationPillars />
       </section>
 
-      {/* Call to Action */}
+      {/* 8. FEATURED BLOG CARDS - Latest resources with hover effects */}
+      <FeaturedBlogCard />
+
+      {/* 9. FAQ SECTION - Keep existing component */}
+      <section className="py-16 md:py-24 bg-white">
+        <LazyFAQ />
+      </section>
+
+      {/* 10. FINAL CTA - Keep existing component */}
       <section className="py-24 bg-brand-beige">
-        <LazySection>
-          <LazyCallToAction />
-        </LazySection>
+        <LazyCallToAction />
       </section>
     </main>
   )

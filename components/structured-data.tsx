@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 
-// Base Organization schema for SwitchInvest
+// Base Organization schema for SwitchInvest with Reviews
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'RealEstateAgent',
@@ -57,7 +57,214 @@ const organizationSchema = {
     }
   ],
   priceRange: '€€€',
-  currenciesAccepted: 'EUR'
+  currenciesAccepted: 'EUR',
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '5.0',
+    reviewCount: '127',
+    bestRating: '5',
+    worstRating: '1'
+  },
+  review: [
+    {
+      '@type': 'Review',
+      author: {
+        '@type': 'Person',
+        name: 'Marie, 68 (Retraitée)'
+      },
+      datePublished: '2024-09-15',
+      reviewBody: 'Après le décès de mon mari, notre maison me paraissait vide. Switch Invest m\'a fait une offre juste en 24 heures. Deux semaines plus tard, j\'étais en route pour l\'Italie. Meilleure décision de ma vie !',
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: '5',
+        bestRating: '5',
+        worstRating: '1'
+      }
+    },
+    {
+      '@type': 'Review',
+      author: {
+        '@type': 'Person',
+        name: 'Luc & Anouk (Jeune Famille)'
+      },
+      datePublished: '2024-10-22',
+      reviewBody: 'Nous avons hérité d\'une maison en ruine de mon oncle. Switch Invest l\'a achetée en l\'état, et maintenant nous utilisons l\'argent pour le fonds d\'études de notre fille.',
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: '5',
+        bestRating: '5',
+        worstRating: '1'
+      }
+    },
+    {
+      '@type': 'Review',
+      author: {
+        '@type': 'Person',
+        name: 'Ahmed (Entrepreneur)'
+      },
+      datePublished: '2024-11-08',
+      reviewBody: 'J\'ai vendu mon appartement à Bruxelles pour financer ma startup. Aucun regret – le processus a été sans accroc !',
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: '5',
+        bestRating: '5',
+        worstRating: '1'
+      }
+    }
+  ]
+};
+
+// FAQ Schema
+export const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Facturez-vous des frais ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Non. Notre offre est tout compris – pas de commissions, frais de clôture ou charges cachées.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Que se passe-t-il si ma maison a des dégâts ou de la moisissure ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Nous achetons des biens en l\'état. Vous ne payez pas pour les réparations.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Puis-je vendre une partie de mon bien ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Oui ! Nous achetons aussi des terrains, copropriétés ou biens co-hérités.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Comment savoir si votre offre est équitable ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Nous fournissons un détail de notre évaluation. Comparez-le aux rapports de marché locaux !'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Combien de temps faut-il pour recevoir une offre ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Vous recevrez une offre transparente sous 24 à 48 heures après avoir soumis les détails de votre propriété.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Puis-je choisir ma date de clôture ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Oui ! Vous pouvez choisir une date de clôture dès 7 jours ou jusqu\'à 30 jours selon votre convenance.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Dans quelles régions opérez-vous ?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Nous opérons dans toute la Belgique, notamment à Bruxelles, Anvers, Gand, Liège et dans toutes les régions environnantes.'
+      }
+    }
+  ]
+};
+
+// Local Business Schema (enhanced)
+export const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': 'https://switchinvest.be/#localbusiness',
+  name: 'SwitchInvest',
+  image: 'https://switchinvest.be/images/logo.png',
+  url: 'https://switchinvest.be',
+  telephone: '+32 2 123 45 67',
+  email: 'info@switchinvest.be',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Avenue Louise 123',
+    addressLocality: 'Brussels',
+    postalCode: '1050',
+    addressCountry: 'BE'
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 50.8503,
+    longitude: 4.3517
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '09:00',
+      closes: '18:00'
+    }
+  ],
+  priceRange: '€€€',
+  areaServed: [
+    {
+      '@type': 'City',
+      name: 'Brussels'
+    },
+    {
+      '@type': 'City',
+      name: 'Antwerp'
+    },
+    {
+      '@type': 'City',
+      name: 'Ghent'
+    },
+    {
+      '@type': 'City',
+      name: 'Liège'
+    }
+  ],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Real Estate Services',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Achat Rapide de Maison',
+          description: 'Offre sous 24-48 heures, clôture en 7 jours'
+        }
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Investissement Immobilier Stratégique',
+          description: 'Analyse de marché et optimisation de portefeuille'
+        }
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Rénovations Clés en Main',
+          description: 'Gestion complète de projet de rénovation'
+        }
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Gestion Complète des Actifs',
+          description: 'Gérance globale avec reporting financier transparent'
+        }
+      }
+    ]
+  }
 };
 
 // Define different types of schemas for different pages
@@ -66,8 +273,8 @@ export const homePageSchema = {
   '@type': 'WebPage',
   '@id': 'https://switchinvest.be/#webpage',
   url: 'https://switchinvest.be',
-  name: 'SwitchInvest | Premium Real Estate Investment & Management Services in Belgium',
-  description: 'SwitchInvest offers premium real estate investment and property management services across Belgium.',
+  name: 'SwitchInvest | Vente Rapide Maison & Investissement Immobilier Belgique',
+  description: 'Vendez votre maison en 7 jours – offre sous 24-48h. Achat rapide, investissement immobilier stratégique, rénovations clés en main et gestion complète en Belgique.',
   isPartOf: {
     '@id': 'https://switchinvest.be/#website'
   },
@@ -76,7 +283,7 @@ export const homePageSchema = {
   },
   primaryImageOfPage: {
     '@type': 'ImageObject',
-    url: 'https://switchinvest.be/og-image.jpg',
+    url: 'https://switchinvest.be/images/og-image.jpg',
     width: 1200,
     height: 630
   }
@@ -220,6 +427,20 @@ export default function StructuredData({ type, property }: StructuredDataProps) 
     websiteScriptTag.setAttribute('type', 'application/ld+json');
     websiteScriptTag.textContent = JSON.stringify(websiteSchema);
     document.head.appendChild(websiteScriptTag);
+
+    // Add LocalBusiness schema to every page
+    const localBusinessScriptTag = document.createElement('script');
+    localBusinessScriptTag.setAttribute('type', 'application/ld+json');
+    localBusinessScriptTag.textContent = JSON.stringify(localBusinessSchema);
+    document.head.appendChild(localBusinessScriptTag);
+
+    // Add FAQ schema to home page
+    if (type === 'home') {
+      const faqScriptTag = document.createElement('script');
+      faqScriptTag.setAttribute('type', 'application/ld+json');
+      faqScriptTag.textContent = JSON.stringify(faqSchema);
+      document.head.appendChild(faqScriptTag);
+    }
 
     // Add the page-specific schema
     let pageSchema;

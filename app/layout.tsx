@@ -1,5 +1,6 @@
 import React from "react";
 import type { Metadata } from "next"
+import Script from "next/script"
 import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -7,6 +8,7 @@ import { CustomCursor } from "@/components/custom-cursor"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { CookieConsent } from "@/components/cookie-consent"
+import { StickyCTA } from "@/components/sticky-cta"
 import { LanguageProvider } from "@/contexts/language-context"
 import { Playfair_Display } from 'next/font/google';
 import ClientLayoutWrapper from '@/components/client-layout-wrapper';
@@ -22,6 +24,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://switchinvest.be'),
   title: {
     default: "SwitchInvest | Premium Real Estate Investment & Management Services in Belgium",
     template: "%s | SwitchInvest",
@@ -85,6 +88,26 @@ export default function RootLayout({
         <meta name="theme-color" content="#ffffff" />
       </head>
       <body className="bg-white flex flex-col min-h-screen">
+        {/* Google Analytics 4 */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-BP7KNJXL5G"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-BP7KNJXL5G');
+          `}
+        </Script>
+        {/* Skip to main content link for accessibility */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-brand-gold focus:text-neutral-dark focus:rounded-lg focus:font-semibold"
+        >
+          Aller au contenu principal
+        </a>
         <ClientLayoutWrapper>
           <LanguageProvider>
             {/* Google Tag Manager (noscript) */}
@@ -94,10 +117,11 @@ export default function RootLayout({
             <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
               <CustomCursor />
               <Navigation />
-              <main className="pt-24 flex-grow">
+              <main id="main-content" className="pt-24 flex-grow">
                 {children}
               </main>
               <Footer />
+              <StickyCTA />
               <CookieConsent />
             </ThemeProvider>
           </LanguageProvider>

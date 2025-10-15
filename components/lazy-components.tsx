@@ -107,6 +107,42 @@ export const LazyCallToAction = dynamic(
   }
 );
 
+const FAQLoadingPlaceholder = () => (
+  <div className="w-full py-12 animate-pulse">
+    <div className="h-10 w-64 bg-gray-100 mx-auto mb-10 rounded"></div>
+    <div className="space-y-4 max-w-4xl mx-auto">
+      {[1, 2, 3, 4].map(i => (
+        <div key={i} className="h-20 bg-gray-100 rounded-lg"></div>
+      ))}
+    </div>
+  </div>
+);
+
+export const LazyFAQ = dynamic(
+  () => import('@/components/faq').then(mod => ({ default: mod.FAQ })),
+  {
+    loading: FAQLoadingPlaceholder,
+  }
+);
+
+const TestimonialsLoadingPlaceholder = () => (
+  <div className="w-full py-12 animate-pulse bg-brand-beige/30">
+    <div className="h-10 w-64 bg-gray-100 mx-auto mb-10 rounded"></div>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      {[1, 2, 3].map(i => (
+        <div key={i} className="h-64 bg-white rounded-lg"></div>
+      ))}
+    </div>
+  </div>
+);
+
+export const LazyTestimonials = dynamic(
+  () => import('@/components/testimonials').then(mod => ({ default: mod.Testimonials })),
+  {
+    loading: TestimonialsLoadingPlaceholder,
+  }
+);
+
 // Helper component for lazy loading images below the fold
 interface LazyImageProps {
   src: string;

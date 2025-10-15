@@ -3,38 +3,64 @@ import { MetadataRoute } from 'next';
 // Define all pages that should be in the sitemap
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://switchinvest.be';
-  
-  // Define the main site pages
-  const mainPages = [
-    '',
-    '/about',
-    '/portfolio',
-    '/technologies',
-    '/services',
+  const currentDate = new Date();
+
+  // High priority pages (homepage and main services)
+  const highPriorityPages = [
+    { route: '', priority: 1.0, changeFrequency: 'daily' as const },
+    { route: '/services', priority: 0.9, changeFrequency: 'weekly' as const },
+    { route: '/contact', priority: 0.9, changeFrequency: 'monthly' as const },
+    { route: '/portfolio', priority: 0.9, changeFrequency: 'weekly' as const },
+    { route: '/blog', priority: 0.9, changeFrequency: 'weekly' as const },
+  ].map(({ route, priority, changeFrequency }) => ({
+    url: `${baseUrl}${route}`,
+    lastModified: currentDate,
+    changeFrequency,
+    priority,
+  }));
+
+  // Service pages
+  const servicePages = [
     '/services/real-estate',
     '/services/investment',
     '/services/development',
     '/services/management',
-    '/contact',
+  ].map(route => ({
+    url: `${baseUrl}${route}`,
+    lastModified: currentDate,
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  }));
+
+  // Information pages
+  const infoPages = [
+    '/about',
+    '/technologies',
+  ].map(route => ({
+    url: `${baseUrl}${route}`,
+    lastModified: currentDate,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  // Legal pages
+  const legalPages = [
     '/privacy-policy',
     '/terms',
   ].map(route => ({
     url: `${baseUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: route === '' ? 1 : 0.8,
+    lastModified: currentDate,
+    changeFrequency: 'yearly' as const,
+    priority: 0.3,
   }));
 
-  // Add language variations for each page
-  const languages = ['en', 'nl', 'fr', 'de'];
-  const languagePages = mainPages.flatMap(page => {
-    return languages.map(lang => ({
-      url: `${page.url}/${lang}`,
-      lastModified: page.lastModified,
-      changeFrequency: page.changeFrequency,
-      priority: page.priority - 0.1, // Slightly lower priority than main pages
-    }));
-  });
+  // Combine all pages
+  const allPages = [
+    ...highPriorityPages,
+    ...servicePages,
+    ...infoPages,
+    ...legalPages,
+  ];
 
-  return [...mainPages, ...languagePages];
+  return allPages;
 }
