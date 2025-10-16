@@ -19,38 +19,66 @@ export default function AnimatedHero() {
   const { t } = useTranslation()
   const videoRef = useRef<HTMLVideoElement>(null)
   const [videoLoaded, setVideoLoaded] = useState(false)
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
-    // Ensure video autoplays on mount
-    if (videoRef.current) {
+    // Detect mobile devices
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+
+    // Delay video loading until after initial render for better LCP
+    const timer = setTimeout(() => {
+      if (!isMobile) {
+        setShouldLoadVideo(true)
+      }
+    }, 1000)
+
+    return () => {
+      window.removeEventListener('resize', checkMobile)
+      clearTimeout(timer)
+    }
+  }, [isMobile])
+
+  useEffect(() => {
+    // Ensure video autoplays after it's loaded
+    if (videoRef.current && shouldLoadVideo) {
       videoRef.current.play().catch(err => {
         console.log("Video autoplay failed:", err)
       })
     }
-  }, [])
+  }, [shouldLoadVideo])
 
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
       {/* Background Video or Animated Pattern */}
       <div className="absolute inset-0 z-0">
-        {/* Replace with your premium video URL */}
-        <video
-          ref={videoRef}
-          autoPlay
-          muted
-          loop
-          playsInline
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-            videoLoaded ? 'opacity-100' : 'opacity-0'
-          }`}
-          onLoadedData={() => setVideoLoaded(true)}
-        >
-          <source src="/videos/hero-bg.mp4" type="video/mp4" />
-          {/* Fallback: Add WebM format for better browser support */}
-          <source src="/videos/hero-bg.webm" type="video/webm" />
-        </video>
+        {/* Only load video on desktop and after initial render */}
+        {shouldLoadVideo && !isMobile && (
+          <video
+            ref={videoRef}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="none"
+            poster="/images/hero-poster.jpg"
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+              videoLoaded ? 'opacity-20' : 'opacity-0'
+            }`}
+            onLoadedData={() => setVideoLoaded(true)}
+            aria-label="Background video showing premium real estate"
+          >
+            <source src="/videos/hero-bg.mp4" type="video/mp4" />
+            <source src="/videos/hero-bg.webm" type="video/webm" />
+            <track kind="captions" src="/videos/hero-captions.vtt" srcLang="en" label="English" />
+          </video>
+        )}
 
-        {/* Animated CSS Gradient Fallback */}
+        {/* Animated CSS Gradient Fallback - Always visible */}
         <div className="absolute inset-0 bg-gradient-to-br from-brand-teal via-brand-teal/95 to-brand-gold/30 animate-gradient-shift" />
 
         {/* Premium Overlay Pattern */}
@@ -78,7 +106,7 @@ export default function AnimatedHero() {
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-6 py-3 shadow-2xl">
               <div className="w-2 h-2 bg-brand-gold rounded-full animate-pulse" />
               <span className="text-white font-medium text-sm md:text-base">
-                {t("home.hero.badge") || "500+ Propriétaires Satisfaits en Belgique"}
+                {t("home.hero.badge") || "500+ Properties Purchased Directly"}
               </span>
             </div>
           </motion.div>

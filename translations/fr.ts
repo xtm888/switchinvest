@@ -2,7 +2,7 @@ import { Translation } from './types';
 
 export const fr: Translation = {
   valuation: {
-    title: "Évaluer mon bien",
+    title: "Vendez-Nous Votre Bien - Offre Comptant",
     address: "Adresse",
     addressPlaceholder: "Commencez à taper votre adresse…",
     addressRequired: "Adresse requise",
@@ -61,43 +61,43 @@ export const fr: Translation = {
     cta: "Évaluer maintenant"
   },
   home: {
-    trustBadge: "Plus de 500 propriétaires nous font confiance",
-    ctaPrimary: "Obtenez Votre Évaluation Gratuite",
-    ctaSecondary: "Découvrez Nos Services",
-    featuresTitle: "Pourquoi Choisir SwitchInvest ?",
-    featuresSubtitle: "Des solutions immobilières rapides, transparentes et sans tracas",
+    trustBadge: "Nous Avons Acheté Plus de 500 Biens Directement",
+    ctaPrimary: "Vendez Votre Bien à Nous",
+    ctaSecondary: "Voyez Comment Nous Achetons",
+    featuresTitle: "Pourquoi Vendre Directement à SwitchInvest ?",
+    featuresSubtitle: "Nous achetons rapidement - pas d'agents, pas d'attente, sans tracas",
     features: {
       fastOffers: {
-        title: "Offres en 24-48 Heures",
-        description: "Recevez une offre transparente sous 2 jours"
+        title: "Nous Achetons en 24-48h",
+        description: "Obtenez notre offre comptant en 2 jours - nous sommes l'acheteur"
       },
       noFees: {
-        title: "Sans Frais Cachés",
-        description: "Prix clairs sans surprises"
+        title: "Nous Vous Payons Directement",
+        description: "Pas de commissions d'agent - nous achetons directement de vous"
       },
       asIs: {
-        title: "Achat en l'État",
+        title: "Nous Achetons EN L'ÉTAT",
         description: "Nous achetons votre bien dans n'importe quel état"
       },
       quickClosing: {
-        title: "Clôture Rapide",
-        description: "Concluez en aussi peu que 7 jours"
+        title: "Paiement Comptant Rapide",
+        description: "Concluez et soyez payé en 7 jours"
       }
     },
     mapTitle: "Notre Présence à Travers la Belgique",
     mapSubtitle: "Au service des propriétaires dans toutes les régions avec une expertise locale",
     hero: {
-      badge: "500+ Propriétaires Satisfaits en Belgique",
-      title: "Transformez Votre Propriété",
-      titleHighlight: "en Possibilités",
-      subtitle: "Vente rapide, évaluation transparente en 24-48h.",
-      features: "Zéro commission • Aucune réparation requise",
-      ctaPrimary: "Évaluation Gratuite Maintenant",
+      badge: "500+ Biens Achetés Directement - Nous Sommes L'Acheteur",
+      title: "Nous Achetons Votre Bien",
+      titleHighlight: "Offre Comptant en 24-48h",
+      subtitle: "Vendez directement à nous - Pas d'agents, pas d'attente d'acheteurs, sans tracas.",
+      features: "Nous achetons EN L'ÉTAT • Zéro commission • Paiement comptant",
+      ctaPrimary: "Obtenez Votre Offre Comptant",
       ctaSecondary: "Voir Comment Ça Marche",
       trustIndicators: [
-        "24-48h Offre Garantie",
-        "Aucune Commission",
-        "Achat en l'État"
+        "24-48h Offre Comptant Garantie",
+        "Nous Sommes L'Acheteur - Pas D'Attente",
+        "Nous Achetons EN L'ÉTAT"
       ],
       scrollText: "Découvrir"
     },
@@ -147,41 +147,41 @@ export const fr: Translation = {
         {
           value: 500,
           suffix: "+",
-          label: "Propriétaires Satisfaits",
-          description: "Ont choisi SwitchInvest pour vendre rapidement"
+          label: "Biens Que Nous Avons Achetés",
+          description: "Directement auprès de propriétaires belges"
         },
         {
           value: 24,
           suffix: "h",
-          label: "Délai d'Évaluation",
-          description: "Offre transparente en moins de 48 heures"
+          label: "Rapidité Offre Comptant",
+          description: "Offre d'achat transparente en 24-48h"
         },
         {
           value: 98,
           suffix: "%",
           label: "Taux de Satisfaction",
-          description: "De nos clients recommandent nos services"
+          description: "Des vendeurs recommandent de nous vendre"
         },
         {
           value: 0,
           suffix: "€",
           label: "Frais Cachés",
-          description: "Transparence totale, aucune surprise"
+          description: "Nous vous payons directement - pas de commissions"
         }
       ],
-      ctaText: "Rejoignez des centaines de propriétaires satisfaits",
-      ctaButton: "Commencer Maintenant"
+      ctaText: "Rejoignez 500+ propriétaires qui nous ont vendu directement",
+      ctaButton: "Vendez-Nous Maintenant"
     },
     testimonials: {
-      title: "Ce Que Disent Nos Clients",
-      subtitle: "Des témoignages authentiques de propriétaires satisfaits",
+      title: "Ce Que Disent Les Propriétaires Qui Nous Ont Vendu",
+      subtitle: "Histoires réelles de propriétaires qui ont vendu directement à SwitchInvest",
       pressTitle: "Vu Dans Les Médias",
       items: [
         {
           name: "Marie Dubois",
           location: "Bruxelles",
-          role: "Propriétaire",
-          quote: "SwitchInvest a transformé une situation stressante en une expérience fluide. Leur équipe a géré chaque détail avec professionnalisme et nous avons reçu notre paiement en moins de deux semaines.",
+          role: "A vendu à SwitchInvest",
+          quote: "J'ai vendu mon bien directement à SwitchInvest. Ils m'ont fait une offre équitable en 24 heures et j'ai reçu mon paiement en moins de deux semaines. C'était tellement plus simple que de passer par une agence!",
           rating: 5,
           image: "/testimonials/marie.jpg",
           date: "Janvier 2025"
@@ -189,8 +189,8 @@ export const fr: Translation = {
         {
           name: "Luc Vermeulen",
           location: "Anvers",
-          role: "Investisseur",
-          quote: "Leur expertise du marché belge est exceptionnelle. Ils ont identifié des opportunités d'investissement que je n'aurais jamais trouvées seul. Les rendements ont dépassé mes attentes.",
+          role: "A vendu à SwitchInvest",
+          quote: "J'avais besoin de vendre rapidement et SwitchInvest a acheté ma maison en l'état. Pas de réparations, pas d'attente d'acheteurs, pas de stress. Ils sont l'acheteur - pas une agence.",
           rating: 5,
           image: "/testimonials/luc.jpg",
           date: "Décembre 2024"
@@ -198,8 +198,8 @@ export const fr: Translation = {
         {
           name: "Sophie Laurent",
           location: "Liège",
-          role: "Propriétaire",
-          quote: "J'avais hérité d'une propriété qui nécessitait des réparations majeures. SwitchInvest l'a achetée en l'état à un prix équitable. Processus simple et rapide du début à la fin.",
+          role: "A vendu à SwitchInvest",
+          quote: "J'avais hérité d'une propriété qui nécessitait des réparations majeures. SwitchInvest l'a achetée directement en l'état à un prix équitable. Processus simple et rapide du début à la fin.",
           rating: 5,
           image: "/testimonials/sophie.jpg",
           date: "Novembre 2024"
@@ -207,8 +207,8 @@ export const fr: Translation = {
         {
           name: "Ahmed Benali",
           location: "Gand",
-          role: "Entrepreneur",
-          quote: "Grâce à SwitchInvest, j'ai pu vendre rapidement ma propriété pour financer mon entreprise. Le service était professionnel, transparent et sans stress. Je les recommande vivement!",
+          role: "A vendu à SwitchInvest",
+          quote: "Je leur ai vendu mon bien directement pour financer mon entreprise. Offre comptant en 48h, clôture en 10 jours. Le service était professionnel, transparent et sans stress!",
           rating: 5,
           image: "/testimonials/ahmed.jpg",
           date: "Octobre 2024"
@@ -256,9 +256,9 @@ export const fr: Translation = {
     },
     faq: {
       title: "Questions Fréquemment Posées",
-      subtitle: "Vous avez des questions sur la vente rapide de votre maison ou nos services ? Trouvez les réponses ici.",
+      subtitle: "Vous avez des questions sur la vente de votre bien directement à SwitchInvest ? Trouvez les réponses ici.",
       stillHaveQuestions: "Vous ne trouvez pas la réponse à votre question ?",
-      contactButton: "Contactez-nous"
+      contactButton: "Parlez à Un Acheteur"
     },
     newsletter: {
       title: "Restez Informé de Nos Opportunités",
@@ -290,16 +290,16 @@ export const fr: Translation = {
   },
   navigation: {
     services: "Services",
-    portfolio: "Portefeuille",
+    portfolio: "Biens Que Nous Avons Achetés",
     technologies: "Technologies",
     about: "À Propos",
-    clientPortal: "Évaluer Mon Bien", // Updated for backward compatibility
-    contactUs: "Évaluer Mon Bien",
+    clientPortal: "Vendez-Nous", // Direct buyer positioning
+    contactUs: "Obtenez Offre Comptant",
   },
   hero: {
-    title: "Transformez Votre Propriété en Possibilités",
-    tagline: "Vendez Rapidement, Évitez le Stress et Financez Vos Rêves !",
-    subtitle: "Chez SwitchInvest, nous croyons que votre maison doit être une passerelle vers de nouvelles opportunités, et non un fardeau. Que vous ayez hérité d’un bien, possédiez une maison nécessitant des réparations coûteuses, ou souhaitiez simplement débloquer rapidement des liquidités pour poursuivre vos passions, nous proposons une solution sans tracas. Nous achetons votre propriété en l’état, prenons en charge toutes les rénovations et vous versons l'argent plus rapidement que les méthodes traditionnelles. Pas d’agents, pas de délais, pas de frais cachés – juste un moyen simple de libérer la valeur de votre maison et de commencer à vivre la vie qui vous ressemble."
+    title: "Nous Achetons Votre Bien - Offre Comptant Rapide",
+    tagline: "Vendez Directement à Nous - Pas D'Agents, Pas D'Attente D'Acheteurs !",
+    subtitle: "SwitchInvest achète des biens directement auprès de propriétaires belges. Nous sommes l'acheteur - pas une agence qui met votre bien en vente. Obtenez une offre comptant transparente en 24-48h, concluez selon votre calendrier et recevez le paiement directement. Que vous ayez hérité d'un bien, possédiez une maison nécessitant des réparations, ou souhaitiez vendre rapidement, nous achetons EN L'ÉTAT sans commissions. Pas d'attente d'autres acheteurs, pas de visites, sans tracas."
   },
   statistics: {
     propertiesManaged: "Propriétés gérées",
@@ -329,12 +329,12 @@ export const fr: Translation = {
     ]
   },
   services: {
-    title: "Nos Services",
-    subtitle: "Solutions clés en main pour libérer le potentiel de votre propriété",
+    title: "Comment Nous Achetons Les Biens & Services Additionnels",
+    subtitle: "Nous achetons des biens directement - plus services de rénovation et d'investissement",
     learnMore: "En savoir plus",
     real_estate: {
-      title: "Achat rapide",
-      description: "Obtenez une offre transparente sous 24–48 heures et concluez en seulement 7 jours—sans agents, sans frais cachés.",
+      title: "Nous Achetons Votre Bien (Service Principal)",
+      description: "Vendez directement à nous - obtenez notre offre comptant en 24–48h et concluez en 7 jours. Nous sommes l'acheteur, pas une agence.",
       features: [
         "Offre sous 24–48 heures",
         "Choisissez votre date de clôture (7–30 jours)",
@@ -569,211 +569,6 @@ export const fr: Translation = {
         ]
       }
     },
-    investment: {
-      title: "Investissement immobilier stratégique",
-      description: "Exploitez notre expertise locale et nos données de marché pour identifier des opportunités à haut rendement et optimiser votre portefeuille.",
-      features: [
-        "Analyse de marché approfondie",
-        "Stratégies d'investissement ajustées au risque",
-        "Optimisation des performances du portefeuille",
-        "Croissance à long terme"
-      ],
-      hero: {
-        title: "Investissement Immobilier Stratégique",
-        subtitle: "Stratégies d'Investissement Basées sur les Données pour des Rendements Maximaux",
-        description: "Exploitez notre expertise approfondie du marché, nos analyses avancées et nos connaissances locales pour identifier des opportunités à haut rendement et construire un portefeuille immobilier résilient sur les marchés belges les plus prometteurs.",
-        cta: "Explorer les Opportunités d'Investissement",
-        benefits: [
-          "Analyse et perspectives d'experts du marché",
-          "Stratégies d'investissement ajustées au risque",
-          "Conseils en diversification de portefeuille",
-          "Accès aux offres hors marché",
-          "Diligence raisonnable de niveau institutionnel",
-          "Focus sur la création de richesse à long terme"
-        ]
-      },
-      process: {
-        title: "Notre Processus d'Investissement",
-        subtitle: "Une approche systématique pour identifier et exécuter des investissements rentables",
-        steps: [
-          {
-            title: "Découverte et Objectifs",
-            description: "Nous commençons par comprendre vos objectifs d'investissement, votre tolérance au risque, votre horizon temporel et vos rendements cibles pour créer une stratégie personnalisée."
-          },
-          {
-            title: "Analyse de Marché",
-            description: "Notre équipe analyse les tendances macro, la dynamique des quartiers, les évolutions démographiques et les développements d'infrastructure pour identifier les opportunités émergentes."
-          },
-          {
-            title: "Sourcing d'Opportunités",
-            description: "Nous exploitons notre vaste réseau pour sourcer des offres exclusives hors marché et évaluer les opportunités du marché avec une diligence raisonnable de niveau institutionnel."
-          },
-          {
-            title: "Exécution d'Investissement",
-            description: "De la coordination du financement à la structuration juridique et à la clôture, nous gérons chaque détail pour assurer une acquisition fluide et des conditions optimales."
-          },
-          {
-            title: "Gestion d'Actifs",
-            description: "Après l'acquisition, nous fournissons un suivi continu du portefeuille, une optimisation des performances et des conseils stratégiques pour maximiser vos rendements."
-          }
-        ]
-      },
-      pricing: {
-        title: "Forfaits de Conseil en Investissement",
-        subtitle: "Modèles d'engagement flexibles adaptés à votre parcours d'investissement",
-        toggle: {
-          monthly: "Mensuel",
-          yearly: "Annuel",
-          savePercent: "Économisez 20%"
-        },
-        plans: [
-          {
-            name: "Explorateur",
-            description: "Parfait pour les investisseurs immobiliers débutants",
-            price: "499 €",
-            period: "/mois",
-            yearlyPrice: "4 790 €",
-            features: [
-              "Rapports de marché mensuels",
-              "Webinaires d'investissement trimestriels",
-              "Accès au pipeline d'opportunités",
-              "Outils de modélisation financière de base",
-              "Support par email",
-              "Accès au forum communautaire"
-            ],
-            cta: "Commencer l'Exploration",
-            popular: false
-          },
-          {
-            name: "Professionnel",
-            description: "Conseil complet pour investisseurs actifs",
-            price: "1 499 €",
-            period: "/mois",
-            yearlyPrice: "14 390 €",
-            features: [
-              "Tout ce qui est dans Explorateur",
-              "Conseiller en investissement dédié",
-              "Recherche de marché personnalisée",
-              "Modélisation financière avancée",
-              "Support de souscription par opportunité",
-              "Accès prioritaire aux opportunités",
-              "Sessions stratégiques trimestrielles",
-              "Conseils en optimisation fiscale"
-            ],
-            cta: "Devenir Professionnel",
-            popular: true
-          },
-          {
-            name: "Institutionnel",
-            description: "Service premium pour investisseurs sérieux",
-            price: "Sur mesure",
-            period: "tarification",
-            yearlyPrice: "Nous Contacter",
-            features: [
-              "Tout ce qui est dans Professionnel",
-              "Gestion complète du portefeuille",
-              "Stratégies d'acquisition sur mesure",
-              "Opportunités de co-investissement",
-              "Suivi des performances au niveau des actifs",
-              "Planification de stratégie de sortie",
-              "Accès direct à l'équipe de direction",
-              "Revue annuelle des performances"
-            ],
-            cta: "Nous Contacter",
-            popular: false
-          }
-        ],
-        trustBadges: [
-          "Conseillers Certifiés RICS",
-          "Plus de 50M€ Déployés",
-          "Plus de 15 Ans d'Expérience",
-          "98% de Satisfaction Client"
-        ]
-      },
-      caseStudies: {
-        title: "Histoires de Succès en Investissement",
-        subtitle: "Résultats réels de clients qui se sont associés avec nous",
-        items: [
-          {
-            name: "Portefeuille Investisseur Privé",
-            location: "Bruxelles & Anvers",
-            category: "Résidentiel Multi-Familial",
-            challenge: "Particulier fortuné cherchant à diversifier sa richesse dans l'immobilier belge avec un engagement de temps minimal.",
-            solution: "Nous avons identifié trois propriétés multi-familiales sous-évaluées dans des quartiers émergents, géré les rénovations et sécurisé des locataires à long terme.",
-            results: [
-              {
-                label: "Valeur du Portefeuille",
-                value: "2,4M €"
-              },
-              {
-                label: "ROI Net",
-                value: "+18% annuel"
-              },
-              {
-                label: "Cash-on-Cash",
-                value: "12,5%"
-              }
-            ],
-            testimonial: "Les connaissances du marché et les capacités d'exécution de Switch Invest sont exceptionnelles. Ils ont rendu l'investissement immobilier sans effort."
-          },
-          {
-            name: "Fonds Family Office",
-            location: "Gand",
-            category: "Bureaux Commerciaux",
-            challenge: "Family office souhaitant une exposition à l'immobilier commercial mais manquant d'expertise locale du marché et de capacités opérationnelles.",
-            solution: "Nous avons sourcé et souscrit un immeuble de bureaux de classe B avec potentiel de repositionnement, exécuté une rénovation à valeur ajoutée et reloué aux loyers du marché.",
-            results: [
-              {
-                label: "Acquisition",
-                value: "3,8M €"
-              },
-              {
-                label: "Valeur Actuelle",
-                value: "5,1M €"
-              },
-              {
-                label: "TRI",
-                value: "22%"
-              }
-            ],
-            testimonial: "Leur approche institutionnelle combinée à des perspectives locales a généré des rendements au-delà de nos attentes."
-          }
-        ]
-      },
-      faqs: {
-        title: "FAQ Investissement",
-        subtitle: "Questions courantes sur l'investissement avec SwitchInvest",
-        searchPlaceholder: "Rechercher des questions...",
-        stillHaveQuestions: "Besoin de plus d'informations?",
-        contactUs: "Planifiez une consultation avec notre équipe d'investissement",
-        items: [
-          {
-            question: "Quel est le montant d'investissement minimum?",
-            answer: "Notre seuil d'investissement minimum varie selon le type d'opportunité. Pour les investissements directs dans des propriétés, nous travaillons généralement avec des investisseurs engageant 250 000 € ou plus. Pour les opportunités de co-investissement, les minimums peuvent être inférieurs."
-          },
-          {
-            question: "Sur quels types de propriétés vous concentrez-vous?",
-            answer: "Nous investissons dans le résidentiel (multi-familial, appartements), le commercial (bureaux, commerce) et les propriétés à usage mixte. Notre focus est sur les opportunités à valeur ajoutée dans les principaux marchés urbains de Belgique."
-          },
-          {
-            question: "Comment identifiez-vous les opportunités d'investissement?",
-            answer: "Nous utilisons une combinaison d'analyses de marché propriétaires, de relations étendues avec les courtiers, de sourcing d'offres hors marché et d'expertise locale sur le terrain pour identifier les opportunités avant qu'elles ne soient largement connues."
-          },
-          {
-            question: "Quels rendements puis-je espérer?",
-            answer: "Les rendements cibles varient selon la classe d'actifs et la stratégie. Historiquement, nos investissements à valeur ajoutée ont généré un TRI de 15-25%, tandis que les propriétés de revenus stabilisées rapportent 8-12% annuellement. Les performances passées ne garantissent pas les résultats futurs."
-          },
-          {
-            question: "À quel point dois-je être impliqué?",
-            answer: "Aussi peu ou autant que vous le souhaitez. De nombreux clients choisissent notre approche de gestion complète où nous gérons tout, de l'acquisition à la gestion d'actifs. D'autres préfèrent une approche plus collaborative."
-          },
-          {
-            question: "Quels sont vos frais?",
-            answer: "Notre structure de frais dépend du modèle d'engagement. Les frais de conseil varient de 1 à 2% du capital investi annuellement, avec des frais de performance potentiels sur les sorties réussies. Nous fournissons une transparence totale sur tous les coûts."
-          }
-        ]
-      }
-    },
     development: {
       title: "Rénovations clés en main",
       description: "Nous gérons toutes les rénovations de A à Z—maximisant la valeur de votre bien et minimisant votre stress.",
@@ -933,292 +728,81 @@ export const fr: Translation = {
         ]
       }
     },
-    management: {
-      title: "Gestion complète des actifs",
-      description: "Gérance globale assurant conformité, transparence et rendements durables sur vos investissements.",
-      features: [
-        "Reporting financier transparent",
-        "Coordination proactive de la maintenance",
-        "Relations locataires & support à la location",
-        "Conformité réglementaire"
-      ],
-      hero: {
-        title: "Gestion Complète des Actifs",
-        subtitle: "Gestion Immobilière Professionnelle pour des Rendements Maximaux",
-        description: "Protégez et développez vos investissements immobiliers avec notre gestion immobilière complète. Nous gérons tout, de la placement des locataires à la maintenance, au reporting financier et à la conformité réglementaire—pour que vous puissiez profiter de revenus passifs en toute tranquillité.",
-        cta: "Obtenir une Proposition de Gestion",
-        benefits: [
-          "Sélection professionnelle des locataires",
-          "Coordination de maintenance 24/7",
-          "Reporting financier transparent",
-          "Conformité réglementaire et juridique",
-          "Collecte de loyers et comptabilité",
-          "Inspections et entretien de propriété"
-        ]
-      },
-      process: {
-        title: "Notre Processus de Gestion",
-        subtitle: "Supervision complète du placement des locataires à l'optimisation financière",
-        steps: [
-          {
-            title: "Intégration de Propriété",
-            description: "Nous effectuons une évaluation complète de la propriété, fixons des loyers compétitifs et créons un plan de gestion personnalisé aligné avec vos objectifs."
-          },
-          {
-            title: "Placement de Locataires",
-            description: "Notre équipe commercialise votre propriété, sélectionne rigoureusement les candidats et place des locataires qualifiés avec des baux complets."
-          },
-          {
-            title: "Opérations Courantes",
-            description: "Nous gérons la collecte des loyers, les demandes de maintenance, les inspections de propriété et la coordination des fournisseurs avec un support locataire 24/7."
-          },
-          {
-            title: "Reporting Financier",
-            description: "Recevez des relevés mensuels détaillés, suivez les revenus et dépenses et accédez aux données financières en temps réel via notre portail propriétaire."
-          },
-          {
-            title: "Optimisation Stratégique",
-            description: "Nous surveillons en continu les conditions du marché, recommandons des améliorations à valeur ajoutée et optimisons les opérations pour des rendements maximaux."
-          }
-        ]
-      },
-      pricing: {
-        title: "Forfaits de Gestion Immobilière",
-        subtitle: "Plans flexibles conçus pour différents besoins d'investisseurs",
-        toggle: {
-          monthly: "Par Mois",
-          yearly: "Contrat Annuel",
-          savePercent: "Économisez 10%"
-        },
-        plans: [
-          {
-            name: "Essentiel",
-            description: "Services de gestion de base pour propriétaires actifs",
-            price: "6%",
-            period: "du loyer mensuel",
-            yearlyPrice: "5,4% avec contrat annuel",
-            features: [
-              "Sélection et placement de locataires",
-              "Collecte et versement de loyers",
-              "Coordination de maintenance de base",
-              "Relevés financiers mensuels",
-              "Support par email (heures ouvrables)",
-              "Inspection annuelle de propriété"
-            ],
-            cta: "Commencer",
-            popular: false
-          },
-          {
-            name: "Professionnel",
-            description: "Gestion complète pour investisseurs occupés",
-            price: "8%",
-            period: "du loyer mensuel",
-            yearlyPrice: "7,2% avec contrat annuel",
-            features: [
-              "Tout ce qui est dans Essentiel",
-              "Maintenance d'urgence 24/7",
-              "Inspections trimestrielles de propriété",
-              "Gestion de renouvellement de bail",
-              "Réseau et coordination de fournisseurs",
-              "Accès au portail propriétaire en ligne",
-              "Reporting annuel détaillé",
-              "Support téléphone et email"
-            ],
-            cta: "Plus Populaire",
-            popular: true
-          },
-          {
-            name: "Premium",
-            description: "Service haut de gamme pour propriétés de luxe",
-            price: "10%",
-            period: "du loyer mensuel",
-            yearlyPrice: "9% avec contrat annuel",
-            features: [
-              "Tout ce qui est dans Professionnel",
-              "Gestionnaire de propriété dédié",
-              "Inspections mensuelles de propriété",
-              "Programmes de maintenance préventive",
-              "Planification d'améliorations de capital",
-              "Préparation de documents fiscaux",
-              "Réponse prioritaire des fournisseurs",
-              "Services de conciergerie pour locataires"
-            ],
-            cta: "Nous Contacter",
-            popular: false
-          }
-        ],
-        trustBadges: [
-          "Certifié FEDERA",
-          "Entièrement Assuré",
-          "Plus de 1 000 Unités Gérées",
-          "99% de Taux de Collecte de Loyers"
-        ]
-      },
-      caseStudies: {
-        title: "Histoires de Succès en Gestion",
-        subtitle: "Comment nous avons aidé les propriétaires à maximiser les rendements",
-        items: [
-          {
-            name: "Portefeuille Multi-Familial",
-            location: "Bruxelles",
-            category: "Gestion Résidentielle",
-            challenge: "Propriétaire gérant à distance un immeuble de 12 unités avec taux de vacance élevé, rotation fréquente et problèmes de maintenance impactant la rentabilité.",
-            solution: "Mise en place de sélection professionnelle de locataires, programmes de maintenance proactive et stratégie de prix compétitive pour stabiliser l'occupation et réduire les coûts.",
-            results: [
-              {
-                label: "Taux d'Occupation",
-                value: "95% → 100%"
-              },
-              {
-                label: "Coûts de Maintenance",
-                value: "-30%"
-              },
-              {
-                label: "Augmentation NOI",
-                value: "+25%"
-              }
-            ],
-            testimonial: "Ils ont transformé mon actif sous-performant en un producteur de revenus stable. Je ne pourrais pas être plus satisfait."
-          },
-          {
-            name: "Immeuble de Bureaux Commercial",
-            location: "Anvers",
-            category: "Gestion Commerciale",
-            challenge: "Immeuble de bureaux de classe A avec 40% de vacance, systèmes vieillissants et manque de gestion professionnelle réduisant la valeur de l'actif.",
-            solution: "Repositionnement complet incluant améliorations de capital ciblées, location professionnelle et services locataires améliorés.",
-            results: [
-              {
-                label: "Vacance",
-                value: "40% → 8%"
-              },
-              {
-                label: "Loyer/m²",
-                value: "+15%"
-              },
-              {
-                label: "Valeur de l'Actif",
-                value: "+1,2M €"
-              }
-            ],
-            testimonial: "Leur expertise commerciale et relations avec les locataires ont redonné vie à notre immeuble."
-          }
-        ]
-      },
-      faqs: {
-        title: "FAQ Gestion",
-        subtitle: "Tout ce que vous devez savoir sur nos services de gestion immobilière",
-        searchPlaceholder: "Rechercher des questions...",
-        stillHaveQuestions: "Vous avez encore des questions?",
-        contactUs: "Parlez avec un spécialiste en gestion immobilière",
-        items: [
-          {
-            question: "Quels types de propriétés gérez-vous?",
-            answer: "Nous gérons des propriétés résidentielles (unifamiliales, multi-familiales, appartements), commerciales (bureaux, commerce) et à usage mixte dans toute la Belgique. Notre équipe a une expertise dans toutes les classes d'actifs."
-          },
-          {
-            question: "Comment sélectionnez-vous les locataires?",
-            answer: "Notre sélection complète inclut vérification de crédit, vérification d'emploi, examen d'historique locatif, vérification de références et vérification de revenus. Nous n'approuvons que les locataires qui répondent à nos critères stricts."
-          },
-          {
-            question: "Dans quel délai répondez-vous aux problèmes de maintenance?",
-            answer: "Les demandes de maintenance d'urgence reçoivent une réponse immédiate (24/7). La maintenance de routine est généralement traitée sous 24 à 48 heures. Nous avons un réseau d'entrepreneurs vérifiés prêts à intervenir."
-          },
-          {
-            question: "Quand reçois-je mes revenus locatifs?",
-            answer: "Nous versons les produits aux propriétaires avant le 10 de chaque mois par virement direct. Vous recevrez un relevé détaillé montrant tous les revenus, dépenses et votre distribution nette."
-          },
-          {
-            question: "Quels sont vos frais de gestion?",
-            answer: "Nos frais varient de 6 à 10% du loyer mensuel selon le niveau de service et le type de propriété. Il n'y a pas de frais cachés—tous les coûts sont transparents et détaillés dans notre accord de gestion."
-          },
-          {
-            question: "Puis-je résilier l'accord de gestion?",
-            answer: "Oui, nos accords ont généralement des clauses de résiliation de 30 à 60 jours. Nous croyons qu'il faut mériter votre confiance chaque mois grâce à un service exceptionnel."
-          },
-          {
-            question: "Gérez-vous les expulsions?",
-            answer: "Oui, si nécessaire, nous gérons l'ensemble du processus d'expulsion incluant les dépôts juridiques, la représentation en justice et la récupération de propriété en conformité avec la loi belge."
-          },
-          {
-            question: "Comment accéder aux rapports financiers?",
-            answer: "Tous les clients reçoivent des relevés financiers mensuels par email et ont un accès 24/7 à notre portail propriétaire en ligne où vous pouvez consulter les données financières en temps réel, les dossiers de maintenance et les documents de propriété."
-          }
-        ]
-      }
-    }
   },
   process: {
-    title: "Comment ça fonctionne",
+    title: "Comment Nous Achetons Votre Bien",
     steps: [
-      { title: "Étape 1 : Donnez-nous les détails de votre bien", description: "Remplissez notre formulaire en ligne rapide ou appelez-nous avec les détails de votre bien : adresse, type, superficie et état." },
-      { title: "Étape 2 : Recevez votre offre rapide", description: "Recevez sous 24 à 48 heures une offre transparente, basée sur des données réelles du marché et sans déductions cachées." },
-      { title: "Étape 3 : Choisissez votre date de clôture", description: "Choisissez une date de clôture dès 7 jours ou jusqu’à 30 jours – selon votre convenance. Nous nous occupons de toutes les formalités légales et des frais de notaire." },
-      { title: "Étape 4 : Nous gérons tout", description: "Nous achetons votre bien en l’état, gérons les rénovations et versons les fonds – sans agents, sans surprises." }
+      { title: "Étape 1 : Soumettez Votre Bien", description: "Remplissez notre formulaire en ligne rapide ou appelez-nous avec les détails de votre bien : adresse, type, superficie et état. Nous achetons EN L'ÉTAT." },
+      { title: "Étape 2 : Recevez Notre Offre Comptant", description: "Recevez sous 24-48 heures notre offre d'achat transparente, basée sur des données réelles du marché. Nous sommes l'acheteur - pas une agence." },
+      { title: "Étape 3 : Acceptez et Planifiez La Clôture", description: "Choisissez votre date de clôture (7-30 jours). Nous gérons toutes les formalités légales et payons les frais de notaire. Vous vendez directement à nous." },
+      { title: "Étape 4 : Recevez Votre Paiement", description: "Signez, transférez le bien, et recevez votre paiement comptant complet. Nous gérons ensuite toutes les rénovations avec notre propre capital." }
     ]
   },
   why_choose_us: {
-    title: "Pourquoi Switch Invest ?",
+    title: "Pourquoi Vendre Directement à SwitchInvest ?",
     items: [
-      { title: "Clôtures rapides", description: "De l’offre à la clôture en seulement 7 jours – sans retards ni obstacles de financement." },
-      { title: "Sans agent", description: "Pas de mise en scène, pas de visites et zéro frais d’agent." },
-      { title: "Offres transparentes", description: "Comprenez comment nous calculons votre offre – pas de frais cachés ou de déductions." },
-      { title: "Service tout inclus", description: "Nous achetons en l’état, gérons les rénovations et nous occupons de tout pour vous." },
-      { title: "Expertise locale", description: "Une connaissance approfondie du marché belge pour maximiser la valeur de votre bien." }
+      { title: "Nous Sommes L'Acheteur", description: "Pas une agence - nous achetons votre bien directement avec notre propre capital. Pas d'attente d'autres acheteurs." },
+      { title: "Offre Comptant en 24-48h", description: "Recevez notre offre d'achat transparente en 2 jours - de l'offre au paiement en aussi peu que 7 jours." },
+      { title: "Nous Achetons EN L'ÉTAT", description: "Zéro réparations requises, pas de mise en scène, pas de visites multiples. Nous achetons votre bien tel quel." },
+      { title: "Zéro Frais & Commissions", description: "Pas de commissions d'agent, pas de frais cachés. Vous recevez notre offre en totalité - nous payons tous les frais." },
+      { title: "Acheteur Local Fiable", description: "Plus de 500 biens achetés en Belgique depuis 2010. Connaissance approfondie du marché pour des offres équitables." }
     ]
   },
   audience: {
-    title: "Qui peut en bénéficier",
+    title: "Qui Vend Directement à Nous",
     items: [
-      { title: "Retraités", description: "Vous souhaitez réduire votre surface et débloquer des fonds pour votre retraite ?" },
-      { title: "Ayants droit", description: "Vous avez hérité d’un bien que vous ne souhaitez pas gérer ? Convertissez-le rapidement en liquide." },
-      { title: "Propriétaires de bien à rénover", description: "Vous possédez un bien nécessitant des réparations ? Nous achetons en l’état pour que vous ne payiez pas de frais de rénovation coûteux." },
-      { title: "Transitions de vie", description: "Utilisez la valeur de votre bien pour lancer une entreprise, financer vos études ou déménager." }
+      { title: "Retraités Réduisant Leur Surface", description: "Vendez-nous votre maison familiale rapidement pour débloquer des fonds pour la retraite - sans attendre des mois pour un acheteur." },
+      { title: "Héritiers de Biens", description: "Vous avez hérité d'un bien à distance ou que vous ne voulez pas gérer ? Vendez-le directement à nous - conversion rapide en liquidités." },
+      { title: "Propriétaires de Biens à Problèmes", description: "Votre bien nécessite des réparations majeures ? Nous l'achetons EN L'ÉTAT - vous ne payez aucun frais de rénovation coûteux." },
+      { title: "Transitions de Vie Rapides", description: "Besoin de capital rapidement pour une entreprise, un divorce, une relocalisation ? Vendez directement à nous et obtenez le paiement en 7-30 jours." }
     ]
   },
   concerns: {
-    title: "Répondre aux préoccupations courantes",
+    title: "Répondre aux Préoccupations Courantes",
     items: [
-      { myth: "Les sociétés d'achat rapide proposent des prix trop bas.", reality: "Nos offres reflètent la véritable valeur du marché moins les coûts de rénovation que nous couvrons." },
-      { myth: "Vendre à une entreprise est compliqué.", reality: "Nous prenons en charge tous les documents et rendez-vous—vous n'avez qu'à signer une seule fois." }
+      { myth: "\"Les acheteurs directs offrent des prix trop bas.\"", reality: "Nos offres reflètent la vraie valeur du marché moins les coûts de rénovation que NOUS payons (pas vous). Comparez avec une vente d'agence après commissions et réparations - notre offre est souvent meilleure." },
+      { myth: "\"Vendre directement à un acheteur est risqué.\"", reality: "SwitchInvest achète des biens en Belgique depuis 2010 avec plus de 500 transactions réussies. Nous sommes un acheteur agréé et réglementé - pas une arnaque." },
+      { myth: "\"Je devrais attendre un meilleur prix d'une agence.\"", reality: "Les ventes d'agence prennent 3-6 mois, nécessitent des réparations, des commissions (6-8%), et des visites. Nous achetons EN L'ÉTAT en 7-30 jours sans frais. Faites le calcul." }
     ]
   },
   cta: {
-    title: "Prêt à libérer la valeur de votre maison ? Obtenez votre offre sans obligation dès maintenant !",
-    tagline: "Rapide. Juste. Sans tracas.",
-    subtitle: "Recevez une offre claire et concluez selon votre calendrier — sans agents, sans réparations, sans frais cachés.",
-    primaryButton: "Soumettez votre adresse en 2 minutes →",
-    secondaryText: "Des questions ? Appelez-nous au +32 2 123 45 67 ou envoyez un email à info@switchinvest.be",
-    consultation: "Planifiez votre consultation",
-    explore: "Découvrez nos services"
+    title: "Prêt à Vendre Votre Bien Directement à Nous ? Obtenez Notre Offre Comptant Gratuite Maintenant !",
+    tagline: "Nous Sommes L'Acheteur - Pas Une Agence",
+    subtitle: "Recevez notre offre d'achat transparente en 24-48h et concluez selon votre calendrier — zéro commissions, zéro réparations, zéro attente d'acheteurs.",
+    primaryButton: "Obtenez Votre Offre Comptant en 2 Minutes →",
+    secondaryText: "Des questions sur la vente à nous ? Appelez-nous au +32 2 123 45 67 ou envoyez un email à info@switchinvest.be",
+    consultation: "Vendez-Nous Votre Bien",
+    explore: "Voir Comment Nous Achetons"
   },
   testimonials: [
-    { client: "Marie, 68 (Retraitée)", quote: "Après le décès de mon mari, notre maison me paraissait vide. Switch Invest m'a fait une offre juste en 24 heures. Deux semaines plus tard, j'étais en route pour l'Italie. Meilleure décision de ma vie !" },
-    { client: "Luc & Anouk (Jeune Famille)", quote: "Nous avons hérité d'une maison en ruine de mon oncle. Switch Invest l'a achetée en l'état, et maintenant nous utilisons l'argent pour le fonds d'études de notre fille." },
-    { client: "Ahmed (Entrepreneur)", quote: "J'ai vendu mon appartement à Bruxelles pour financer ma startup. Aucun regret – le processus a été sans accroc !" }
+    { client: "Marie, 68 (A vendu à SwitchInvest)", quote: "Après le décès de mon mari, j'ai vendu notre maison directement à SwitchInvest. Ils m'ont fait une offre juste en 24 heures et ont tout géré. Deux semaines plus tard, j'étais en route pour l'Italie avec mon paiement!" },
+    { client: "Luc & Anouk (Ont vendu à SwitchInvest)", quote: "Nous avons hérité d'une maison en ruine de mon oncle à distance. SwitchInvest l'a achetée directement en l'état - zéro stress, zéro réparations. Maintenant l'argent finance les études de notre fille!" },
+    { client: "Ahmed (A vendu à SwitchInvest)", quote: "J'ai vendu mon appartement à Bruxelles directement à SwitchInvest pour financer ma startup. Offre en 48h, paiement en 10 jours. Pas d'agents, pas d'attente - juste de l'argent rapide!" }
   ],
   renovation_transparency: {
-    title: "Que devient votre bien après la vente ?",
+    title: "Que Devient Votre Bien Après Que Nous L'Achetons ?",
     renovationScope: [
-      "Réparations structurelles (toiture, plomberie, électricité).",
-      "Modernisation (cuisines, salles de bains, revêtements de sol).",
-      "Améliorations éco-responsables (isolation, panneaux solaires)."
+      "Nous investissons notre propre capital dans les réparations structurelles complètes (toiture, fondations, plomberie, électricité).",
+      "Nous modernisons avec de nouvelles cuisines, salles de bains, revêtements de sol et équipements.",
+      "Nous ajoutons des améliorations éco-responsables (isolation, panneaux solaires, chauffage efficace) pour les futures familles."
     ],
-    communityImpact: "Nous revitalisons les quartiers en transformant des biens négligés en logements modernes et sûrs pour de nouvelles familles."
+    communityImpact: "En achetant des biens en difficulté directement, nous revitalisons les quartiers belges en transformant des propriétés négligées en belles maisons modernes pour de nouvelles familles - créant de la valeur pour les communautés."
   },
   faqs: [
-    { question: "Facturez-vous des frais ?", answer: "Non. Notre offre est tout compris – pas de commissions, frais de clôture ou charges cachées." },
-    { question: "Que se passe-t-il si ma maison a des dégâts ou de la moisissure ?", answer: "Nous achetons des biens en l’état. Vous ne payez pas pour les réparations." },
-    { question: "Puis-je vendre une partie de mon bien ?", answer: "Oui ! Nous achetons aussi des terrains, copropriétés ou biens co-hérités." },
-    { question: "Comment savoir si votre offre est équitable ?", answer: "Nous fournissons un détail de notre évaluation. Comparez-le aux rapports de marché locaux !" }
+    { question: "Êtes-vous une agence immobilière ou un agent ?", answer: "Non ! Nous ne sommes PAS une agence. SwitchInvest est un acheteur de biens - nous achetons des biens directement en utilisant notre propre capital. Vous vendez À nous, pas PAR nous. Pas d'attente d'autres acheteurs, pas de mise en vente, pas de commissions d'agent." },
+    { question: "Facturez-vous des frais ou des commissions ?", answer: "Zéro frais. Notre offre comptant est le montant complet que vous recevez - pas de commissions d'agent (économisez 6-8%), pas de frais de clôture, pas de charges cachées. Nous payons même les frais de notaire." },
+    { question: "Que se passe-t-il si ma maison a des dégâts importants, de la moisissure ou nécessite des réparations ?", answer: "Parfait ! Nous achetons des biens EN L'ÉTAT. Toiture qui fuit ? Fondation fissurée ? Dégâts d'eau ? Plomberie obsolète ? Nous achetons tel quel - vous ne payez AUCUNE réparation." },
+    { question: "Puis-je vendre une partie de mon bien ou une copropriété ?", answer: "Oui ! Nous achetons des terrains, des parts de copropriété, des biens co-hérités, et même des biens avec des situations juridiques complexes." },
+    { question: "Comment puis-je savoir si votre offre est équitable ?", answer: "Nous fournissons une ventilation transparente : valeur marchande - coûts de rénovation que NOUS paierons - notre marge raisonnable = votre offre. Comparez-la avec une vente d'agence après commissions et réparations !" }
   ],
   portfolio: {
-    title: "Actifs d'Exception sous Gestion",
-    subtitle: "Une sélection de nos propriétés gérées et développées avec succès à travers la Belgique",
-    explore: "Découvrez notre travail",
-    filterTitle: "Filtrer par catégorie de propriété",
-    searchPlaceholder: "Rechercher des projets...",
-    showingResults: "Affichage des propriétés",
-    viewDetails: "Voir les détails",
+    title: "Biens Que Nous Avons Achetés & Rénovés",
+    subtitle: "Exemples réels de biens que nous avons achetés directement et transformés",
+    explore: "Voir Nos Achats Passés",
+    filterTitle: "Filtrer par Type de Bien",
+    searchPlaceholder: "Rechercher achats passés...",
+    showingResults: "Affichage des biens achetés",
+    viewDetails: "Voir Histoire D'Achat",
     filters: {
       all: "Tous les projets",
       residential: "Résidentiel",
@@ -1246,11 +830,11 @@ export const fr: Translation = {
       reset: "Réinitialiser les filtres"
     },
     cta: {
-      label: "Opportunités d'investissement",
-      title: "Intéressé par un investissement avec nous ?",
-      description: "Notre expertise du marché immobilier belge nous permet d'identifier et de développer des propriétés à fort potentiel. Contactez-nous pour discuter des opportunités d'investissement.",
-      contactButton: "Nous contacter",
-      servicesButton: "Nos services"
+      label: "Vous Voulez Vendre Votre Bien ?",
+      title: "Prêt à nous vendre votre bien directement ?",
+      description: "Comme ces propriétaires, vous pouvez vendre votre bien directement à SwitchInvest avec une offre comptant rapide. Nous achetons des biens dans n'importe quel état partout en Belgique.",
+      contactButton: "Obtenez Votre Offre Comptant",
+      servicesButton: "Voyez Comment Nous Achetons"
     },
     items: [
       {
@@ -1389,12 +973,12 @@ export const fr: Translation = {
   },
   about: {
     title: "À propos de nous",
-    heroSubtitle: "Excellence en Immobilier Belge Depuis 2010",
-    description: "Depuis 2010, SwitchInvest permet aux propriétaires belges de libérer rapidement et sans effort la valeur de leur bien. Nous achetons en l'état avec des offres claires sous 24–48 heures, gérons des rénovations clés en main et apportons une gestion stratégique des actifs—assurant conformité, exécution fluide et rendements maximaux pour nos clients.",
+    heroSubtitle: "Premier Acheteur de Biens en Belgique Depuis 2010",
+    description: "Depuis 2010, SwitchInvest achète des biens directement auprès de propriétaires belges qui doivent vendre rapidement. Nous sommes l'acheteur - pas une agence. Nous achetons des biens EN L'ÉTAT avec des offres comptant transparentes en 24–48h, puis investissons notre propre capital dans les rénovations et le développement. Plus de 500 propriétaires nous ont vendu directement partout en Belgique.",
     storyTitle: "Notre Histoire",
-    mission: "Offrir à notre clientèle d'exception une gestion immobilière intégrale et irréprochable, optimisant les performances et cimentant la confiance.",
+    mission: "Fournir aux propriétaires belges le moyen le plus rapide et transparent de vendre leurs biens en les achetant directement avec des offres comptant équitables.",
     missionTitle: "Mission",
-    vision: "Devenir la référence incontestée en gestion immobilière premium, reconnue pour notre intégrité inébranlable, notre vision stratégique et notre excellence discrète.",
+    vision: "Devenir l'acheteur direct de biens le plus fiable de Belgique, reconnu pour nos offres équitables, nos clôtures rapides et notre aide aux propriétaires pour atteindre leurs objectifs financiers.",
     visionTitle: "Vision",
     values: {
       title: "Nos Valeurs",
@@ -1658,8 +1242,8 @@ export const fr: Translation = {
   
   // Page Contact
   contact: {
-    title: "Contactez-Nous",
-    subtitle: "Nous sommes là pour répondre à vos questions sur les opportunités d'investissement immobilier en Belgique.",
+    title: "Vendez Votre Bien à SwitchInvest",
+    subtitle: "Obtenez votre offre comptant gratuite en 24-48h. Nous achetons des biens directement partout en Belgique.",
     quickContact: "Contact Rapide",
     whatsapp: "Message instantané",
     clickToCall: "Cliquez pour appeler",

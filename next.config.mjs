@@ -44,21 +44,60 @@ const nextConfig = {
       },
     ]
   },
-  // Properly configure CSS optimization with critters now that it's installed
+  // Performance optimizations
   experimental: {
     optimizeCss: true,
-    // Ensure critters is used correctly
-    craCompression: false
+    optimizePackageImports: ['lucide-react', 'framer-motion', 'react-leaflet', 'd3'],
   },
-  // Ensure CSS modules are properly processed
-  webpack: (config) => {
-    // Ensure CSS modules are properly processed
-    const rules = config.module.rules
-      .find((rule) => typeof rule.oneOf === 'object')
-      .oneOf.filter((rule) => Array.isArray(rule.use));
+  // Webpack optimizations
+  webpack: (config, { isServer }) => {
+    // Optimize bundle size
+    if (!isServer) {
+      config.optimization = {
+        ...config.optimization,
+        moduleIds: 'deterministic',
+        runtimeChunk: 'single',
+        splitChunks: {
+          chunks: 'all',
+          cacheGroups: {
+            default: false,
+            vendors: false,
+            // Vendor chunk for node_modules
+            vendor: {
+              name: 'vendor',
+              chunks: 'all',
+              test: /node_modules/,
+              priority: 20
+            },
+            // Separate chunk for large libraries
+            framerMotion: {
+              name: 'framer-motion',
+              test: /[\\/]node_modules[\\/]framer-motion[\\/]/,
+              priority: 30,
+            },
+            maps: {
+              name: 'maps',
+              test: /[\\/]node_modules[\\/](leaflet|react-leaflet)[\\/]/,
+              priority: 30,
+            },
+            d3: {
+              name: 'd3-charts',
+              test: /[\\/]node_modules[\\/]d3[\\/]/,
+              priority: 30,
+            },
+            // Common chunk for shared code
+            common: {
+              name: 'common',
+              minChunks: 2,
+              priority: 10,
+              reuseExistingChunk: true,
+              enforce: true
+            },
+          }
+        }
+      };
+    }
 
-    // Add any necessary webpack configurations here
-    
     return config;
   },
   images: {
@@ -72,21 +111,18 @@ const nextConfig = {
         pathname: '**',
       },
     ],
-    // Enable optimization for production, but allow unoptimized images during development
     unoptimized: process.env.NODE_ENV !== 'production',
-    // Minimize image revalidation during builds
     minimumCacheTTL: 60,
   },
   // Enable performance optimization features
   reactStrictMode: true,
   compiler: {
-    // Remove console logs in production
     removeConsole: process.env.NODE_ENV === 'production',
   },
-  experimental: {
-    // Optimize CSS for faster loading
-    optimizeCss: true,
-  },
+  // Disable powered by header
+  poweredByHeader: false,
+  // Compress responses
+  compress: true,
 }
 
 export default nextConfig

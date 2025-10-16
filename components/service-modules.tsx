@@ -17,16 +17,8 @@ export function ServiceModules() {
       icon: <ClipboardCheck className="h-6 w-6" />,
     },
     {
-      key: "investment",
-      icon: <TrendingUp className="h-6 w-6" />,
-    },
-    {
       key: "development",
       icon: <Cpu className="h-6 w-6" />,
-    },
-    {
-      key: "management",
-      icon: <ClipboardCheck className="h-6 w-6" />,
     },
   ]
 

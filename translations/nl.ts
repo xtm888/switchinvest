@@ -2,7 +2,7 @@ import { Translation } from './types';
 
 export const nl: Translation = {
   valuation: {
-    title: "Evalueer mijn eigendom",
+    title: "Verkoop Aan Ons - Ontvang Contant Bod",
     address: "Adres",
     addressPlaceholder: "Begin met het typen van uw adres…",
     addressRequired: "Adres is verplicht",
@@ -61,43 +61,43 @@ export const nl: Translation = {
     cta: "Nu waarderen"
   },
   home: {
-    trustBadge: "Vertrouwd door 500+ Eigenaren",
-    ctaPrimary: "Krijg Uw Gratis Waardering",
-    ctaSecondary: "Ontdek Onze Diensten",
-    featuresTitle: "Waarom Kiezen Voor SwitchInvest?",
-    featuresSubtitle: "Snelle, transparante en zorgeloze vastgoedoplossingen",
+    trustBadge: "Wij Kochten 500+ Woningen Direct",
+    ctaPrimary: "Verkoop Uw Woning Aan Ons",
+    ctaSecondary: "Zie Hoe Wij Woningen Kopen",
+    featuresTitle: "Waarom Direct Verkopen Aan SwitchInvest?",
+    featuresSubtitle: "Wij kopen woningen snel - geen makelaars, geen wachten, geen gedoe",
     features: {
       fastOffers: {
-        title: "24-48 Uur Aanbod",
-        description: "Ontvang een transparant aanbod binnen 2 dagen"
+        title: "Wij Kopen in 24-48 Uur",
+        description: "Ontvang ons contant bod binnen 2 dagen - wij zijn de koper"
       },
       noFees: {
-        title: "Geen Verborgen Kosten",
-        description: "Heldere prijzen zonder verrassingen"
+        title: "Wij Betalen U Direct",
+        description: "Geen makelaarsprovincies - wij kopen direct van u"
       },
       asIs: {
-        title: "Aankoop in Huidige Staat",
+        title: "Wij Kopen AS-IS",
         description: "Wij kopen uw woning in elke staat"
       },
       quickClosing: {
-        title: "Snelle Afsluiting",
-        description: "Sluit af in slechts 7 dagen"
+        title: "Snelle Contante Betaling",
+        description: "Sluiten en betaald worden in slechts 7 dagen"
       }
     },
     mapTitle: "Onze Aanwezigheid Door Heel België",
     mapSubtitle: "Eigenaren bedienen in alle regio's met lokale expertise",
     hero: {
-      badge: "500+ Tevreden Eigenaren in België",
-      title: "Transformeer Uw Eigendom",
-      titleHighlight: "in Mogelijkheden",
-      subtitle: "Snelle verkoop, transparante waardering in 24-48u.",
-      features: "Nul commissie • Geen reparaties vereist",
-      ctaPrimary: "Gratis Waardering Nu",
-      ctaSecondary: "Bekijk Hoe Het Werkt",
+      badge: "500+ Woningen Direct Gekocht - Wij Zijn De Koper",
+      title: "Wij Kopen Uw Woning",
+      titleHighlight: "Contant Bod in 24-48 Uur",
+      subtitle: "Verkoop direct aan ons - Geen makelaars, geen wachten op kopers, geen gedoe.",
+      features: "Wij kopen AS-IS • Nul commissie • Contante betaling",
+      ctaPrimary: "Ontvang Uw Contant Bod",
+      ctaSecondary: "Zie Hoe Het Werkt",
       trustIndicators: [
-        "24-48u Gegarandeerd Aanbod",
-        "Geen Commissie",
-        "Aankoop in Huidige Staat"
+        "24-48u Gegarandeerd Contant Bod",
+        "Wij Zijn De Koper - Geen Wachten",
+        "Wij Kopen AS-IS"
       ],
       scrollText: "Ontdekken"
     },
@@ -147,34 +147,34 @@ export const nl: Translation = {
         {
           value: 500,
           suffix: "+",
-          label: "Tevreden Eigenaren",
-          description: "Hebben gekozen voor SwitchInvest om snel te verkopen"
+          label: "Woningen Die Wij Kochten",
+          description: "Direct van Belgische huiseigenaren"
         },
         {
           value: 24,
           suffix: "u",
-          label: "Waarderingstijd",
-          description: "Transparant aanbod in minder dan 48 uur"
+          label: "Contant Bod Snelheid",
+          description: "Transparant aankoopbod in 24-48 uur"
         },
         {
           value: 98,
           suffix: "%",
           label: "Tevredenheidsgraad",
-          description: "Van onze klanten beveelt onze diensten aan"
+          description: "Van verkopers bevelen verkopen aan ons aan"
         },
         {
           value: 0,
           suffix: "€",
           label: "Verborgen Kosten",
-          description: "Volledige transparantie, geen verrassingen"
+          description: "Wij betalen u direct - geen commissies"
         }
       ],
-      ctaText: "Sluit u aan bij honderden tevreden eigenaren",
-      ctaButton: "Nu Beginnen"
+      ctaText: "Sluit u aan bij 500+ huiseigenaren die direct aan ons verkochten",
+      ctaButton: "Verkoop Nu Aan Ons"
     },
     testimonials: {
-      title: "Wat Onze Klanten Zeggen",
-      subtitle: "Authentieke getuigenissen van tevreden eigenaren",
+      title: "Wat Huiseigenaren Zeggen Over Verkopen Aan Ons",
+      subtitle: "Echte verhalen van eigenaren die hun woningen direct aan SwitchInvest verkochten",
       pressTitle: "Gezien In De Media",
       items: [
         {
@@ -291,18 +291,18 @@ export const nl: Translation = {
   // 1. Navigatie
   navigation: {
     services: "Diensten",
-    portfolio: "Portefeuille",
+    portfolio: "Woningen Die Wij Kochten",
     technologies: "Technologieën",
     about: "Over ons",
-    clientPortal: "Evalueer Mijn Eigendom",
-    contactUs: "Evalueer Mijn Eigendom",
+    clientPortal: "Verkoop Aan Ons",
+    contactUs: "Ontvang Contant Bod",
   },
 
   // 2. Hero Sectie
   hero: {
-    title: "Maak van uw woning kansen",
-    tagline: "Snel verkopen, zonder stress en uw dromen financieren!",
-    subtitle: "Bij Switch Invest geloven we dat uw woning een toegangspoort tot nieuwe kansen moet zijn, geen last. Of u nu een erfpand hebt geërfd, een huis bezit dat dure reparaties nodig heeft, of gewoon snel geld wilt vrijmaken om uw passies te volgen, wij bieden een zorgeloze oplossing. Wij kopen uw woning in de staat waarin deze verkeert, verzorgen alle renovaties en storten het geld sneller dan traditionele methoden op uw rekening. Geen makelaars, geen vertragingen, geen verborgen kosten – alleen een eenvoudige manier om de waarde van uw huis vrij te maken en te beginnen met leven op uw voorwaarden.",
+    title: "Wij Kopen Uw Woning - Snel Contant Bod",
+    tagline: "Verkoop Direct Aan Ons - Geen Makelaars, Geen Wachten Op Kopers!",
+    subtitle: "SwitchInvest koopt woningen direct van Belgische huiseigenaren. Wij zijn de koper - geen makelaar die uw woning aanbiedt. Ontvang een transparant contant bod in 24-48 uur, sluit af op uw tijdlijn en ontvang direct betaling. Of u nu een erfpand heeft, een huis bezit dat reparaties nodig heeft, of snel wilt verkopen, wij kopen AS-IS zonder commissies. Geen wachten op andere kopers, geen bezichtigingen, geen gedoe.",
   },
 
   // 3. Statistieken Labels
@@ -336,12 +336,12 @@ export const nl: Translation = {
     ]
   },
   services: {
-    title: "Onze Diensten",
-    subtitle: "Turnkey-oplossingen om het potentieel van uw woning te ontsluiten",
+    title: "Hoe Wij Woningen Kopen & Extra Diensten",
+    subtitle: "Wij kopen woningen direct - plus renovatie en investeringsdiensten",
     learnMore: "Meer informatie",
     real_estate: {
-      title: "Snelle aankoop",
-      description: "Ontvang binnen 24–48 uur een transparant bod en sluit al binnen 7 dagen af—geen makelaars, geen verborgen kosten.",
+      title: "Wij Kopen Uw Woning (Primaire Dienst)",
+      description: "Verkoop direct aan ons - ontvang ons contant bod binnen 24–48 uur en sluit af in 7 dagen. Wij zijn de koper, geen makelaar.",
       features: [
         "Bod binnen 24–48 uur",
         "Kies uw sluitingsdatum (7–30 dagen)",
@@ -572,212 +572,6 @@ export const nl: Translation = {
           {
             question: "Is er een verplichting nadat ik een bod heb ontvangen?",
             answer: "Helemaal niet. Onze biedingen zijn volledig vrijblijvend. Neem de tijd om te beoordelen, vergelijk met andere opties en neem de beslissing die het beste voor u is."
-          }
-        ]
-      }
-    },
-    investment: {
-      title: "Strategische Vastgoedinvestering",
-      description: "Benut onze lokale expertise en marktgegevens om rendabele kansen te identificeren en uw portefeuille te optimaliseren.",
-      features: [
-        "Diepgaande marktanalyse",
-        "Risicogecorrigeerde investeringsstrategieën",
-        "Optimalisatie van portefeuilleprestaties",
-        "Focus op langetermijngroei"
-      ],
-      hero: {
-        title: "Strategische Vastgoedinvestering",
-        subtitle: "Data-Gedreven Investeringsstrategieën voor Maximum Rendement",
-        description: "Ontgrendel uitzonderlijke investeringsmogelijkheden in de Belgische vastgoedmarkt met onze diepgaande lokale expertise, rigoureuze marktanalyse en bewezen strategieën. Wij begeleiden u door elke fase—van acquisitie en waardecreatie tot optimale exit—met volledige transparantie en gepersonaliseerde ondersteuning.",
-        cta: "Ontdek Investeringsmogelijkheden",
-        benefits: [
-          "Exclusieve toegang tot off-market deals",
-          "Uitgebreide due diligence en risicoanalyse",
-          "Portefeuillediversificatie over sectoren",
-          "Actieve waardetoevoeging en renovatiestrategieën",
-          "Transparante prestatierapportage",
-          "Strategische exit planning en uitvoering"
-        ]
-      },
-      process: {
-        title: "Ons Investeringsproces",
-        subtitle: "Van acquisitie tot exit—een gestructureerde aanpak voor maximale rendementen",
-        steps: [
-          {
-            title: "Discovery & Strategie",
-            description: "Wij beginnen door uw investeringsdoelstellingen, risicotolerantie en tijdshorizon te begrijpen. Ons team ontwikkelt een op maat gemaakte investeringsaanpak afgestemd op uw doelen."
-          },
-          {
-            title: "Marktkansen Identificeren",
-            description: "Benutting van eigen marktdata, off-market netwerken en vooruitziende analyse om waarde-investeringsmogelijkheden in hoog potentieel gebieden te identificeren."
-          },
-          {
-            title: "Due Diligence & Acquisitie",
-            description: "Uitgebreide financiële, juridische en technische analyse om risico's te kwantificeren. Wij leiden onderhandelingen en sluiting om gunstige voorwaarden te garanderen."
-          },
-          {
-            title: "Waardecreatie",
-            description: "Implementatie van actieve strategieën—renovaties, herpositionering, verhuuroptimalisatie—om prestaties te verbeteren en activa waarde te verhogen."
-          },
-          {
-            title: "Asset Management & Monitoring",
-            description: "Doorlopend toezicht met driemaandelijkse prestatie-updates, financiële rapportage en proactief beheer om duurzame rendementen te behouden."
-          },
-          {
-            title: "Strategische Exit",
-            description: "Timen van marktkansen en uitvoeren van exit strategieën om winsten te maximaliseren—via verkoop, herfinanciering of portfolioherbalancering."
-          }
-        ]
-      },
-      pricing: {
-        title: "Investeringsadvies Pakketten",
-        subtitle: "Kies het niveau van begeleiding en ondersteuning dat past bij uw investeringsaanpak",
-        toggle: {
-          monthly: "Maandelijks",
-          yearly: "Jaarlijks",
-          savePercent: "Bespaar 20%"
-        },
-        plans: [
-          {
-            name: "Basis Advies",
-            description: "Ideaal voor ervaren investeerders die inzicht en analyse zoeken",
-            price: "€2.500",
-            period: "/maand",
-            features: [
-              "Driemaandelijkse marktinzichtrapporten",
-              "Toegang tot off-market investeringslijsten",
-              "Jaarlijkse portefeuillebeoordeling",
-              "E-mail ondersteuning (reactie binnen 48 uur)",
-              "Uitnodigingen voor exclusieve investeringsevenementen",
-              "Basisdashboard voor prestatie tracking"
-            ],
-            cta: "Begin Basis",
-            popular: false
-          },
-          {
-            name: "Premium Partnership",
-            description: "Volledige service voor actieve investeerders die groei willen",
-            price: "€7.500",
-            period: "/maand",
-            features: [
-              "Alles van Basis",
-              "Toegewijde investeringsadviseur",
-              "Maandelijkse strategie reviews",
-              "Prioritaire toegang tot nieuwe acquisities",
-              "Hands-on acquisitie ondersteuning",
-              "Uitgebreide due diligence rapporten",
-              "Geavanceerde financiële modellering",
-              "Onbeperkte consultatietijd"
-            ],
-            cta: "Word Premium Partner",
-            popular: true
-          },
-          {
-            name: "Institutioneel",
-            description: "Op maat voor institutionele beleggers en family offices",
-            price: "Op Maat",
-            period: "contact voor prijzen",
-            features: [
-              "Alles van Premium",
-              "Multi-activa portefeuillebeheer",
-              "Co-investeringsmogelijkheden",
-              "Gepersonaliseerde investeringsstructuren",
-              "Belastingoptimalisatie planning",
-              "Multi-jurisdictie ondersteuning",
-              "White-label rapportage",
-              "Senior executive team toegang"
-            ],
-            cta: "Neem Contact Op",
-            popular: false
-          }
-        ],
-        trustBadges: [
-          "€150M+ Activa Onder Beheer",
-          "12+ Jaar Tracrecord",
-          "200+ Voltooide Deals",
-          "18% Gemiddeld Jaarlijks Rendement"
-        ]
-      },
-      caseStudies: {
-        title: "Investeringssuccessen",
-        subtitle: "Real-world resultaten behaald voor onze investeringspartners",
-        items: [
-          {
-            name: "Luxury Residential Portfolio",
-            location: "Brussel & Antwerpen",
-            category: "Multi-Family Residentieel",
-            challenge: "Een internationale family office zocht blootstelling aan de Belgische luxe residentiële markt met stabiel inkomen en waardestijging.",
-            solution: "Wij hebben een gediversifieerde portefeuille samengesteld van 8 premium appartementen in toplocaties, met gerichte renovaties uitgevoerd om huurpremiums te rechtvaardigen en hoogwaardige huurders aan te trekken.",
-            results: [
-              {
-                label: "Totale Investering",
-                value: "€4.8M"
-              },
-              {
-                label: "Jaarlijks Netto Rendement",
-                value: "6.2%"
-              },
-              {
-                label: "Waardestijging (3 jaar)",
-                value: "+22%"
-              }
-            ],
-            testimonial: "SwitchInvest's grondig lokaal inzicht en actief beheer overtroffen onze verwachtingen. De portefeuille presteert consistent en levert zowel inkomen als waardestijging."
-          },
-          {
-            name: "Commercial Office Repositioning",
-            location: "Louise District, Brussel",
-            category: "Commercieel Kantoor",
-            challenge: "Onderpresterend Class B kantoorgebouw in een prime locatie met hoge leegstand en verouderde voorzieningen.",
-            solution: "Uitgevoerd een volledige renovatie met moderne afwerkingen, slimme gebouwtechnologie en duurzame certificering (BREEAM). Herpositioneert als Class A workspace en trok tech huurders aan.",
-            results: [
-              {
-                label: "Acquisitieprijs",
-                value: "€6.2M"
-              },
-              {
-                label: "Exit Waarde (4 jaar)",
-                value: "€9.5M"
-              },
-              {
-                label: "IRR",
-                value: "18.3%"
-              }
-            ],
-            testimonial: "Het team identificeerde een verborgen kans en voerde een meesterlijke transformatie uit. De exit leverde substantiële winsten op binnen ons geplande tijdsbestek."
-          }
-        ]
-      },
-      faqs: {
-        title: "Veelgestelde Vragen",
-        subtitle: "Alles wat u moet weten over investeren met SwitchInvest",
-        searchPlaceholder: "Zoek vragen...",
-        stillHaveQuestions: "Nog vragen?",
-        contactUs: "Neem contact op met ons investeringsteam voor gedetailleerde antwoorden",
-        items: [
-          {
-            question: "Wat is de minimale investeringsgrootte?",
-            answer: "Voor directe co-investeringen is ons minimum doorgaans €500.000. Voor onze advieservices is geen minimale portefeuillegrootte vereist, maar we raden €1M+ aan om schaalvoordelen te benutten."
-          },
-          {
-            question: "Welke sectoren richt u zich op?",
-            answer: "Wij specialiseren ons in Belgisch residentieel (luxe en mid-market), commerciële kantoren, mixed-use ontwikkelingen en geselecteerde logistieke activa. Onze focus ligt op kernlocaties met aantoonbare vraag en waardetoevoegingspotentieel."
-          },
-          {
-            question: "Hoe vind en vet u deals?",
-            answer: "We benutten uitgebreide lokale netwerken, off-market relaties, eigen data-analyse en vooruitziende marktonderzoek. Elke kans ondergaat rigoureuze financiële, juridische en technische due diligence voordat we deze aan klanten presenteren."
-          },
-          {
-            question: "Wat zijn typische holdingperioden en rendementen?",
-            answer: "Holdingperioden variëren van 3-7 jaar afhankelijk van strategie. Historisch heeft onze portefeuille een gemiddeld jaarlijks bruto rendement van 18% geleverd, met variatie per activaklasse en marktomstandigheden."
-          },
-          {
-            question: "Hoe betrokken moet ik zijn?",
-            answer: "Dat kiest u! Sommige klanten prefereren een hands-off benadering met driemaandelijkse updates, terwijl anderen actief deelnemen aan grotere beslissingen. Wij passen ons aan aan uw voorkeursbetrokkenheidsniveau."
-          },
-          {
-            question: "Welke kosten brengt u in rekening?",
-            answer: "Onze advieskosten zijn transparant: maandelijkse retainer (zie pakketten hierboven) of success-based fees bij co-investeringen (doorgaans 20% van winsten boven een vooraf bepaalde drempel). Alle kosten worden volledig geopenbaard voorafgaand aan elke transactie."
           }
         ]
       }
@@ -1015,230 +809,15 @@ export const nl: Translation = {
         ]
       }
     },
-    management: {
-      title: "Uitgebreid assetmanagement",
-      description: "End-to-end beheer dat naleving, transparantie en duurzame rendementen op uw investeringen garandeert.",
-      features: [
-        "Transparante financiële rapportage",
-        "Proactieve onderhoudscoördinatie",
-        "Huurderrelaties & verhuurondersteuning",
-        "Naleving van regelgeving"
-      ],
-      hero: {
-        title: "Premium Vastgoedbeheer",
-        subtitle: "Bescherm Uw Investering, Maximaliseer Uw Rendement",
-        description: "Vertrouw uw vastgoedactiva toe aan onze ervaren beheerteams. Wij verzorgen dagelijkse operaties, huurderrelaties, financiële rapportage en strategische planning—zodat u kunt genieten van passief inkomen en langetermijnwaardestijging zonder de hoofdpijn van hands-on beheer.",
-        cta: "Begin met Professioneel Beheer",
-        benefits: [
-          "Volledige huurder screening en plaatsing",
-          "24/7 onderhoudcoördinatie",
-          "Maandelijkse financiële rapportage en analyses",
-          "Juridische naleving en risicobeheer",
-          "Strategische plannen voor kapitaalverbeteringen",
-          "Toegewijde accountmanager"
-        ]
-      },
-      process: {
-        title: "Onze Beheersaanpak",
-        subtitle: "Een systematische methode om uw activa te beschermen en prestaties te optimaliseren",
-        steps: [
-          {
-            title: "Onboarding & Beoordeling",
-            description: "Wij voeren een grondige beoordeling uit van uw pand, beoordelen de huidige staat, identificeren verbetermogelijkheden en stellen een beheerplan op maat op."
-          },
-          {
-            title: "Huurderwerving",
-            description: "Professionele marketing, rigoureuze screening (krediet, inkomen, referenties) en leaseondertekening om kwalitatieve, betrouwbare huurders aan te trekken."
-          },
-          {
-            title: "Financieel Beheer",
-            description: "Maandelijkse huurinning, expense tracking, eigenaaruitbetalingen en gedetailleerde financiële rapportage via uw online portaal."
-          },
-          {
-            title: "Onderhoud & Reparaties",
-            description: "24/7 huurderondersteuning, gevetted aannemersnetwerk, proactieve inspections en snelle probleemoplossing om activawaarde te behouden."
-          },
-          {
-            title: "Naleving & Risicobeheer",
-            description: "Naleving van alle lokale en nationale regelgeving, verzekeringcoördinatie en juridische risicobeperking."
-          },
-          {
-            title: "Strategische Optimalisatie",
-            description: "Jaarlijkse prestatiebeoordelingen, huurmarktanalyse, kapitaalverbeteringsaanbevelingen en langetermijnstrategische planning."
-          }
-        ]
-      },
-      pricing: {
-        title: "Beheerpakketten",
-        subtitle: "Flexibele service opties aangepast aan uw portefeuille omvang en behoeften",
-        toggle: {
-          monthly: "Per Pand",
-          yearly: "Portfolio",
-          savePercent: "Bespaar 15%"
-        },
-        plans: [
-          {
-            name: "Essentieel Beheer",
-            description: "Kern diensten voor eigenaren die hands-on betrokken willen blijven",
-            price: "6% - 8%",
-            period: "maandelijkse huur",
-            features: [
-              "Huurinning en remittance",
-              "Basis huurder screening",
-              "Onderhoud coördinatie (eigenaar goedkeurt kosten)",
-              "Maandelijkse financiële rapporten",
-              "Online eigenaarportaal",
-              "Jaarlijkse pand inspections"
-            ],
-            cta: "Kies Essentieel",
-            popular: false
-          },
-          {
-            name: "Volledig Beheer",
-            description: "Hands-off oplossing voor drukke professionals en beleggers",
-            price: "8% - 10%",
-            period: "maandelijkse huur",
-            features: [
-              "Alles van Essentieel",
-              "Volledige huurder screening (krediet, inkomen, achtergrond)",
-              "24/7 huurderondersteuning",
-              "Proactieve onderhoudsinspecties",
-              "Reparatieautorisatie tot €1.500",
-              "Lease verlenging onderhandelingen",
-              "Driemaandelijkse prestatie reviews",
-              "Toegewijde accountmanager"
-            ],
-            cta: "Start Volledig Beheer",
-            popular: true
-          },
-          {
-            name: "Premium Portfolio Beheer",
-            description: "White-glove service voor multi-pand eigenaren en institutionele beleggers",
-            price: "Op Maat",
-            period: "op basis van portfolio",
-            features: [
-              "Alles van Volledig",
-              "Multi-pand coördinatie",
-              "Strategische portfolio planning",
-              "Aangepaste financiële rapportage",
-              "Kapitaalverbetering projectbeheer",
-              "Juridische coördinatie en ondersteuning",
-              "Belastingdocument voorbereiding",
-              "Senior team toegang",
-              "Kwartaalijke strategische reviews"
-            ],
-            cta: "Bespreek Portfolio",
-            popular: false
-          }
-        ],
-        trustBadges: [
-          "€85M+ Activa Onder Beheer",
-          "450+ Panden Beheerd",
-          "97% Huurder Retentie",
-          "15+ Jaar Expertise"
-        ]
-      },
-      caseStudies: {
-        title: "Beheersuccessen",
-        subtitle: "Hoe wij pandprestaties optimaliseren en eigenaarwaarde verhogen",
-        items: [
-          {
-            name: "Multi-Family Portfolio Optimalisatie",
-            location: "Brussel & Omgeving",
-            category: "Residentieel Portfolio Beheer",
-            challenge: "Een belegger met 12 huurappartementen worstelde met hoge leegstand (30%), langzame onderhoudsrespons en onnauwkeurige financiële rapportage van de vorige beheerder.",
-            solution: "Wij hebben de volledige portfolio overgenomen, geïmplementeerd gestandaardiseerde processen, uitgevoerd gerichte marketing, verbeterde onderhoudsreactietijden en verstrekt real-time financiële dashboards.",
-            results: [
-              {
-                label: "Leegstandsvermindering",
-                value: "30% → 5%"
-              },
-              {
-                label: "Onderhoudsresponstijd",
-                value: "5 dagen → 24 uur"
-              },
-              {
-                label: "NOI Verbetering",
-                value: "+28%"
-              }
-            ],
-            testimonial: "SwitchInvest transformeerde mijn chaotische portfolio in een soepel lopende operatie. Ik ontvang mijn huurbetaling op tijd, zie realtime financiën en heb eindelijk gemoedsrust."
-          },
-          {
-            name: "Commercieel Kantoorgebouw Stabilisatie",
-            location: "Antwerpen",
-            category: "Commercieel Pandmanagement",
-            challenge: "Een kleine kantoorruimte had hoge huurderomzet, onderhoudsproblemen en was 40% leeg vanwege slechte relaties en verouderde voorzieningen.",
-            solution: "Wij hebben huurderrelaties herbouwd, selectieve renovaties geïmplementeerd (lobby, gemeenschappelijke ruimtes), nieuw lease programma gestart en proactieve huurder engagement initiatieven uitgevoerd.",
-            results: [
-              {
-                label: "Bezettingsgraad",
-                value: "60% → 95%"
-              },
-              {
-                label: "Huurder Retentie",
-                value: "+55%"
-              },
-              {
-                label: "Pand Waarde",
-                value: "+€380K"
-              }
-            ],
-            testimonial: "Het beheerteam keerde de situatie volledig om. Het gebouw is nu goed bezet en huurders zijn tevreden. Een dramatische verbetering."
-          }
-        ]
-      },
-      faqs: {
-        title: "Veelgestelde Vragen",
-        subtitle: "Alles wat u moet weten over onze vastgoedbeheer diensten",
-        searchPlaceholder: "Zoek vragen...",
-        stillHaveQuestions: "Nog vragen?",
-        contactUs: "Neem contact op met ons beheerteam voor gedetailleerde antwoorden",
-        items: [
-          {
-            question: "Wat is inbegrepen in uw beheer fee?",
-            answer: "Onze fee dekt dagelijkse operaties, huurinning, huurder communicatie, onderhoud coördinatie, financiële rapportage, lease beheer en compliance. Fysieke reparaties, juridische kosten en marketing uitgaven zijn voor eigenaarrekening en worden doorbelast."
-          },
-          {
-            question: "Hoe screent u potentiële huurders?",
-            answer: "Wij voeren uitgebreide achtergrondcontroles uit: kredietscores, inkomensverificatie (doorgaans 3x huur), verhuurgeschiedenis, referenties en criminele achtergrondcontroles waar toegestaan. Onze criteria worden aangepast om kwaliteitshuurders te selecteren."
-          },
-          {
-            question: "Hoe snel reageert u op onderhoudsproblemen?",
-            answer: "Nood reparaties (bijv. leidinglekken): onmiddellijk (24/7 lijn). Urgente problemen (bijv. defecte HVAC): binnen 24 uur. Routine onderhoud: binnen 3-5 dagen. Wij coördineren alles en houden u op de hoogte."
-          },
-          {
-            question: "Kan ik mijn financiën realtime zien?",
-            answer: "Ja! Elke eigenaar krijgt toegang tot onze online portal met realtime inkomen tracking, expense logs, onderhoudsstatus en downloadbare rapporten. U kunt inloggen wanneer u maar wilt."
-          },
-          {
-            question: "Wat als een huurder de huur niet betaalt?",
-            answer: "Wij volgen Belgische wetgeving voor late betalingen. Wij communiceren onmiddellijk met de huurder, geven formele kennisgevingen als nodig en coördineren met juridische vertegenwoordiging indien ontruiming noodzakelijk wordt. U blijft gedurende het proces geïnformeerd."
-          },
-          {
-            question: "Kan ik wisselen van beheerders midden in leases?",
-            answer: "Absoluut. Wij beheren de overgang soepel—nemen bestaande leases over, introduceren onszelf aan huurders, verkrijgen alle pandtoegangsinformatie en pakken alle lopende problemen op. Doorgaans voltooid binnen 2 weken."
-          },
-          {
-            question: "Bieden jullie lease-only diensten (geen lopend beheer)?",
-            answer: "Ja, wij bieden zelfstandige huurder plaatsing diensten als u het dagelijkse beheer zelf wilt afhandelen. Fee is doorgaans één maand huur."
-          },
-          {
-            question: "Hoe gaan jullie om met kapitaalverbeteringen?",
-            answer: "Voor Premium Portfolio klanten beheren we kapitaalprojecten als onderdeel van onze service. Voor andere pakketten bieden wij advies en aannemerscoördinatie tegen een project management fee (doorgaans 10-15% van projectkosten)."
-          }
-        ]
-      }
-    }
   },
   portfolio: {
-    title: "Voorbeeldige beheerde activa",
-    subtitle: "Een selectie van onze succesvol beheerde en ontwikkelde eigendommen in België",
-    explore: "Ontdek ons werk",
-    filterTitle: "Filter op vastgoedcategorie",
-    searchPlaceholder: "Zoek projecten...",
-    showingResults: "Eigendommen weergeven",
-    viewDetails: "Details bekijken",
+    title: "Woningen Die Wij Kochten & Renoveerden",
+    subtitle: "Echte voorbeelden van woningen die wij direct van eigenaren kochten en transformeerden",
+    explore: "Bekijk Onze Eerdere Aankopen",
+    filterTitle: "Filter op Woningtype",
+    searchPlaceholder: "Zoek eerdere aankopen...",
+    showingResults: "Woningen die wij kochten weergeven",
+    viewDetails: "Bekijk Aankoopverhaal",
     filters: {
       all: "Alle projecten",
       residential: "Residentieel",
@@ -1266,11 +845,11 @@ export const nl: Translation = {
       reset: "Filters resetten"
     },
     cta: {
-      label: "Investeringsmogelijkheden",
-      title: "Geïnteresseerd in investeren met ons?",
-      description: "Onze expertise in de Belgische vastgoedmarkt stelt ons in staat om hoogwaardige eigendommen te identificeren en te ontwikkelen. Neem contact met ons op om investeringsmogelijkheden te bespreken.",
-      contactButton: "Neem contact op",
-      servicesButton: "Onze diensten"
+      label: "Wilt U Uw Woning Verkopen?",
+      title: "Klaar om uw woning direct aan ons te verkopen?",
+      description: "Net als deze huiseigenaren kunt u uw woning direct aan SwitchInvest verkopen met een snel contant bod. Wij kopen woningen in elke staat door heel België.",
+      contactButton: "Ontvang Uw Contant Bod",
+      servicesButton: "Zie Hoe Wij Kopen"
     },
     items: [
       {
@@ -1406,12 +985,12 @@ export const nl: Translation = {
   },
   about: {
     title: "Over ons",
-    heroSubtitle: "Uitmuntendheid in Belgisch Vastgoed Sinds 2010",
-    description: "Sinds 2010 helpt SwitchInvest Belgische huiseigenaren om snel en moeiteloos de waarde van hun woning te ontsluiten. We kopen in de huidige staat met transparante biedingen binnen 24–48 uur, verzorgen sleutelklare renovaties en bieden strategisch assetmanagement—met naleving, naadloze uitvoering en maximale rendementen voor onze klanten.",
+    heroSubtitle: "België's Leidende Woningaankoop Bedrijf Sinds 2010",
+    description: "Sinds 2010 koopt SwitchInvest woningen direct van Belgische huiseigenaren die snel moeten verkopen. Wij zijn de koper - geen makelaar. Wij kopen woningen AS-IS met transparante contante biedingen binnen 24–48 uur, investeren vervolgens ons eigen kapitaal in renovaties en ontwikkeling. Meer dan 500 huiseigenaren verkochten direct aan ons door heel België.",
     storyTitle: "Ons Verhaal",
-    mission: "Onze missie is om veeleisende cliënten te voorzien van onberispelijk, full-service vastgoedbeheer dat prestaties optimaliseert en vertrouwen versterkt.",
+    mission: "Belgische huiseigenaren voorzien van de snelste, meest transparante manier om hun woningen te verkopen door ze direct te kopen met eerlijke contante biedingen.",
     missionTitle: "Missie",
-    vision: "Onze visie is om de lat te leggen in premium vastgoedbeheer, bekend om onze onwrikbare integriteit, strategisch inzicht en discrete uitmuntendheid.",
+    vision: "België's meest vertrouwde directe woningkoper worden, bekend om eerlijke biedingen, snelle afsluitingen en het helpen van huiseigenaren hun financiële doelen te bereiken.",
     visionTitle: "Visie",
     values: {
       title: "Onze waarden",
@@ -1667,14 +1246,9 @@ export const nl: Translation = {
       'belgium': "België"
     }
   },
-  notFound: {
-    title: "Pagina Niet Gevonden",
-    message: "De pagina die u zoekt bestaat niet of is verplaatst naar een andere locatie.",
-    backHome: "Terug naar Homepagina"
-  },
   contact: {
-    title: "Neem Contact Met Ons Op",
-    subtitle: "Wij zijn er om uw vragen over vastgoedbeleggingsmogelijkheden in België te beantwoorden.",
+    title: "Verkoop Uw Woning Aan SwitchInvest",
+    subtitle: "Ontvang uw gratis contant bod in 24-48 uur. Wij kopen woningen direct door heel België.",
     quickContact: "Snel Contact",
     whatsapp: "Direct bericht",
     clickToCall: "Klik om te bellen",

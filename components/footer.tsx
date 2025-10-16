@@ -137,14 +137,15 @@ export function Footer() {
                 </motion.div>
               </div>
 
-              {/* Social Media Icons */}
+              {/* Social Media Icons - Optimized for accessibility */}
               <div className="flex items-center gap-3">
                 <motion.a
                   href="https://linkedin.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.2, y: -3 }}
-                  className="p-2 bg-white/10 rounded-full hover:bg-brand-gold/20 transition-colors group"
+                  className="p-3 bg-white/10 rounded-full hover:bg-brand-gold/20 transition-colors group min-w-[44px] min-h-[44px] flex items-center justify-center"
+                  aria-label="Follow us on LinkedIn"
                 >
                   <Linkedin className="h-5 w-5 text-brand-beige group-hover:text-brand-gold transition-colors" />
                 </motion.a>
@@ -153,7 +154,8 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.2, y: -3 }}
-                  className="p-2 bg-white/10 rounded-full hover:bg-brand-gold/20 transition-colors group"
+                  className="p-3 bg-white/10 rounded-full hover:bg-brand-gold/20 transition-colors group min-w-[44px] min-h-[44px] flex items-center justify-center"
+                  aria-label="Follow us on Twitter"
                 >
                   <Twitter className="h-5 w-5 text-brand-beige group-hover:text-brand-gold transition-colors" />
                 </motion.a>
@@ -162,7 +164,8 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.2, y: -3 }}
-                  className="p-2 bg-white/10 rounded-full hover:bg-brand-gold/20 transition-colors group"
+                  className="p-3 bg-white/10 rounded-full hover:bg-brand-gold/20 transition-colors group min-w-[44px] min-h-[44px] flex items-center justify-center"
+                  aria-label="Follow us on Facebook"
                 >
                   <Facebook className="h-5 w-5 text-brand-beige group-hover:text-brand-gold transition-colors" />
                 </motion.a>
@@ -180,14 +183,7 @@ export function Footer() {
                 <li>
                   <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
                     <Link href="/services/real-estate" className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
-                      {t("services.real_estate.title") || "Quick Purchase"}
-                    </Link>
-                  </motion.div>
-                </li>
-                <li>
-                  <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
-                    <Link href="/services/investment" className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
-                      {t("services.investment.title") || "Strategic Real Estate Investment"}
+                      {t("services.real_estate.title") || "We Buy Your Property"}
                     </Link>
                   </motion.div>
                 </li>
@@ -195,13 +191,6 @@ export function Footer() {
                   <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
                     <Link href="/services/development" className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
                       {t("services.development.title") || "Turnkey Renovations"}
-                    </Link>
-                  </motion.div>
-                </li>
-                <li>
-                  <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
-                    <Link href="/services/management" className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
-                      {t("services.management.title") || "Comprehensive Asset Management"}
                     </Link>
                   </motion.div>
                 </li>
@@ -306,14 +295,15 @@ export function Footer() {
                 <Globe className="h-4 w-4 mr-1" />
                 <span>{t("footer.belgium")}</span>
               </motion.div>
-              <div className="flex gap-2">
+              <div className="flex gap-3">
                 <motion.button
                   type="button"
                   onClick={() => setLanguage("nl")}
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-3 py-1 text-xs font-semibold bg-white/10 hover:bg-brand-gold hover:text-neutral-dark rounded-md transition-colors cursor-pointer border border-white/20"
+                  className="px-4 py-2 min-w-[44px] min-h-[44px] text-sm font-semibold bg-white/10 hover:bg-brand-gold hover:text-neutral-dark rounded-md transition-colors cursor-pointer border border-white/20"
                   title={`${t("languages.nl")} (${t("languages.regions.flanders")}, ${t("languages.regions.brussels")})`}
+                  aria-label={`Switch to Dutch language`}
                 >
                   NL
                 </motion.button>
@@ -322,8 +312,9 @@ export function Footer() {
                   onClick={() => setLanguage("fr")}
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-3 py-1 text-xs font-semibold bg-white/10 hover:bg-brand-gold hover:text-neutral-dark rounded-md transition-colors cursor-pointer border border-white/20"
+                  className="px-4 py-2 min-w-[44px] min-h-[44px] text-sm font-semibold bg-white/10 hover:bg-brand-gold hover:text-neutral-dark rounded-md transition-colors cursor-pointer border border-white/20"
                   title={`${t("languages.fr")} (${t("languages.regions.wallonia")}, ${t("languages.regions.brussels")})`}
+                  aria-label={`Switch to French language`}
                 >
                   FR
                 </motion.button>
@@ -332,8 +323,9 @@ export function Footer() {
                   onClick={() => setLanguage("de")}
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-3 py-1 text-xs font-semibold bg-white/10 hover:bg-brand-gold hover:text-neutral-dark rounded-md transition-colors cursor-pointer border border-white/20"
+                  className="px-4 py-2 min-w-[44px] min-h-[44px] text-sm font-semibold bg-white/10 hover:bg-brand-gold hover:text-neutral-dark rounded-md transition-colors cursor-pointer border border-white/20"
                   title={`${t("languages.de")} (${t("languages.regions.german")})`}
+                  aria-label={`Switch to German language`}
                 >
                   DE
                 </motion.button>
@@ -342,8 +334,9 @@ export function Footer() {
                   onClick={() => setLanguage("en")}
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-3 py-1 text-xs font-semibold bg-white/10 hover:bg-brand-gold hover:text-neutral-dark rounded-md transition-colors cursor-pointer border border-white/20"
+                  className="px-4 py-2 min-w-[44px] min-h-[44px] text-sm font-semibold bg-white/10 hover:bg-brand-gold hover:text-neutral-dark rounded-md transition-colors cursor-pointer border border-white/20"
                   title={`${t("languages.en")} (${t("languages.regions.international")})`}
+                  aria-label={`Switch to English language`}
                 >
                   EN
                 </motion.button>

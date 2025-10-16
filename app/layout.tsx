@@ -86,6 +86,13 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className={`${playfair.variable} ${GeistSans.variable} ${GeistMono.variable}`}>
       <head>
         <meta name="theme-color" content="#ffffff" />
+        {/* Resource hints for performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        {/* Preload critical assets */}
+        <link rel="preload" href="/images/logo.png" as="image" type="image/png" fetchPriority="high" />
       </head>
       <body className="bg-white flex flex-col min-h-screen">
         {/* Google Analytics 4 */}

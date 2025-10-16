@@ -2,7 +2,7 @@ import { Translation } from './types';
 
 export const en: Translation = {
   valuation: {
-    title: "Evaluate my property",
+    title: "Get Your Cash Offer - Sell To Us",
     address: "Address",
     addressPlaceholder: "Start typing your address…",
     addressRequired: "Address is required",
@@ -61,43 +61,43 @@ export const en: Translation = {
     cta: "Evaluate Now"
   },
   home: {
-    trustBadge: "Trusted by 500+ Property Owners",
-    ctaPrimary: "Get Your Free Valuation",
-    ctaSecondary: "Explore Our Services",
-    featuresTitle: "Why Choose SwitchInvest?",
-    featuresSubtitle: "Fast, transparent, and hassle-free property solutions",
+    trustBadge: "We've Purchased 500+ Properties Directly",
+    ctaPrimary: "Sell Your Property To Us",
+    ctaSecondary: "See How We Buy Properties",
+    featuresTitle: "Why Sell Directly To SwitchInvest?",
+    featuresSubtitle: "We buy properties fast - no agents, no waiting, no hassle",
     features: {
       fastOffers: {
-        title: "24-48 Hour Offers",
-        description: "Get a transparent offer within 2 days"
+        title: "We Buy in 24-48 Hours",
+        description: "Get our cash offer within 2 days - we are the buyer"
       },
       noFees: {
-        title: "No Hidden Fees",
-        description: "Clear pricing with zero surprises"
+        title: "We Pay You Directly",
+        description: "No agent commissions - we purchase directly from you"
       },
       asIs: {
-        title: "As-Is Purchase",
-        description: "We buy your property in any condition"
+        title: "We Buy AS-IS",
+        description: "We purchase your property in any condition"
       },
       quickClosing: {
-        title: "Quick Closing",
-        description: "Close in as little as 7 days"
+        title: "Fast Cash Payment",
+        description: "Close and get paid in as little as 7 days"
       }
     },
     mapTitle: "Our Presence Across Belgium",
     mapSubtitle: "Serving property owners in all regions with local expertise",
     hero: {
-      badge: "500+ Satisfied Property Owners in Belgium",
-      title: "Transform Your Property",
-      titleHighlight: "into Possibilities",
-      subtitle: "Fast sale, transparent evaluation in 24-48h.",
-      features: "Zero commission • No repairs required",
-      ctaPrimary: "Free Evaluation Now",
+      badge: "500+ Properties Purchased Directly - We Are The Buyer",
+      title: "We Buy Your Property",
+      titleHighlight: "Cash Offer in 24-48 Hours",
+      subtitle: "Sell directly to us - No agents, no waiting for buyers, no hassle.",
+      features: "We purchase AS-IS • Zero commission • Cash payment",
+      ctaPrimary: "Get Your Cash Offer",
       ctaSecondary: "See How It Works",
       trustIndicators: [
-        "24-48h Guaranteed Offer",
-        "No Commission",
-        "As-Is Purchase"
+        "24-48h Guaranteed Cash Offer",
+        "We Are The Buyer - No Waiting",
+        "We Purchase AS-IS"
       ],
       scrollText: "Discover"
     },
@@ -120,22 +120,22 @@ export const en: Translation = {
       testimonials: {
         brussels: {
           region: "Brussels",
-          quote: "Quick response and excellent service!",
+          quote: "They bought my property fast - excellent service!",
           author: "Marie D."
         },
         antwerp: {
           region: "Antwerp",
-          quote: "Professional team, fair price received.",
+          quote: "SwitchInvest purchased directly - fair cash offer.",
           author: "Johan V."
         },
         liege: {
           region: "Liège",
-          quote: "Sold my property in record time!",
+          quote: "They bought my property in record time!",
           author: "Sophie L."
         },
         ghent: {
           region: "Ghent",
-          quote: "Trustworthy and transparent process.",
+          quote: "Sold directly to them - trustworthy process.",
           author: "Lucas M."
         }
       }
@@ -147,41 +147,41 @@ export const en: Translation = {
         {
           value: 500,
           suffix: "+",
-          label: "Satisfied Owners",
-          description: "Chose SwitchInvest to sell quickly"
+          label: "Properties We've Purchased",
+          description: "Directly from Belgian property owners"
         },
         {
           value: 24,
           suffix: "h",
-          label: "Evaluation Time",
-          description: "Transparent offer in less than 48 hours"
+          label: "Cash Offer Speed",
+          description: "Transparent purchase offer in 24-48 hours"
         },
         {
           value: 98,
           suffix: "%",
           label: "Satisfaction Rate",
-          description: "Of our clients recommend our services"
+          description: "Of sellers recommend selling to us"
         },
         {
           value: 0,
           suffix: "€",
           label: "Hidden Fees",
-          description: "Total transparency, no surprises"
+          description: "We pay you directly - no commissions"
         }
       ],
-      ctaText: "Join hundreds of satisfied property owners",
-      ctaButton: "Start Now"
+      ctaText: "Join 500+ property owners who sold directly to us",
+      ctaButton: "Sell To Us Now"
     },
     testimonials: {
-      title: "What Our Clients Say",
-      subtitle: "Authentic testimonials from satisfied property owners",
+      title: "What Property Owners Say About Selling To Us",
+      subtitle: "Real stories from owners who sold their properties directly to SwitchInvest",
       pressTitle: "As Seen In The Media",
       items: [
         {
           name: "Marie Dubois",
           location: "Brussels",
-          role: "Owner",
-          quote: "SwitchInvest transformed a stressful situation into a smooth experience. In 48 hours, I had a clear and transparent offer. No commission, no surprises - exactly what they promise.",
+          role: "Property Owner",
+          quote: "SwitchInvest bought my property and transformed a stressful situation into a smooth experience. In 48 hours, they gave me a clear cash offer. No commission, no surprises - they purchased it directly from me exactly as promised.",
           rating: 5,
           image: "/testimonials/marie.jpg",
           date: "January 2025"
@@ -189,8 +189,8 @@ export const en: Translation = {
         {
           name: "Jean-Pierre Laurent",
           location: "Liège",
-          role: "Investor",
-          quote: "Exemplary professionalism. The SwitchInvest team handled every detail with care. My property was sold in 10 days, well above my expectations. I highly recommend their services.",
+          role: "Property Owner",
+          quote: "Exemplary professionalism. SwitchInvest purchased my property in 10 days - they handled every detail with care. Selling directly to them exceeded my expectations. I highly recommend if you want to sell fast.",
           rating: 5,
           image: "/testimonials/jean.jpg",
           date: "December 2024"
@@ -199,7 +199,7 @@ export const en: Translation = {
           name: "Sophie Martin",
           location: "Antwerp",
           role: "Heir",
-          quote: "Following a complex inheritance, SwitchInvest provided me with a quick and fair solution. Their expertise in the Belgian market is impressive. Real peace of mind.",
+          quote: "Following a complex inheritance, selling directly to SwitchInvest was the perfect solution. They bought the property quickly and fairly. Their expertise in the Belgian market is impressive. Real peace of mind.",
           rating: 5,
           image: "/testimonials/sophie.jpg",
           date: "November 2024"
@@ -207,8 +207,8 @@ export const en: Translation = {
         {
           name: "Marc Delarue",
           location: "Ghent",
-          role: "Entrepreneur",
-          quote: "As an entrepreneur, time is money. SwitchInvest understood that. Ultra-fast process, clear communication, results delivered. That's premium service.",
+          role: "Property Owner",
+          quote: "As an entrepreneur, time is money. SwitchInvest purchased my property with an ultra-fast process. They understood my urgency and bought it directly - clear communication, fast cash. That's premium service.",
           rating: 5,
           image: "/testimonials/marc.jpg",
           date: "October 2024"
@@ -290,22 +290,22 @@ export const en: Translation = {
   },
   navigation: {
     services: "Services",
-    portfolio: "Portfolio",
+    portfolio: "Properties We've Bought",
     technologies: "Technologies",
     about: "About",
-    clientPortal: "Evaluate My Property", // Updated to maintain backward compatibility
-    contactUs: "Evaluate My Property",
+    clientPortal: "Sell To Us", // Direct buyer positioning
+    contactUs: "Get Cash Offer",
   },
   hero: {
-    title: "Turn Your Property into Possibilities",
-    tagline: "Sell Fast, Skip the Stress, and Fund Your Dreams!",
-    subtitle: "At Switch Invest, we believe your home should be a gateway to new opportunities, not a burden. Whether you’ve inherited a property, own a house that needs costly repairs, or simply want to cash out quickly to pursue your passions, we offer a hassle-free solution. We buy your property AS-IS, handle all renovations, and put cash in your hands faster than traditional methods. No agents, no delays, no hidden fees – just a straightforward way to unlock your home’s value and start living life on your terms.",
+    title: "We Buy Your Property - Fast Cash Offer",
+    tagline: "Sell Directly To Us - No Agents, No Waiting For Buyers!",
+    subtitle: "SwitchInvest purchases properties directly from Belgian homeowners. We are the buyer - not an agency that lists your property. Get a transparent cash offer in 24-48 hours, close on your timeline, and receive payment directly. Whether you've inherited a property, own a house needing repairs, or want to cash out quickly, we buy AS-IS with zero commissions. No waiting for other buyers, no showings, no hassle.",
   },
   statistics: {
-    propertiesManaged: "Properties Managed",
-    totalSquareMeters: "Total Square Meters",
-    yearsExperience: "Years of Experience",
-    satisfiedClients: "Satisfied Clients",
+    propertiesManaged: "Properties Purchased",
+    totalSquareMeters: "Total Property Value Bought",
+    yearsExperience: "Years Buying Properties",
+    satisfiedClients: "Properties Owners We've Paid",
   },
   trustIndicators: {
     title: "Featured Properties & Partners",
@@ -329,12 +329,12 @@ export const en: Translation = {
     ]
   },
   services: {
-    title: "Our Services",
-    subtitle: "Turnkey solutions to unlock your property's potential",
+    title: "How We Buy Properties & Additional Services",
+    subtitle: "We purchase properties directly - plus renovation and investment services",
     learnMore: "Learn More",
     real_estate: {
-      title: "Quick Purchase",
-      description: "Get a transparent offer within 24–48 hours and close in as little as 7 days—no agents, no hidden fees.",
+      title: "We Buy Your Property (Primary Service)",
+      description: "Sell directly to us - get our cash offer within 24–48 hours and close in 7 days. We are the buyer, not an agent.",
       features: [
         "Offer in 24–48 hours",
         "Choose your closing date (7–30 days)",
@@ -342,10 +342,10 @@ export const en: Translation = {
         "No hidden fees"
       ],
       hero: {
-        title: "Quick Purchase Solutions",
-        subtitle: "Fast, Fair, Hassle-Free Property Sales",
-        description: "Get a transparent offer within 24–48 hours and close in as little as 7 days. We buy your property as-is, handle all paperwork, and put cash in your hands—no agents, no hidden fees.",
-        cta: "Get Your Free Offer",
+        title: "We Buy Properties Directly From Owners",
+        subtitle: "Sell To Us - Fast Cash, No Agents, No Waiting",
+        description: "SwitchInvest purchases properties directly across Belgium. Get our transparent cash offer within 24–48 hours and close in 7 days. We are the buyer - we purchase your property AS-IS, handle all paperwork, and pay you cash directly. No agents, no commissions, no waiting for other buyers.",
+        cta: "Get Your Cash Offer Now",
         benefits: [
           "24-48 hour transparent offers",
           "Close in as little as 7 days",
@@ -479,7 +479,7 @@ export const en: Translation = {
                 value: "€285,000"
               }
             ],
-            testimonial: "Switch Invest made a difficult time so much easier. The process was transparent and stress-free."
+            testimonial: "Selling my property directly to SwitchInvest made a difficult time so much easier. They purchased it quickly - the process was transparent and stress-free."
           },
           {
             name: "Luc & Sophie V.",
@@ -501,7 +501,7 @@ export const en: Translation = {
                 value: "€195,000"
               }
             ],
-            testimonial: "We never had to visit Belgium. Everything was handled professionally and quickly."
+            testimonial: "SwitchInvest bought our inherited property remotely. We never had to visit Belgium. They purchased it professionally and quickly."
           },
           {
             name: "Ahmed K.",
@@ -523,7 +523,7 @@ export const en: Translation = {
                 value: "€320,000"
               }
             ],
-            testimonial: "The quick sale allowed me to seize an incredible business opportunity. Highly recommended!"
+            testimonial: "Selling directly to SwitchInvest allowed me to seize an incredible business opportunity. They bought it fast with cash. Highly recommended!"
           }
         ]
       },
@@ -535,8 +535,12 @@ export const en: Translation = {
         contactUs: "Contact our team for personalized answers",
         items: [
           {
+            question: "Are you a real estate agency or agent?",
+            answer: "No! We are NOT an agency. SwitchInvest is a property buyer - we purchase properties directly using our own capital. You sell TO us, not THROUGH us. There are no listings, no waiting for other buyers, and no agent commissions. We ARE the buyer."
+          },
+          {
             question: "How quickly can you make an offer?",
-            answer: "We typically provide a transparent, no-obligation offer within 24-48 hours after receiving your property details. In urgent situations, we can expedite this to same-day offers."
+            answer: "We typically provide a transparent, no-obligation cash offer within 24-48 hours after receiving your property details. In urgent situations, we can expedite this to same-day offers."
           },
           {
             question: "Do you charge any fees or commissions?",
@@ -565,211 +569,6 @@ export const en: Translation = {
           {
             question: "Is there any obligation after I receive an offer?",
             answer: "None whatsoever. Our offers are completely no-obligation. Take your time to review, compare with other options, and make the decision that's best for you."
-          }
-        ]
-      }
-    },
-    investment: {
-      title: "Strategic Real Estate Investment",
-      description: "Leverage our local expertise and market data to identify high-yield opportunities and optimize your portfolio.",
-      features: [
-        "In-depth market analysis",
-        "Risk-adjusted investment strategies",
-        "Portfolio performance optimization",
-        "Long-term growth focus"
-      ],
-      hero: {
-        title: "Strategic Real Estate Investment",
-        subtitle: "Data-Driven Investment Strategies for Maximum Returns",
-        description: "Leverage our deep market expertise, advanced analytics, and local insights to identify high-yield opportunities and build a resilient real estate portfolio in Belgium's most promising markets.",
-        cta: "Explore Investment Opportunities",
-        benefits: [
-          "Expert market analysis & insights",
-          "Risk-adjusted investment strategies",
-          "Portfolio diversification guidance",
-          "Access to off-market deals",
-          "Institutional-grade due diligence",
-          "Long-term wealth building focus"
-        ]
-      },
-      process: {
-        title: "Our Investment Process",
-        subtitle: "A systematic approach to identifying and executing profitable investments",
-        steps: [
-          {
-            title: "Discovery & Goals",
-            description: "We start by understanding your investment objectives, risk tolerance, timeline, and target returns to create a personalized strategy."
-          },
-          {
-            title: "Market Analysis",
-            description: "Our team analyzes macro trends, neighborhood dynamics, demographic shifts, and infrastructure developments to identify emerging opportunities."
-          },
-          {
-            title: "Deal Sourcing",
-            description: "We leverage our extensive network to source exclusive off-market deals and evaluate on-market opportunities with institutional-grade due diligence."
-          },
-          {
-            title: "Investment Execution",
-            description: "From financing coordination to legal structuring and closing, we manage every detail to ensure smooth acquisition and optimal terms."
-          },
-          {
-            title: "Asset Management",
-            description: "Post-acquisition, we provide ongoing portfolio monitoring, performance optimization, and strategic guidance to maximize your returns."
-          }
-        ]
-      },
-      pricing: {
-        title: "Investment Advisory Packages",
-        subtitle: "Flexible engagement models tailored to your investment journey",
-        toggle: {
-          monthly: "Monthly",
-          yearly: "Yearly",
-          savePercent: "Save 20%"
-        },
-        plans: [
-          {
-            name: "Explorer",
-            description: "Perfect for first-time real estate investors",
-            price: "€499",
-            period: "/month",
-            yearlyPrice: "€4,790",
-            features: [
-              "Monthly market reports",
-              "Quarterly investment webinars",
-              "Access to deal pipeline",
-              "Basic financial modeling tools",
-              "Email support",
-              "Community forum access"
-            ],
-            cta: "Start Exploring",
-            popular: false
-          },
-          {
-            name: "Professional",
-            description: "Comprehensive advisory for active investors",
-            price: "€1,499",
-            period: "/month",
-            yearlyPrice: "€14,390",
-            features: [
-              "Everything in Explorer",
-              "Dedicated investment advisor",
-              "Custom market research",
-              "Advanced financial modeling",
-              "Deal-by-deal underwriting support",
-              "Priority deal access",
-              "Quarterly strategy sessions",
-              "Tax optimization guidance"
-            ],
-            cta: "Go Professional",
-            popular: true
-          },
-          {
-            name: "Institutional",
-            description: "White-glove service for serious investors",
-            price: "Custom",
-            period: "pricing",
-            yearlyPrice: "Contact Us",
-            features: [
-              "Everything in Professional",
-              "Full portfolio management",
-              "Bespoke acquisition strategies",
-              "Co-investment opportunities",
-              "Asset-level performance tracking",
-              "Exit strategy planning",
-              "Direct access to leadership team",
-              "Annual performance review"
-            ],
-            cta: "Contact Us",
-            popular: false
-          }
-        ],
-        trustBadges: [
-          "RICS Certified Advisors",
-          "€50M+ Deployed",
-          "15+ Years Experience",
-          "98% Client Satisfaction"
-        ]
-      },
-      caseStudies: {
-        title: "Investment Success Stories",
-        subtitle: "Real results from clients who partnered with us",
-        items: [
-          {
-            name: "Private Investor Portfolio",
-            location: "Brussels & Antwerp",
-            category: "Multi-Family Residential",
-            challenge: "High-net-worth individual seeking to diversify wealth into Belgian real estate with minimal time commitment.",
-            solution: "We identified three undervalued multi-family properties in emerging neighborhoods, managed renovations, and secured long-term tenants.",
-            results: [
-              {
-                label: "Portfolio Value",
-                value: "€2.4M"
-              },
-              {
-                label: "Net ROI",
-                value: "+18% annually"
-              },
-              {
-                label: "Cash-on-Cash",
-                value: "12.5%"
-              }
-            ],
-            testimonial: "Switch Invest's market knowledge and execution capabilities are exceptional. They've made real estate investing effortless."
-          },
-          {
-            name: "Family Office Fund",
-            location: "Ghent",
-            category: "Commercial Office",
-            challenge: "Family office wanted exposure to commercial real estate but lacked local market expertise and operational capabilities.",
-            solution: "We sourced and underwrote a Class B office building with repositioning potential, executed a value-add renovation, and re-tenanted at market rents.",
-            results: [
-              {
-                label: "Acquisition",
-                value: "€3.8M"
-              },
-              {
-                label: "Current Value",
-                value: "€5.1M"
-              },
-              {
-                label: "IRR",
-                value: "22%"
-              }
-            ],
-            testimonial: "Their institutional approach combined with local insights delivered returns beyond our expectations."
-          }
-        ]
-      },
-      faqs: {
-        title: "Investment FAQs",
-        subtitle: "Common questions about investing with SwitchInvest",
-        searchPlaceholder: "Search questions...",
-        stillHaveQuestions: "Need more information?",
-        contactUs: "Schedule a consultation with our investment team",
-        items: [
-          {
-            question: "What is the minimum investment amount?",
-            answer: "Our minimum investment threshold varies by opportunity type. For direct property investments, we typically work with investors committing €250,000 or more. For co-investment opportunities, minimums can be lower."
-          },
-          {
-            question: "What types of properties do you focus on?",
-            answer: "We invest across residential (multi-family, apartments), commercial (office, retail), and mixed-use properties. Our focus is on value-add opportunities in Belgium's major urban markets."
-          },
-          {
-            question: "How do you identify investment opportunities?",
-            answer: "We use a combination of proprietary market analytics, extensive broker relationships, off-market deal sourcing, and on-the-ground local expertise to identify opportunities before they become widely known."
-          },
-          {
-            question: "What returns can I expect?",
-            answer: "Target returns vary by asset class and strategy. Historically, our value-add investments have delivered 15-25% IRR, while stabilized income properties yield 8-12% annually. Past performance does not guarantee future results."
-          },
-          {
-            question: "How hands-on do I need to be?",
-            answer: "As little or as much as you prefer. Many clients choose our full-service management approach where we handle everything from acquisition to asset management. Others prefer a more collaborative approach."
-          },
-          {
-            question: "What fees do you charge?",
-            answer: "Our fee structure depends on the engagement model. Advisory fees range from 1-2% of invested capital annually, with potential performance fees on successful exits. We provide full transparency on all costs."
           }
         ]
       }
@@ -933,219 +732,6 @@ export const en: Translation = {
         ]
       }
     },
-    management: {
-      title: "Comprehensive Asset Management",
-      description: "End-to-end stewardship ensuring compliance, transparency, and sustained returns on your investments.",
-      features: [
-        "Transparent financial reporting",
-        "Proactive maintenance coordination",
-        "Tenant relations & leasing support",
-        "Regulatory compliance"
-      ],
-      hero: {
-        title: "Comprehensive Asset Management",
-        subtitle: "Professional Property Management for Maximum Returns",
-        description: "Protect and grow your real estate investments with our full-service property management. We handle everything from tenant placement to maintenance, financial reporting, and regulatory compliance—so you can enjoy passive income with peace of mind.",
-        cta: "Get Management Proposal",
-        benefits: [
-          "Professional tenant screening",
-          "24/7 maintenance coordination",
-          "Transparent financial reporting",
-          "Regulatory & legal compliance",
-          "Rent collection & accounting",
-          "Property inspections & care"
-        ]
-      },
-      process: {
-        title: "Our Management Process",
-        subtitle: "Comprehensive oversight from tenant placement to financial optimization",
-        steps: [
-          {
-            title: "Property Onboarding",
-            description: "We conduct a thorough property assessment, set competitive rental rates, and create a customized management plan aligned with your goals."
-          },
-          {
-            title: "Tenant Placement",
-            description: "Our team markets your property, screens applicants rigorously, and places qualified tenants with comprehensive lease agreements."
-          },
-          {
-            title: "Ongoing Operations",
-            description: "We handle rent collection, maintenance requests, property inspections, and vendor coordination with 24/7 tenant support."
-          },
-          {
-            title: "Financial Reporting",
-            description: "Receive detailed monthly statements, track income and expenses, and access real-time financial data through our owner portal."
-          },
-          {
-            title: "Strategic Optimization",
-            description: "We continuously monitor market conditions, recommend value-add improvements, and optimize operations for maximum returns."
-          }
-        ]
-      },
-      pricing: {
-        title: "Property Management Packages",
-        subtitle: "Flexible plans designed for different investor needs",
-        toggle: {
-          monthly: "Per Month",
-          yearly: "Yearly Contract",
-          savePercent: "Save 10%"
-        },
-        plans: [
-          {
-            name: "Essential",
-            description: "Core management services for hands-on owners",
-            price: "6%",
-            period: "of monthly rent",
-            yearlyPrice: "5.4% with annual contract",
-            features: [
-              "Tenant screening & placement",
-              "Rent collection & disbursement",
-              "Basic maintenance coordination",
-              "Monthly financial statements",
-              "Email support (business hours)",
-              "Annual property inspection"
-            ],
-            cta: "Get Started",
-            popular: false
-          },
-          {
-            name: "Professional",
-            description: "Full-service management for busy investors",
-            price: "8%",
-            period: "of monthly rent",
-            yearlyPrice: "7.2% with annual contract",
-            features: [
-              "Everything in Essential",
-              "24/7 emergency maintenance",
-              "Quarterly property inspections",
-              "Lease renewal management",
-              "Vendor network & coordination",
-              "Online owner portal access",
-              "Detailed annual reporting",
-              "Phone & email support"
-            ],
-            cta: "Most Popular",
-            popular: true
-          },
-          {
-            name: "Premium",
-            description: "White-glove service for luxury properties",
-            price: "10%",
-            period: "of monthly rent",
-            yearlyPrice: "9% with annual contract",
-            features: [
-              "Everything in Professional",
-              "Dedicated property manager",
-              "Monthly property inspections",
-              "Preventive maintenance programs",
-              "Capital improvement planning",
-              "Tax document preparation",
-              "Priority vendor response",
-              "Concierge tenant services"
-            ],
-            cta: "Contact Us",
-            popular: false
-          }
-        ],
-        trustBadges: [
-          "FEDERA Certified",
-          "Fully Insured",
-          "1,000+ Units Managed",
-          "99% Rent Collection Rate"
-        ]
-      },
-      caseStudies: {
-        title: "Management Success Stories",
-        subtitle: "How we've helped property owners maximize returns",
-        items: [
-          {
-            name: "Multi-Family Portfolio",
-            location: "Brussels",
-            category: "Residential Management",
-            challenge: "Owner managing 12-unit building remotely with high vacancy, frequent turnover, and maintenance issues impacting profitability.",
-            solution: "Implemented professional tenant screening, proactive maintenance programs, and competitive pricing strategy to stabilize occupancy and reduce costs.",
-            results: [
-              {
-                label: "Occupancy Rate",
-                value: "95% → 100%"
-              },
-              {
-                label: "Maintenance Costs",
-                value: "-30%"
-              },
-              {
-                label: "NOI Increase",
-                value: "+25%"
-              }
-            ],
-            testimonial: "They transformed my underperforming asset into a stable income producer. Couldn't be happier."
-          },
-          {
-            name: "Commercial Office Building",
-            location: "Antwerp",
-            category: "Commercial Management",
-            challenge: "Class A office building with 40% vacancy, aging systems, and lack of professional management reducing asset value.",
-            solution: "Comprehensive repositioning including targeted capital improvements, professional leasing, and enhanced tenant services.",
-            results: [
-              {
-                label: "Vacancy",
-                value: "40% → 8%"
-              },
-              {
-                label: "Rent/m²",
-                value: "+15%"
-              },
-              {
-                label: "Asset Value",
-                value: "+€1.2M"
-              }
-            ],
-            testimonial: "Their commercial expertise and tenant relationships brought our building back to life."
-          }
-        ]
-      },
-      faqs: {
-        title: "Management FAQs",
-        subtitle: "Everything you need to know about our property management services",
-        searchPlaceholder: "Search questions...",
-        stillHaveQuestions: "Still have questions?",
-        contactUs: "Speak with a property management specialist",
-        items: [
-          {
-            question: "What types of properties do you manage?",
-            answer: "We manage residential (single-family, multi-family, apartments), commercial (office, retail), and mixed-use properties throughout Belgium. Our team has expertise across all asset classes."
-          },
-          {
-            question: "How do you screen tenants?",
-            answer: "Our comprehensive screening includes credit checks, employment verification, rental history review, reference checks, and income verification. We only approve tenants who meet our strict criteria."
-          },
-          {
-            question: "How quickly do you respond to maintenance issues?",
-            answer: "Emergency maintenance requests receive immediate response (24/7). Routine maintenance is typically addressed within 24-48 hours. We have a network of vetted contractors ready to respond."
-          },
-          {
-            question: "When do I receive my rental income?",
-            answer: "We disburse owner proceeds by the 10th of each month via direct deposit. You'll receive a detailed statement showing all income, expenses, and your net distribution."
-          },
-          {
-            question: "What are your management fees?",
-            answer: "Our fees range from 6-10% of monthly rent depending on the service tier and property type. There are no hidden fees—all costs are transparent and detailed in our management agreement."
-          },
-          {
-            question: "Can I terminate the management agreement?",
-            answer: "Yes, our agreements typically have 30-60 day termination clauses. We believe in earning your business every month through exceptional service."
-          },
-          {
-            question: "Do you handle evictions?",
-            answer: "Yes, when necessary, we manage the entire eviction process including legal filings, court representation, and property recovery in compliance with Belgian law."
-          },
-          {
-            question: "How do I access financial reports?",
-            answer: "All clients receive monthly financial statements via email and have 24/7 access to our online owner portal where you can view real-time financial data, maintenance records, and property documents."
-          }
-        ]
-      }
-    }
   },
   process: {
     title: "How It Works",
@@ -1181,18 +767,18 @@ export const en: Translation = {
     ]
   },
   cta: {
-    title: "Ready to Unlock Your Home’s Value? Get Your No-Obligation Offer Now!",
-    tagline: "Fast. Fair. Hassle-Free.",
-    subtitle: "Receive a clear offer and close on your own timeline—no agents, no repairs, no hidden fees.",
-    primaryButton: "Submit Your Address in 2 Minutes →",
+    title: "Ready To Sell Your Property? We'll Buy It - Cash Offer in 24-48h!",
+    tagline: "We Are The Buyer. Direct Purchase. Fast Cash.",
+    subtitle: "Sell directly to SwitchInvest—no agents, no waiting for other buyers, no repairs needed, no hidden fees.",
+    primaryButton: "Get Your Cash Offer Now →",
     secondaryText: "Questions? Call us at +32 2 123 45 67 or email info@switchinvest.be",
-    consultation: "Schedule Your Consultation",
-    explore: "Explore Our Services"
+    consultation: "Sell Your Property To Us",
+    explore: "See How We Buy Properties"
   },
   testimonials: [
-    { client: "Marie, 68 (Retired Teacher)", quote: "After my husband passed, our house felt empty. Switch Invest gave me a fair offer in 24 hours. Two weeks later, I was on a train to Italy. Best decision ever!" },
-    { client: "Luc & Anouk (Young Family)", quote: "We inherited a crumbling house from my uncle. Switch Invest took it AS-IS, and now we’re using the cash for our daughter’s education fund." },
-    { client: "Ahmed (Entrepreneur)", quote: "Sold my apartment in Brussels to fund my startup. No regrets – the process was seamless!" }
+    { client: "Marie, 68 (Retired Teacher)", quote: "After my husband passed, our house felt empty. SwitchInvest bought my property with a fair cash offer in 24 hours. Two weeks later, I was on a train to Italy. Selling directly to them was the best decision ever!" },
+    { client: "Luc & Anouk (Young Family)", quote: "We inherited a crumbling house from my uncle. SwitchInvest purchased it AS-IS directly from us, and now we're using the cash for our daughter's education fund." },
+    { client: "Ahmed (Entrepreneur)", quote: "SwitchInvest bought my Brussels apartment to help me fund my startup. Selling directly to them - no regrets, the process was seamless!" }
   ],
   renovation_transparency: {
     title: "What Happens to Your Property After the Sale?",
@@ -1210,13 +796,13 @@ export const en: Translation = {
     { question: "How do I know your offer is fair?", answer: "We provide a detailed breakdown of our valuation. Compare it with local market reports!" }
   ],
   portfolio: {
-    title: "Exemplary Assets Under Management",
-    subtitle: "A selection of our successfully managed and developed properties across Belgium",
-    explore: "Explore Our Work",
-    filterTitle: "Filter by Property Category",
-    searchPlaceholder: "Search projects...",
-    showingResults: "Showing properties",
-    viewDetails: "View Details",
+    title: "Properties We've Purchased & Renovated",
+    subtitle: "Real examples of properties we bought directly from owners and transformed",
+    explore: "See Our Past Acquisitions",
+    filterTitle: "Filter by Property Type",
+    searchPlaceholder: "Search past purchases...",
+    showingResults: "Showing properties we've purchased",
+    viewDetails: "View Purchase Story",
     filters: {
       all: "All Projects",
       residential: "Residential",
@@ -1244,16 +830,16 @@ export const en: Translation = {
       reset: "Reset filters"
     },
     cta: {
-      label: "Investment Opportunities",
-      title: "Interested in investing with us?",
-      description: "Our expertise in the Belgian real estate market allows us to identify and develop high-potential properties. Contact us to discuss investment opportunities.",
-      contactButton: "Contact Us",
-      servicesButton: "Our Services"
+      label: "Want To Sell Your Property?",
+      title: "Ready to sell your property directly to us?",
+      description: "Just like these property owners, you can sell your property directly to SwitchInvest with a fast cash offer. We buy properties in any condition across Belgium.",
+      contactButton: "Get Your Cash Offer",
+      servicesButton: "See How We Buy"
     },
     items: [
       {
         title: "Étoile Residences",
-        description: "Transformation of an underperforming historic asset in a prime district into premier luxury residences. SwitchInvest navigated complex heritage regulations and executed a meticulous refurbishment program, delivering exceptional quality and attracting discerning international occupants.",
+        description: "We purchased this underperforming historic property directly from the owner in a prime Brussels district. After acquisition, SwitchInvest navigated complex heritage regulations and executed a meticulous refurbishment program, transforming it into premier luxury residences.",
         location: "Brussels",
         type: "Residential",
         size: "6,000 m²",
@@ -1269,7 +855,7 @@ export const en: Translation = {
       },
       {
         title: "Portside Business Centre",
-        description: "Strategic repositioning of an aging commercial building into a Class A office destination in a key economic hub. SwitchInvest implemented a comprehensive upgrade focusing on cutting-edge sustainability (BREEAM), smart technology integration, and premium tenant amenities.",
+        description: "We purchased this aging commercial building directly from the owner in Antwerp. After acquisition, SwitchInvest implemented a comprehensive upgrade focusing on cutting-edge sustainability (BREEAM), smart technology integration, and premium tenant amenities, repositioning it into a Class A office destination.",
         location: "Antwerp",
         type: "Commercial (Office)",
         size: "15,500 m²",
@@ -1285,7 +871,7 @@ export const en: Translation = {
       },
       {
         title: "North Sea Gateway Logistics",
-        description: "Optimization and targeted expansion of a strategically vital logistics facility to accommodate modern high-volume e-commerce and distribution requirements. SwitchInvest managed infrastructure enhancements and process flow redesign, creating a highly efficient, state-of-the-art hub.",
+        description: "We acquired this strategically vital logistics facility in Ghent's port area directly from the previous owner. After purchase, SwitchInvest managed infrastructure enhancements and process flow redesign to accommodate modern e-commerce needs, creating a highly efficient, state-of-the-art hub.",
         location: "Ghent (Port Area)",
         type: "Industrial (Logistics)",
         size: "42,000 m²",
@@ -1301,7 +887,7 @@ export const en: Translation = {
       },
       {
         title: "The Sablon Quarters",
-        description: "Meticulous redevelopment of a mixed-use property in a prestigious historical area, balancing preservation with contemporary needs. SwitchInvest curated a blend of high-end retail, exclusive office spaces, and luxury apartments, enhancing the asset's overall profile and yield.",
+        description: "We purchased this mixed-use property directly from the owner in Brussels' prestigious Sablon area. Following acquisition, SwitchInvest executed a meticulous redevelopment balancing preservation with contemporary needs, curating a blend of high-end retail, exclusive office spaces, and luxury apartments.",
         location: "Brussels",
         type: "Mixed-Use (Retail, Office, Residential)",
         size: "9,500 m²",
@@ -1387,12 +973,12 @@ export const en: Translation = {
   },
   about: {
     title: "About Us",
-    heroSubtitle: "Excellence in Belgian Real Estate Since 2010",
-    description: "Since 2010, SwitchInvest has empowered Belgian property owners to unlock their home's value quickly and effortlessly. We buy as-is with transparent offers in 24–48 hours, manage turnkey renovations, and provide strategic asset stewardship—ensuring compliance, seamless execution, and maximum returns for our clients.",
+    heroSubtitle: "Belgium's Leading Property Acquisition Company Since 2010",
+    description: "Since 2010, SwitchInvest has been purchasing properties directly from Belgian homeowners who need to sell quickly. We are the buyer - not an agency. We purchase properties AS-IS with transparent cash offers in 24–48 hours, then invest our own capital in renovations and development. Over 500 property owners have sold directly to us across Belgium.",
     storyTitle: "Our Story",
-    mission: "To provide discerning clients with impeccable, full-service property management that optimizes performance and reinforces trust.",
+    mission: "To provide Belgian property owners with the fastest, most transparent way to sell their properties by purchasing them directly with fair cash offers.",
     missionTitle: "Mission",
-    vision: "To set the benchmark in premium real estate management, renowned for our unwavering integrity, strategic insight, and discreet excellence.",
+    vision: "To become Belgium's most trusted direct property buyer, known for fair offers, fast closings, and helping property owners achieve their financial goals.",
     visionTitle: "Vision",
     values: {
       title: "Our Values",
@@ -1405,13 +991,13 @@ export const en: Translation = {
     },
     valuesSubtitle: "The principles that guide everything we do",
     stats: {
-      experience: "Years Experience",
-      properties: "Properties Managed",
-      assets: "Assets Under Management",
-      satisfaction: "Client Satisfaction"
+      experience: "Years Buying Properties",
+      properties: "Properties Purchased",
+      assets: "Paid Directly to Sellers",
+      satisfaction: "Seller Satisfaction"
     },
-    ctaTitle: "Ready to Work With Us?",
-    ctaSubtitle: "Let's discuss how we can help you unlock the value of your property",
+    ctaTitle: "Ready to Sell Your Property To Us?",
+    ctaSubtitle: "Let's discuss your property and provide you with a fast cash offer",
     ctaContactButton: "Contact Us Today",
     ctaServicesButton: "View Our Services",
     team: [
@@ -1652,8 +1238,8 @@ export const en: Translation = {
   },
   // Contact Page
   contact: {
-    title: "Get in Touch With Us",
-    subtitle: "We're here to answer your questions about real estate investment opportunities in Belgium.",
+    title: "Sell Your Property To SwitchInvest",
+    subtitle: "Get your free cash offer in 24-48 hours. We buy properties directly across Belgium.",
     quickContact: "Quick Contact",
     whatsapp: "Instant message",
     clickToCall: "Click to call",

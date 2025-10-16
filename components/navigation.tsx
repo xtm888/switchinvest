@@ -49,7 +49,7 @@ export function Navigation() {
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-center md:justify-between relative">
         <Link href="/" className="flex items-center">
-          <div 
+          <div
             className="relative transition-all duration-300 w-[180px] h-[60px]"
           >
             <Image
@@ -58,7 +58,7 @@ export function Navigation() {
               style={{ objectFit: "contain" }}
               src="/images/logo.png"
               sizes="180px"
-              priority 
+              priority
             />
           </div>
         </Link>
@@ -84,22 +84,10 @@ export function Navigation() {
                   🏠 {t("services.real_estate.title")}
                 </Link>
                 <Link
-                  href="/services/investment"
-                  className="block px-4 py-2 text-sm text-neutral-dark hover:bg-brand-beige/20 hover:text-brand-gold transition-colors"
-                >
-                  💰 {t("services.investment.title")}
-                </Link>
-                <Link
                   href="/services/development"
                   className="block px-4 py-2 text-sm text-neutral-dark hover:bg-brand-beige/20 hover:text-brand-gold transition-colors"
                 >
                   🏗️ {t("services.development.title")}
-                </Link>
-                <Link
-                  href="/services/management"
-                  className="block px-4 py-2 text-sm text-neutral-dark hover:bg-brand-beige/20 hover:text-brand-gold transition-colors"
-                >
-                  📊 {t("services.management.title")}
                 </Link>
               </div>
             </div>
@@ -187,25 +175,11 @@ export function Navigation() {
                     🏠 {t("services.real_estate.title")}
                   </Link>
                   <Link
-                    href="/services/investment"
-                    className="block text-brand-teal/80 py-1 hover-reveal text-sm"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    💰 {t("services.investment.title")}
-                  </Link>
-                  <Link
                     href="/services/development"
                     className="block text-brand-teal/80 py-1 hover-reveal text-sm"
                     onClick={() => setIsOpen(false)}
                   >
                     🏗️ {t("services.development.title")}
-                  </Link>
-                  <Link
-                    href="/services/management"
-                    className="block text-brand-teal/80 py-1 hover-reveal text-sm"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    📊 {t("services.management.title")}
                   </Link>
                 </div>
               </motion.div>

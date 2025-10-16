@@ -12,9 +12,7 @@ export default function ServicesPage() {
 
   const serviceKeys = [
     { key: "real_estate", icon: "🏠" },
-    { key: "investment", icon: "💰" },
     { key: "development", icon: "🏗️" },
-    { key: "management", icon: "📊" },
   ]
 
   return (
@@ -88,7 +86,7 @@ export default function ServicesPage() {
       {/* Services Grid */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {serviceKeys.map((service, index) => (
               <motion.div
                 key={index}
