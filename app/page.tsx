@@ -29,13 +29,40 @@
  */
 
 import { useTranslation } from "@/hooks/use-translation"
+import dynamic from "next/dynamic"
 import AnimatedHero from "@/components/home/AnimatedHero"
 import AnimatedStats from "@/components/home/AnimatedStats"
-import TestimonialsCarousel from "@/components/home/TestimonialsCarousel"
-import TrustBadges from "@/components/home/TrustBadges"
-import FeaturedBlogCard from "@/components/home/FeaturedBlogCard"
-import EnhancedMapSection from "@/components/home/EnhancedMapSection"
 import StructuredData from '@/components/structured-data'
+
+// Lazy load heavy components to reduce initial bundle
+const EnhancedMapSection = dynamic(
+  () => import("@/components/home/EnhancedMapSection"),
+  {
+    ssr: false,
+    loading: () => <div className="h-[500px] bg-gray-100 animate-pulse" />
+  }
+)
+
+const TestimonialsCarousel = dynamic(
+  () => import("@/components/home/TestimonialsCarousel"),
+  {
+    loading: () => <div className="h-[400px] bg-gray-100 animate-pulse" />
+  }
+)
+
+const TrustBadges = dynamic(
+  () => import("@/components/home/TrustBadges"),
+  {
+    loading: () => <div className="h-[300px] bg-gray-100 animate-pulse" />
+  }
+)
+
+const FeaturedBlogCard = dynamic(
+  () => import("@/components/home/FeaturedBlogCard"),
+  {
+    loading: () => <div className="h-[400px] bg-gray-100 animate-pulse" />
+  }
+)
 
 // Import existing components that are still good
 import {

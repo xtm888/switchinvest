@@ -47,54 +47,15 @@ const nextConfig = {
   // Performance optimizations
   experimental: {
     optimizeCss: true,
-    optimizePackageImports: ['lucide-react', 'framer-motion', 'react-leaflet', 'd3'],
+    optimizePackageImports: ['lucide-react'],
   },
-  // Webpack optimizations
+  // Webpack optimizations - Keep it simple
   webpack: (config, { isServer }) => {
-    // Optimize bundle size
     if (!isServer) {
+      // Only optimize for client-side
       config.optimization = {
         ...config.optimization,
-        moduleIds: 'deterministic',
-        runtimeChunk: 'single',
-        splitChunks: {
-          chunks: 'all',
-          cacheGroups: {
-            default: false,
-            vendors: false,
-            // Vendor chunk for node_modules
-            vendor: {
-              name: 'vendor',
-              chunks: 'all',
-              test: /node_modules/,
-              priority: 20
-            },
-            // Separate chunk for large libraries
-            framerMotion: {
-              name: 'framer-motion',
-              test: /[\\/]node_modules[\\/]framer-motion[\\/]/,
-              priority: 30,
-            },
-            maps: {
-              name: 'maps',
-              test: /[\\/]node_modules[\\/](leaflet|react-leaflet)[\\/]/,
-              priority: 30,
-            },
-            d3: {
-              name: 'd3-charts',
-              test: /[\\/]node_modules[\\/]d3[\\/]/,
-              priority: 30,
-            },
-            // Common chunk for shared code
-            common: {
-              name: 'common',
-              minChunks: 2,
-              priority: 10,
-              reuseExistingChunk: true,
-              enforce: true
-            },
-          }
-        }
+        minimize: true,
       };
     }
 
