@@ -2,7 +2,7 @@
 
 import { ServiceCard } from "@/components/service-card"
 import { useTranslation } from "@/hooks/use-translation"
-import { motion } from "framer-motion"
+import { m, LazyMotion, domAnimation } from "framer-motion"
 import Link from "next/link"
 import { ChevronRight } from "lucide-react"
 import SectionDivider from "@/components/home/SectionDivider"
@@ -16,7 +16,7 @@ export default function ServicesPage() {
   ]
 
   return (
-    <motion.main
+    <m.main
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -25,7 +25,7 @@ export default function ServicesPage() {
       {/* Hero Section - Modern design matching blog/portfolio */}
       <section className="relative bg-gradient-to-b from-brand-teal to-brand-teal/90 py-20 text-white overflow-hidden">
         {/* Floating Background Elements */}
-        <motion.div
+        <m.div
           animate={{
             y: [0, -25, 0],
             x: [0, 10, 0],
@@ -37,7 +37,7 @@ export default function ServicesPage() {
           }}
           className="absolute top-20 right-20 w-36 h-36 bg-brand-gold/10 rounded-full blur-3xl"
         />
-        <motion.div
+        <m.div
           animate={{
             y: [0, 15, 0],
             x: [0, -10, 0],
@@ -62,7 +62,7 @@ export default function ServicesPage() {
             </span>
           </div>
 
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -76,7 +76,7 @@ export default function ServicesPage() {
             <p className="text-xl text-brand-beige/90 max-w-2xl mx-auto">
               {t("services.subtitle") || "Comprehensive real estate solutions tailored to your needs"}
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
@@ -88,7 +88,7 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {serviceKeys.map((service, index) => (
-              <motion.div
+              <m.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -96,11 +96,11 @@ export default function ServicesPage() {
                 className="col-span-1"
               >
                 <ServiceCard serviceKey={service.key} icon={service.icon} t={t} />
-              </motion.div>
+              </m.div>
             ))}
           </div>
         </div>
       </section>
-    </motion.main>
+    </m.main>
   )
 }

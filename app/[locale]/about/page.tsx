@@ -1,7 +1,7 @@
 "use client"
 
 import { useTranslation } from "@/hooks/use-translation"
-import { motion } from "framer-motion"
+import { m, LazyMotion, domAnimation } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 import { ChevronRight, Award, Users, TrendingUp, Heart } from "lucide-react"
@@ -136,7 +136,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <motion.main
+    <m.main
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -147,7 +147,7 @@ export default function AboutPage() {
       {/* Hero Section - Modern design */}
       <section className="relative bg-gradient-to-b from-brand-teal to-brand-teal/90 py-20 text-white overflow-hidden">
         {/* Floating Background Elements */}
-        <motion.div
+        <m.div
           animate={{
             y: [0, -20, 0],
             rotate: [0, 5, 0],
@@ -159,7 +159,7 @@ export default function AboutPage() {
           }}
           className="absolute top-10 right-10 w-32 h-32 bg-brand-gold/10 rounded-full blur-2xl"
         />
-        <motion.div
+        <m.div
           animate={{
             y: [0, 20, 0],
             rotate: [0, -5, 0],
@@ -184,7 +184,7 @@ export default function AboutPage() {
             </span>
           </div>
 
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -198,7 +198,7 @@ export default function AboutPage() {
             <p className="text-xl text-brand-beige/90 max-w-2xl mx-auto">
               {t("about.heroSubtitle") || "Excellence in Belgian Real Estate Since 2010"}
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
@@ -210,7 +210,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center max-w-7xl mx-auto">
             {/* Left Column: Text Content */}
-            <motion.div
+            <m.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -249,10 +249,10 @@ export default function AboutPage() {
                   </CardContent>
                 </Card>
               </div>
-            </motion.div>
+            </m.div>
 
             {/* Right Column: Image */}
-            <motion.div
+            <m.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -261,7 +261,7 @@ export default function AboutPage() {
               <div className="relative w-full aspect-video overflow-hidden rounded-xl shadow-2xl border-4 border-brand-gold/20">
                 <PlaceholderImage variant="property" category="Our Office" />
               </div>
-            </motion.div>
+            </m.div>
           </div>
         </div>
       </section>
@@ -272,7 +272,7 @@ export default function AboutPage() {
       {/* Values Section */}
       <section className="py-16 md:py-24 bg-brand-beige">
         <div className="container mx-auto px-4 md:px-6">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -285,11 +285,11 @@ export default function AboutPage() {
             <p className="text-lg text-neutral-dark/80 max-w-2xl mx-auto">
               {t("about.valuesSubtitle") || "The principles that guide everything we do"}
             </p>
-          </motion.div>
+          </m.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
             {valuesObj.items.map((value, index) => (
-              <motion.div
+              <m.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -307,7 +307,7 @@ export default function AboutPage() {
                     </h3>
                   </CardContent>
                 </Card>
-              </motion.div>
+              </m.div>
             ))}
           </div>
         </div>
@@ -338,7 +338,7 @@ export default function AboutPage() {
               { number: "€50M+", label: t("about.stats.assets") || "Assets Under Management" },
               { number: "98%", label: t("about.stats.satisfaction") || "Client Satisfaction" }
             ].map((stat, index) => (
-              <motion.div
+              <m.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -352,7 +352,7 @@ export default function AboutPage() {
                 <div className="text-sm md:text-base text-brand-beige/90">
                   {stat.label}
                 </div>
-              </motion.div>
+              </m.div>
             ))}
           </div>
         </div>
@@ -364,7 +364,7 @@ export default function AboutPage() {
       {/* CTA Section */}
       <section className="py-16 md:py-24 bg-brand-beige">
         <div className="container mx-auto px-4 md:px-6">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -381,29 +381,29 @@ export default function AboutPage() {
                 </p>
                 <div className="flex gap-4 justify-center flex-wrap">
                   <Link href="/contact">
-                    <motion.button
+                    <m.button
                       whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(218, 165, 32, 0.5)" }}
                       whileTap={{ scale: 0.95 }}
                       className="bg-brand-gold hover:bg-brand-gold/90 text-neutral-dark font-serif px-8 py-3 rounded-lg transition-colors font-semibold"
                     >
                       {t("about.ctaContactButton") || "Contact Us Today"}
-                    </motion.button>
+                    </m.button>
                   </Link>
                   <Link href="/services">
-                    <motion.button
+                    <m.button
                       whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(255, 255, 255, 0.3)" }}
                       whileTap={{ scale: 0.95 }}
                       className="bg-white/10 hover:bg-white/20 text-white font-serif px-8 py-3 rounded-lg transition-colors font-semibold border border-white/30"
                     >
                       {t("about.ctaServicesButton") || "View Our Services"}
-                    </motion.button>
+                    </m.button>
                   </Link>
                 </div>
               </CardContent>
             </Card>
-          </motion.div>
+          </m.div>
         </div>
       </section>
-    </motion.main>
+    </m.main>
   )
 }

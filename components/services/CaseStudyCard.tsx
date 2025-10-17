@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { m, LazyMotion, domAnimation } from "framer-motion"
 import { LucideIcon, TrendingUp, Clock, Euro, ArrowRight } from "lucide-react"
 import Link from "next/link"
 
@@ -36,21 +36,21 @@ interface CaseStudyCardProps {
 
 export function CaseStudyCard({ caseStudy, index = 0 }: CaseStudyCardProps) {
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="h-full"
     >
-      <motion.div
+      <m.div
         whileHover={{ y: -5 }}
         transition={{ duration: 0.3 }}
         className="h-full bg-white rounded-2xl border border-brand-beige/30 shadow-lg hover:shadow-2xl transition-shadow overflow-hidden group"
       >
         {/* Header */}
         <div className="bg-gradient-to-br from-brand-teal to-brand-teal/90 p-6 text-white relative overflow-hidden">
-          <motion.div
+          <m.div
             animate={{
               scale: [1, 1.2, 1],
               rotate: [0, 90, 0],
@@ -110,7 +110,7 @@ export function CaseStudyCard({ caseStudy, index = 0 }: CaseStudyCardProps) {
             {/* Metrics */}
             <div className="grid grid-cols-3 gap-3">
               {caseStudy.metrics.map((metric, idx) => (
-                <motion.div
+                <m.div
                   key={idx}
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
@@ -125,7 +125,7 @@ export function CaseStudyCard({ caseStudy, index = 0 }: CaseStudyCardProps) {
                   <div className="text-xs text-neutral-dark/60">
                     {metric.label}
                   </div>
-                </motion.div>
+                </m.div>
               ))}
             </div>
           </div>
@@ -148,18 +148,18 @@ export function CaseStudyCard({ caseStudy, index = 0 }: CaseStudyCardProps) {
           {/* Read More Link */}
           {caseStudy.link && (
             <Link href={caseStudy.link}>
-              <motion.div
+              <m.div
                 whileHover={{ x: 5 }}
                 className="flex items-center gap-2 text-brand-teal font-semibold text-sm group-hover:text-brand-gold transition-colors"
               >
                 <span>Lire l'étude complète</span>
                 <ArrowRight className="w-4 h-4" />
-              </motion.div>
+              </m.div>
             </Link>
           )}
         </div>
-      </motion.div>
-    </motion.div>
+      </m.div>
+    </m.div>
   )
 }
 
@@ -183,7 +183,7 @@ export default function CaseStudiesSection({
     <section className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -199,7 +199,7 @@ export default function CaseStudiesSection({
           <p className="text-lg md:text-xl text-neutral-dark/70 max-w-2xl mx-auto">
             {subtitle}
           </p>
-        </motion.div>
+        </m.div>
 
         {/* Case Studies Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">

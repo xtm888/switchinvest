@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef } from "react"
-import { motion, useInView } from "framer-motion"
+import { m, LazyMotion, domAnimation, useInView } from "framer-motion"
 import { useTranslation } from "@/hooks/use-translation"
 import {
   Accordion,
@@ -21,7 +21,7 @@ export function FAQ() {
   return (
     <section ref={ref} className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 md:px-6">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
@@ -63,7 +63,7 @@ export function FAQ() {
               {t("home.faq.contactButton") || "Contactez-nous"}
             </a>
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   )

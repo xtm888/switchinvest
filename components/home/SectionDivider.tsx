@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { m, LazyMotion, domAnimation } from "framer-motion"
 
 /**
  * Premium Section Dividers
@@ -46,9 +46,10 @@ export default function SectionDivider({
 
   if (variant === "gradient") {
     return (
+      <LazyMotion features={domAnimation} strict>
       <div className={`relative h-1 ${className}`}>
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-brand-gold to-transparent opacity-50" />
-        <motion.div
+        <m.div
           animate={{
             x: ["-100%", "100%"],
           }}
@@ -60,14 +61,16 @@ export default function SectionDivider({
           className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-50"
         />
       </div>
+      </LazyMotion>
     )
   }
 
   if (variant === "dots") {
     return (
+      <LazyMotion features={domAnimation} strict>
       <div className={`relative flex items-center justify-center gap-2 py-8 ${className}`}>
         {[...Array(5)].map((_, i) => (
-          <motion.div
+          <m.div
             key={i}
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
@@ -79,6 +82,7 @@ export default function SectionDivider({
           />
         ))}
       </div>
+      </LazyMotion>
     )
   }
 

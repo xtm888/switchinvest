@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { m, LazyMotion, domAnimation, AnimatePresence } from "framer-motion"
 import { Phone, MessageCircle, X, Mail, MapPin } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -60,7 +60,7 @@ export function StickyCTA() {
   return (
     <AnimatePresence>
       {isVisible && (
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 100 }}
@@ -70,7 +70,7 @@ export function StickyCTA() {
           {/* Expanded Menu */}
           <AnimatePresence>
             {isExpanded && (
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, scale: 0.8, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.8, y: 20 }}
@@ -163,12 +163,12 @@ export function StickyCTA() {
                     </Button>
                   </Link>
                 </div>
-              </motion.div>
+              </m.div>
             )}
           </AnimatePresence>
 
           {/* Main CTA Button */}
-          <motion.button
+          <m.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => setIsExpanded(!isExpanded)}
@@ -188,11 +188,11 @@ export function StickyCTA() {
                 <span className="hidden md:inline relative z-10">{t("contact.quickContact") || "Contact Rapide"}</span>
               </>
             )}
-          </motion.button>
+          </m.button>
 
           {/* Notification Badge */}
           {!isExpanded && (
-            <motion.div
+            <m.div
               initial={{ scale: 0 }}
               animate={{ scale: [1, 1.2, 1] }}
               transition={{
@@ -204,9 +204,9 @@ export function StickyCTA() {
               className="absolute -top-1 -right-1 bg-gradient-to-br from-red-500 to-red-600 text-white text-xs rounded-full w-7 h-7 flex items-center justify-center font-bold shadow-lg border-2 border-white"
             >
               !
-            </motion.div>
+            </m.div>
           )}
-        </motion.div>
+        </m.div>
       )}
     </AnimatePresence>
   )

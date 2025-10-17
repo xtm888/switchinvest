@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { m, LazyMotion, domAnimation } from "framer-motion"
 import { MapPin, TrendingUp, Clock, Award, Users, Quote } from "lucide-react"
 import { useTranslation } from "@/hooks/use-translation"
 import { LazyLeafletMap } from "@/components/lazy-components"
@@ -82,6 +82,7 @@ export default function EnhancedMapSection() {
   ]
 
   return (
+    <LazyMotion features={domAnimation} strict>
     <section className="relative bg-gradient-to-b from-brand-beige via-white to-brand-beige pt-24 pb-32 overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-brand-teal/5 rounded-full blur-3xl" />
@@ -89,7 +90,7 @@ export default function EnhancedMapSection() {
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         {/* Section Header */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -109,19 +110,19 @@ export default function EnhancedMapSection() {
           <p className="text-lg md:text-xl text-neutral-dark/70 max-w-2xl mx-auto">
             {t("home.map.subtitle") || "Service disponible dans toute la Belgique avec expertise locale"}
           </p>
-        </motion.div>
+        </m.div>
 
         {/* Map Container with Stats Overlay */}
         <div className="relative max-w-7xl mx-auto">
           {/* Animated Stats Grid - Positioned Above Map */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
             {regionalStats.map((stat, index) => (
-              <motion.div
+              <m.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
                 whileHover={{ y: -8, scale: 1.02 }}
                 className="group"
               >
@@ -135,32 +136,9 @@ export default function EnhancedMapSection() {
 
                   {/* Icon */}
                   <div className="relative">
-                    <motion.div
-                      className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br ${stat.color} text-white mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300`}
-                      animate={{
-                        rotate: [0, 5, -5, 0],
-                      }}
-                      transition={{
-                        duration: 4,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                        delay: index * 0.2,
-                      }}
-                    >
-                      <motion.div
-                        animate={{
-                          scale: [1, 1.1, 1],
-                        }}
-                        transition={{
-                          duration: 2,
-                          repeat: Infinity,
-                          ease: "easeInOut",
-                          delay: index * 0.3,
-                        }}
-                      >
-                        <stat.icon className="w-6 h-6" />
-                      </motion.div>
-                    </motion.div>
+                    <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br ${stat.color} text-white mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                      <stat.icon className="w-6 h-6" />
+                    </div>
 
                     {/* Value */}
                     <div className="text-3xl md:text-4xl font-bold text-brand-teal mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-brand-teal group-hover:to-brand-gold transition-all duration-300">
@@ -181,16 +159,16 @@ export default function EnhancedMapSection() {
                   {/* Hover effect indicator */}
                   <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${stat.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 rounded-b-2xl`} />
                 </div>
-              </motion.div>
+              </m.div>
             ))}
           </div>
 
           {/* Map Container with Enhanced Styling */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
             className="relative"
           >
             {/* Decorative border wrapper */}
@@ -205,12 +183,12 @@ export default function EnhancedMapSection() {
               {/* Regional Testimonial Snippets - Floating over map */}
               <div className="absolute inset-0 pointer-events-none z-10 hidden lg:block">
                 {regionalTestimonials.map((testimonial, index) => (
-                  <motion.div
+                  <m.div
                     key={index}
                     initial={{ opacity: 0, scale: 0.8, y: 20 }}
                     whileInView={{ opacity: 1, scale: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.9 + index * 0.1 }}
+                    transition={{ duration: 0.5, delay: 0.2 + index * 0.05 }}
                     whileHover={{ scale: 1.05, y: -4 }}
                     className={`absolute ${testimonial.position} max-w-xs pointer-events-auto`}
                   >
@@ -224,20 +202,9 @@ export default function EnhancedMapSection() {
 
                       <div className="relative z-10">
                         {/* Quote icon */}
-                        <motion.div
-                          animate={{
-                            rotate: [0, 5, -5, 0],
-                          }}
-                          transition={{
-                            duration: 3,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                            delay: index * 0.5,
-                          }}
-                          className={`inline-flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-to-br ${testimonial.color} text-white mb-2 shadow-md`}
-                        >
+                        <div className={`inline-flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-to-br ${testimonial.color} text-white mb-2 shadow-md`}>
                           <Quote className="w-4 h-4" />
-                        </motion.div>
+                        </div>
 
                         {/* Region badge */}
                         <div className="text-xs font-semibold text-brand-teal mb-2">
@@ -258,16 +225,16 @@ export default function EnhancedMapSection() {
                       {/* Hover accent line */}
                       <div className={`absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r ${testimonial.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 rounded-b-xl`} />
                     </div>
-                  </motion.div>
+                  </m.div>
                 ))}
               </div>
 
               {/* Floating "View Properties" Badge */}
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.8 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
                 className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10"
               >
                 <div className="relative bg-white/80 backdrop-blur-2xl px-6 py-3 rounded-full shadow-xl border border-white/30 hover:border-brand-gold/50 flex items-center gap-3 overflow-hidden group transition-all duration-300">
@@ -283,25 +250,26 @@ export default function EnhancedMapSection() {
                   </span>
                   <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse relative z-10" />
                 </div>
-              </motion.div>
+              </m.div>
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Regional Highlights - Optional Bottom Section */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.6 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-12 text-center"
           >
             <p className="text-sm text-neutral-dark/60 max-w-3xl mx-auto">
               {t("home.map.footerText") ||
                 "Our expert team operates across all Belgian provinces with local market knowledge. From Brussels to Antwerp, Liège to Ghent - we're here to help you unlock your property's value."}
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>
+    </LazyMotion>
   )
 }

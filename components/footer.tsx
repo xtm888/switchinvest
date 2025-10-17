@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { motion } from "framer-motion"
+import { m, LazyMotion, domAnimation } from "framer-motion"
 import { Globe, Shield, Lock, Mail, Linkedin, Twitter, Facebook, Send } from "lucide-react"
 import { useTranslation } from "@/hooks/use-translation"
 import { useLanguage } from "@/contexts/language-context"
@@ -33,6 +33,7 @@ export function Footer() {
   }
 
   return (
+    <LazyMotion features={domAnimation} strict>
     <footer className="relative">
       {/* Wave Divider */}
       <SectionDivider variant="wave" />
@@ -40,7 +41,7 @@ export function Footer() {
       {/* Main Footer Content */}
       <div className="bg-gradient-to-b from-brand-teal to-brand-teal/90 text-brand-beige/80 pt-16 pb-8 relative overflow-hidden">
         {/* Floating Background Elements */}
-        <motion.div
+        <m.div
           animate={{
             y: [0, -20, 0],
             scale: [1, 1.1, 1],
@@ -52,7 +53,7 @@ export function Footer() {
           }}
           className="absolute top-10 right-10 w-40 h-40 bg-brand-gold/5 rounded-full blur-3xl"
         />
-        <motion.div
+        <m.div
           animate={{
             y: [0, 20, 0],
             scale: [1, 0.9, 1],
@@ -66,7 +67,7 @@ export function Footer() {
         />
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           {/* Premium Newsletter Section */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -75,13 +76,13 @@ export function Footer() {
           >
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 md:p-12 border border-white/20">
               <div className="max-w-3xl mx-auto text-center">
-                <motion.div
+                <m.div
                   animate={{ rotate: [0, 360] }}
                   transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                   className="inline-block mb-4"
                 >
                   <Mail className="w-12 h-12 text-brand-gold" />
-                </motion.div>
+                </m.div>
                 <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 font-serif">
                   {t("home.newsletter.title") || "Restez Informé de Nos Opportunités"}
                 </h3>
@@ -98,7 +99,7 @@ export function Footer() {
                     className="flex-1 px-4 py-3 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-brand-gold"
                     aria-label="Email address"
                   />
-                  <motion.button
+                  <m.button
                     type="submit"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -106,18 +107,18 @@ export function Footer() {
                   >
                     <Send className="w-4 h-4" />
                     {t("home.newsletter.button") || "S'abonner"}
-                  </motion.button>
+                  </m.button>
                 </form>
                 <p className="text-xs text-white/50 mt-4">
                   {t("home.newsletter.privacy") || "🔒 Vos données sont protégées. Désabonnement possible à tout moment."}
                 </p>
               </div>
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Footer Columns */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -134,23 +135,23 @@ export function Footer() {
 
               {/* Trust Badges with Glow */}
               <div className="flex items-center gap-3 mb-6">
-                <motion.div
+                <m.div
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   className="p-2 bg-white/10 rounded-lg border border-white/20"
                 >
                   <Shield className="h-5 w-5 text-brand-gold" />
-                </motion.div>
-                <motion.div
+                </m.div>
+                <m.div
                   whileHover={{ scale: 1.1, rotate: -5 }}
                   className="p-2 bg-white/10 rounded-lg border border-white/20"
                 >
                   <Lock className="h-5 w-5 text-brand-gold" />
-                </motion.div>
+                </m.div>
               </div>
 
               {/* Social Media Icons - Optimized for accessibility */}
               <div className="flex items-center gap-3">
-                <motion.a
+                <m.a
                   href="https://linkedin.com"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -159,8 +160,8 @@ export function Footer() {
                   aria-label="Follow us on LinkedIn"
                 >
                   <Linkedin className="h-5 w-5 text-brand-beige group-hover:text-brand-gold transition-colors" />
-                </motion.a>
-                <motion.a
+                </m.a>
+                <m.a
                   href="https://twitter.com"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -169,8 +170,8 @@ export function Footer() {
                   aria-label="Follow us on Twitter"
                 >
                   <Twitter className="h-5 w-5 text-brand-beige group-hover:text-brand-gold transition-colors" />
-                </motion.a>
-                <motion.a
+                </m.a>
+                <m.a
                   href="https://facebook.com"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -179,11 +180,11 @@ export function Footer() {
                   aria-label="Follow us on Facebook"
                 >
                   <Facebook className="h-5 w-5 text-brand-beige group-hover:text-brand-gold transition-colors" />
-                </motion.a>
+                </m.a>
               </div>
-            </motion.div>
+            </m.div>
 
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -192,23 +193,23 @@ export function Footer() {
               <h4 className="font-bold text-white mb-4 font-serif">{t("footer.services.title")}</h4>
               <ul className="space-y-2">
                 <li>
-                  <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                  <m.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
                     <Link href={`/${language}/services/real-estate`} className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
                       {t("services.real_estate.title") || "We Buy Your Property"}
                     </Link>
-                  </motion.div>
+                  </m.div>
                 </li>
                 <li>
-                  <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                  <m.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
                     <Link href={`/${language}/services/development`} className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
                       {t("services.development.title") || "Turnkey Renovations"}
                     </Link>
-                  </motion.div>
+                  </m.div>
                 </li>
               </ul>
-            </motion.div>
+            </m.div>
 
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -217,37 +218,37 @@ export function Footer() {
               <h4 className="font-bold text-white mb-4 font-serif">{t("footer.company.title")}</h4>
               <ul className="space-y-2">
                 <li>
-                  <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                  <m.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
                     <Link href={`/${language}/about`} className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
                       {t("footer.company.about")}
                     </Link>
-                  </motion.div>
+                  </m.div>
                 </li>
                 <li>
-                  <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                  <m.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
                     <Link href={`/${language}/portfolio`} className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
                       {t("portfolio.title") || "Portfolio"}
                     </Link>
-                  </motion.div>
+                  </m.div>
                 </li>
                 <li>
-                  <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                  <m.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
                     <Link href={`/${language}/blog`} className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
                       {t("notFound.links.blog") || "Blog"}
                     </Link>
-                  </motion.div>
+                  </m.div>
                 </li>
                 <li>
-                  <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                  <m.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
                     <Link href={`/${language}/contact`} className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
                       {t("footer.company.contact")}
                     </Link>
-                  </motion.div>
+                  </m.div>
                 </li>
               </ul>
-            </motion.div>
+            </m.div>
 
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -256,48 +257,48 @@ export function Footer() {
               <h4 className="font-bold text-white mb-4 font-serif">{t("footer.legal.title")}</h4>
               <ul className="space-y-2">
                 <li>
-                  <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                  <m.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
                     <Link href={`/${language}/privacy-policy`} className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
                       {t("footer.legal.privacy")}
                     </Link>
-                  </motion.div>
+                  </m.div>
                 </li>
                 <li>
-                  <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                  <m.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
                     <Link href={`/${language}/terms`} className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
                       {t("footer.legal.terms")}
                     </Link>
-                  </motion.div>
+                  </m.div>
                 </li>
                 <li>
-                  <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                  <m.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
                     <Link href={`/${language}/privacy-policy#cookies`} className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
                       {t("footer.legal.cookies")}
                     </Link>
-                  </motion.div>
+                  </m.div>
                 </li>
                 <li>
-                  <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                  <m.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
                     <Link href={`/${language}/privacy-policy#gdpr`} className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
                       {t("footer.legal.gdpr")}
                     </Link>
-                  </motion.div>
+                  </m.div>
                 </li>
               </ul>
-            </motion.div>
+            </m.div>
         </div>
 
           <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center">
-            <motion.div
+            <m.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               className="text-xs mb-4 md:mb-0 text-brand-beige/70"
             >
               &copy; {new Date().getFullYear()} SwitchInvest.be. {t("footer.copyright")}
-            </motion.div>
+            </m.div>
             <div className="flex items-center gap-4">
-              <motion.div
+              <m.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
@@ -305,9 +306,9 @@ export function Footer() {
               >
                 <Globe className="h-4 w-4 mr-1" />
                 <span>{t("footer.belgium")}</span>
-              </motion.div>
+              </m.div>
               <div className="flex gap-3">
-                <motion.button
+                <m.button
                   type="button"
                   onClick={() => handleLanguageSwitch("nl")}
                   whileHover={{ scale: 1.1, y: -2 }}
@@ -317,8 +318,8 @@ export function Footer() {
                   aria-label={`Switch to Dutch language`}
                 >
                   NL
-                </motion.button>
-                <motion.button
+                </m.button>
+                <m.button
                   type="button"
                   onClick={() => handleLanguageSwitch("fr")}
                   whileHover={{ scale: 1.1, y: -2 }}
@@ -328,8 +329,8 @@ export function Footer() {
                   aria-label={`Switch to French language`}
                 >
                   FR
-                </motion.button>
-                <motion.button
+                </m.button>
+                <m.button
                   type="button"
                   onClick={() => handleLanguageSwitch("de")}
                   whileHover={{ scale: 1.1, y: -2 }}
@@ -339,8 +340,8 @@ export function Footer() {
                   aria-label={`Switch to German language`}
                 >
                   DE
-                </motion.button>
-                <motion.button
+                </m.button>
+                <m.button
                   type="button"
                   onClick={() => handleLanguageSwitch("en")}
                   whileHover={{ scale: 1.1, y: -2 }}
@@ -350,12 +351,13 @@ export function Footer() {
                   aria-label={`Switch to English language`}
                 >
                   EN
-                </motion.button>
+                </m.button>
               </div>
             </div>
           </div>
         </div>
       </div>
     </footer>
+    </LazyMotion>
   )
 }

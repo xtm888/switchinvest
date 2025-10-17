@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Calendar, Clock, ArrowRight } from "lucide-react"
 import Link from "next/link"
-import { motion } from "framer-motion"
+import { m, LazyMotion, domAnimation } from "framer-motion"
 import StructuredData from '@/components/structured-data'
 import SectionDivider from '@/components/home/SectionDivider'
 import { blogPosts, categories } from "@/lib/blog-data"
@@ -15,7 +15,7 @@ export default function BlogPage() {
   const { t } = useTranslation()
 
   return (
-    <motion.main
+    <m.main
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -26,7 +26,7 @@ export default function BlogPage() {
       {/* Hero Section */}
       <section className="relative bg-gradient-to-b from-brand-teal to-brand-teal/90 py-20 text-white overflow-hidden">
         {/* Floating Background Elements */}
-        <motion.div
+        <m.div
           animate={{
             y: [0, -20, 0],
             rotate: [0, 10, 0],
@@ -38,7 +38,7 @@ export default function BlogPage() {
           }}
           className="absolute top-16 right-16 w-32 h-32 bg-brand-gold/10 rounded-full blur-2xl"
         />
-        <motion.div
+        <m.div
           animate={{
             y: [0, 20, 0],
             rotate: [0, -10, 0],
@@ -52,7 +52,7 @@ export default function BlogPage() {
         />
 
         <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -66,7 +66,7 @@ export default function BlogPage() {
             <p className="text-xl text-brand-beige/90 max-w-2xl mx-auto">
               {t("home.blog.pageDescription") || "Expert advice, market analysis and practical guides to succeed with your real estate projects in Belgium"}
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
@@ -96,7 +96,7 @@ export default function BlogPage() {
           {/* Blog Posts Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {blogPosts.map((post, index) => (
-              <motion.div
+              <m.div
                 key={post.slug}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -144,12 +144,12 @@ export default function BlogPage() {
                     </CardContent>
                   </Card>
                 </Link>
-              </motion.div>
+              </m.div>
             ))}
           </div>
 
           {/* Newsletter CTA */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
@@ -164,19 +164,19 @@ export default function BlogPage() {
                   {t("home.blog.newsletterDescription") || "Receive our market analysis, expert advice and investment opportunities directly in your inbox."}
                 </p>
                 <Link href="/contact">
-                  <motion.button
+                  <m.button
                     whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(218, 165, 32, 0.5)" }}
                     whileTap={{ scale: 0.95 }}
                     className="bg-brand-gold hover:bg-brand-gold/90 text-neutral-dark font-serif px-8 py-3 rounded-lg transition-colors font-semibold"
                   >
                     {t("home.blog.newsletterButton") || "Subscribe to Newsletter"}
-                  </motion.button>
+                  </m.button>
                 </Link>
               </CardContent>
             </Card>
-          </motion.div>
+          </m.div>
         </div>
       </section>
-    </motion.main>
+    </m.main>
   )
 }

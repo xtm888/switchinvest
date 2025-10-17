@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef } from "react"
-import { motion, useInView } from "framer-motion"
+import { m, LazyMotion, domAnimation, useInView } from "framer-motion"
 import { Blocks, BarChart3, Crown } from "lucide-react"
 import { useTranslation } from "@/hooks/use-translation"
 
@@ -28,7 +28,7 @@ export function InnovationPillars() {
   return (
     <section ref={ref} className="py-20">
       <div className="container mx-auto px-4 md:px-6">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
@@ -36,11 +36,11 @@ export function InnovationPillars() {
         >
           <h2 className="text-3xl md:text-4xl font-bold text-brand-beige mb-4 font-serif">{t("innovation.title")}</h2>
           <p className="text-brand-beige/80 max-w-3xl mx-auto">{t("innovation.subtitle")}</p>
-        </motion.div>
+        </m.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {pillars.map((pillar, index) => (
-            <motion.div
+            <m.div
               key={pillar.key}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
@@ -52,7 +52,7 @@ export function InnovationPillars() {
               </div>
               <h3 className="text-xl font-bold text-brand-beige mb-3 font-serif">{t(`innovation.${pillar.key}.title`)}</h3>
               <p className="text-brand-beige/70">{t(`innovation.${pillar.key}.description`)}</p>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

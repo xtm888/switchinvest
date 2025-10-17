@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { useTranslation } from "@/hooks/use-translation"
-import { motion, AnimatePresence } from "framer-motion"
+import { m, LazyMotion, domAnimation, AnimatePresence } from "framer-motion"
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
@@ -139,7 +139,7 @@ export default function PortfolioPage() {
   })
 
   return (
-    <motion.main
+    <m.main
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -150,7 +150,7 @@ export default function PortfolioPage() {
       {/* Hero Section - Modern design matching blog */}
       <section className="relative bg-gradient-to-b from-brand-teal to-brand-teal/90 py-20 text-white overflow-hidden">
         {/* Floating Background Elements */}
-        <motion.div
+        <m.div
           animate={{
             y: [0, -30, 0],
             scale: [1, 1.1, 1],
@@ -162,7 +162,7 @@ export default function PortfolioPage() {
           }}
           className="absolute top-10 left-1/4 w-40 h-40 bg-brand-gold/10 rounded-full blur-3xl"
         />
-        <motion.div
+        <m.div
           animate={{
             y: [0, 25, 0],
             scale: [1, 0.9, 1],
@@ -187,7 +187,7 @@ export default function PortfolioPage() {
             </span>
           </div>
 
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -201,7 +201,7 @@ export default function PortfolioPage() {
             <p className="text-xl text-brand-beige/90 max-w-2xl mx-auto">
               {t("portfolio.subtitle") || "A selection of our successfully managed and developed properties across Belgium"}
             </p>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
@@ -258,7 +258,7 @@ export default function PortfolioPage() {
                   ))}
                 </>
               ) : (
-                <motion.div
+                <m.div
                   className="col-span-full flex flex-col items-center justify-center py-16 text-center"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -273,21 +273,21 @@ export default function PortfolioPage() {
                   <p className="text-gray-500 max-w-md">
                     {t("portfolio.noResults.description") || "Try adjusting your search or filter criteria to find what you're looking for."}
                   </p>
-                  <motion.button
+                  <m.button
                     onClick={() => {setActiveFilter("all"); setSearchQuery("")}}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="mt-6 bg-brand-teal text-white px-6 py-2 rounded-md font-medium hover:bg-brand-teal/90 transition-colors"
                   >
                     {t("portfolio.noResults.reset") || "Reset filters"}
-                  </motion.button>
-                </motion.div>
+                  </m.button>
+                </m.div>
               )}
             </AnimatePresence>
           </div>
 
           {/* CTA Section - Modern design matching blog newsletter */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
@@ -306,27 +306,27 @@ export default function PortfolioPage() {
                 </p>
                 <div className="flex gap-4 justify-center flex-wrap">
                   <Link href="/contact">
-                    <motion.button
+                    <m.button
                       whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(218, 165, 32, 0.5)" }}
                       whileTap={{ scale: 0.95 }}
                       className="bg-brand-gold hover:bg-brand-gold/90 text-neutral-dark font-serif px-8 py-3 rounded-lg transition-colors font-semibold"
                     >
                       {t("portfolio.cta.contactButton") || "Contact Us"}
-                    </motion.button>
+                    </m.button>
                   </Link>
                   <Link href="/services">
-                    <motion.button
+                    <m.button
                       whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(255, 255, 255, 0.3)" }}
                       whileTap={{ scale: 0.95 }}
                       className="bg-white/10 hover:bg-white/20 text-white font-serif px-8 py-3 rounded-lg transition-colors font-semibold border border-white/30"
                     >
                       {t("portfolio.cta.servicesButton") || "Our Services"}
-                    </motion.button>
+                    </m.button>
                   </Link>
                 </div>
               </CardContent>
             </Card>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
@@ -336,6 +336,6 @@ export default function PortfolioPage() {
         isOpen={isLightboxOpen}
         onClose={closeProject}
       />
-    </motion.main>
+    </m.main>
   )
 }

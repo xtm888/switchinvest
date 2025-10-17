@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { m, LazyMotion, domAnimation, AnimatePresence } from "framer-motion"
 import { ChevronLeft, ChevronRight, Quote, Star } from "lucide-react"
 import Image from "next/image"
 import { useTranslation } from "@/hooks/use-translation"
@@ -104,6 +104,7 @@ export default function TestimonialsCarousel() {
   const currentTestimonial = testimonials[currentIndex]
 
   return (
+    <LazyMotion features={domAnimation} strict>
     <section className="py-20 md:py-28 bg-gradient-to-b from-white to-brand-beige/30 relative overflow-hidden">
       {/* Background Decoration */}
       <div className="absolute inset-0 opacity-5">
@@ -113,7 +114,7 @@ export default function TestimonialsCarousel() {
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         {/* Section Header */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -126,7 +127,7 @@ export default function TestimonialsCarousel() {
           <p className="text-lg md:text-xl text-neutral-dark/70 max-w-2xl mx-auto">
             {t("home.testimonials.subtitle") || "Des témoignages authentiques de propriétaires satisfaits"}
           </p>
-        </motion.div>
+        </m.div>
 
         {/* Carousel Container */}
         <div
@@ -135,7 +136,7 @@ export default function TestimonialsCarousel() {
           onMouseLeave={() => setIsPaused(false)}
         >
           <AnimatePresence initial={false} custom={direction} mode="wait">
-            <motion.div
+            <m.div
               key={currentIndex}
               custom={direction}
               variants={slideVariants}
@@ -193,12 +194,12 @@ export default function TestimonialsCarousel() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </m.div>
           </AnimatePresence>
 
           {/* Navigation Buttons */}
           <div className="absolute top-1/2 -translate-y-1/2 left-0 right-0 flex justify-between px-4 md:-mx-16">
-            <motion.button
+            <m.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               onClick={handlePrev}
@@ -206,9 +207,9 @@ export default function TestimonialsCarousel() {
               aria-label="Previous testimonial"
             >
               <ChevronLeft className="w-6 h-6" />
-            </motion.button>
+            </m.button>
 
-            <motion.button
+            <m.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               onClick={handleNext}
@@ -216,7 +217,7 @@ export default function TestimonialsCarousel() {
               aria-label="Next testimonial"
             >
               <ChevronRight className="w-6 h-6" />
-            </motion.button>
+            </m.button>
           </div>
 
           {/* Dots Indicator */}
@@ -240,7 +241,7 @@ export default function TestimonialsCarousel() {
         </div>
 
         {/* "As Seen On" Press Logos */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -253,7 +254,7 @@ export default function TestimonialsCarousel() {
 
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
             {pressLogos.map((press, index) => (
-              <motion.div
+              <m.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -274,11 +275,12 @@ export default function TestimonialsCarousel() {
                   height={40}
                   className="h-12 w-auto"
                 /> */}
-              </motion.div>
+              </m.div>
             ))}
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </section>
+    </LazyMotion>
   )
 }

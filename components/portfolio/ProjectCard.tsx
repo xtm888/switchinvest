@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { m, LazyMotion, domAnimation } from "framer-motion"
 import Image from "next/image"
 import { MapPin, Square, Calendar, ArrowRight } from "lucide-react"
 import type { ProjectData } from "./ProjectLightbox"
@@ -19,7 +19,7 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project, index, onClick }: ProjectCardProps) {
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 30 }}
@@ -63,7 +63,7 @@ export default function ProjectCard({ project, index, onClick }: ProjectCardProp
           </div>
 
           {/* View Details Button - Appears on Hover */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 10 }}
             whileHover={{ opacity: 1, y: 0 }}
             className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-300"
@@ -72,7 +72,7 @@ export default function ProjectCard({ project, index, onClick }: ProjectCardProp
               <span>Voir les détails</span>
               <ArrowRight className="w-4 h-4" />
             </div>
-          </motion.div>
+          </m.div>
         </div>
 
         {/* Content */}
@@ -126,6 +126,6 @@ export default function ProjectCard({ project, index, onClick }: ProjectCardProp
         {/* Decorative Corner */}
         <div className="absolute top-0 right-0 w-20 h-20 bg-brand-gold/5 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
-    </motion.div>
+    </m.div>
   )
 }

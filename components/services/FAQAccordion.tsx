@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { m, LazyMotion, domAnimation, AnimatePresence } from "framer-motion"
 import { ChevronDown, Search } from "lucide-react"
 
 /**
@@ -45,7 +45,7 @@ export default function FAQAccordion({
     <section className="py-16 md:py-24 bg-gradient-to-b from-white to-brand-beige/30">
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -61,12 +61,12 @@ export default function FAQAccordion({
           <p className="text-lg md:text-xl text-neutral-dark/70 max-w-2xl mx-auto">
             {subtitle}
           </p>
-        </motion.div>
+        </m.div>
 
         <div className="max-w-4xl mx-auto">
           {/* Search Bar */}
           {showSearch && (
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -88,14 +88,14 @@ export default function FAQAccordion({
                   {filteredFAQs.length} résultat{filteredFAQs.length !== 1 ? 's' : ''} trouvé{filteredFAQs.length !== 1 ? 's' : ''}
                 </p>
               )}
-            </motion.div>
+            </m.div>
           )}
 
           {/* FAQ Items */}
           <div className="space-y-4">
             {filteredFAQs.length > 0 ? (
               filteredFAQs.map((faq, index) => (
-                <motion.div
+                <m.div
                   key={index}
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -115,7 +115,7 @@ export default function FAQAccordion({
                     <span className="text-lg font-semibold text-brand-teal group-hover:text-brand-gold transition-colors">
                       {faq.question}
                     </span>
-                    <motion.div
+                    <m.div
                       animate={{ rotate: openIndex === index ? 180 : 0 }}
                       transition={{ duration: 0.3 }}
                       className="flex-shrink-0"
@@ -123,13 +123,13 @@ export default function FAQAccordion({
                       <ChevronDown className={`w-6 h-6 transition-colors ${
                         openIndex === index ? 'text-brand-teal' : 'text-neutral-dark/40'
                       }`} />
-                    </motion.div>
+                    </m.div>
                   </button>
 
                   {/* Answer */}
                   <AnimatePresence>
                     {openIndex === index && (
-                      <motion.div
+                      <m.div
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
@@ -137,22 +137,22 @@ export default function FAQAccordion({
                         className="overflow-hidden"
                       >
                         <div className="px-6 pb-5 border-t-2 border-brand-gold/20 pt-4">
-                          <motion.p
+                          <m.p
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.3, delay: 0.1 }}
                             className="text-neutral-dark/80 leading-relaxed"
                           >
                             {faq.answer}
-                          </motion.p>
+                          </m.p>
                         </div>
-                      </motion.div>
+                      </m.div>
                     )}
                   </AnimatePresence>
-                </motion.div>
+                </m.div>
               ))
             ) : (
-              <motion.div
+              <m.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 className="text-center py-12 bg-white rounded-xl border border-brand-beige/30"
@@ -160,12 +160,12 @@ export default function FAQAccordion({
                 <p className="text-neutral-dark/60">
                   Aucune question ne correspond à votre recherche.
                 </p>
-              </motion.div>
+              </m.div>
             )}
           </div>
 
           {/* Still Have Questions CTA */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -178,14 +178,14 @@ export default function FAQAccordion({
             <p className="text-white/90 mb-6">
               Notre équipe est là pour vous aider. Contactez-nous pour une réponse personnalisée.
             </p>
-            <motion.button
+            <m.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-brand-gold hover:bg-yellow-500 text-neutral-dark font-bold px-8 py-3 rounded-lg transition-colors"
             >
               Contactez-Nous
-            </motion.button>
-          </motion.div>
+            </m.button>
+          </m.div>
         </div>
       </div>
     </section>

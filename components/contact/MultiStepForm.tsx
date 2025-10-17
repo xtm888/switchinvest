@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { m, LazyMotion, domAnimation, AnimatePresence } from "framer-motion"
 import { User, Mail, Phone, MessageSquare, Send, Check, ArrowRight, ArrowLeft } from "lucide-react"
 
 /**
@@ -109,36 +109,36 @@ export default function MultiStepForm() {
 
   if (isSuccess) {
     return (
-      <motion.div
+      <m.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         className="bg-white rounded-2xl p-12 shadow-2xl text-center max-w-2xl mx-auto"
       >
-        <motion.div
+        <m.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
           className="w-24 h-24 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6"
         >
           <Check className="w-12 h-12 text-white" />
-        </motion.div>
-        <motion.h3
+        </m.div>
+        <m.h3
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
           className="text-3xl font-bold text-brand-teal mb-4 font-serif"
         >
           Message Envoyé Avec Succès!
-        </motion.h3>
-        <motion.p
+        </m.h3>
+        <m.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
           className="text-neutral-dark/70 text-lg"
         >
           Nous vous répondrons dans les plus brefs délais. Merci pour votre confiance!
-        </motion.p>
-      </motion.div>
+        </m.p>
+      </m.div>
     )
   }
 
@@ -149,7 +149,7 @@ export default function MultiStepForm() {
         <div className="flex justify-between items-center mb-4">
           {[1, 2, 3].map((step) => (
             <div key={step} className="flex items-center flex-1">
-              <motion.div
+              <m.div
                 initial={false}
                 animate={{
                   scale: currentStep === step ? 1.2 : 1,
@@ -160,9 +160,9 @@ export default function MultiStepForm() {
                 }`}
               >
                 {currentStep > step ? <Check className="w-5 h-5" /> : step}
-              </motion.div>
+              </m.div>
               {step < 3 && (
-                <motion.div
+                <m.div
                   initial={false}
                   animate={{
                     backgroundColor: currentStep > step ? "#0f766e" : "#e5e7eb"
@@ -184,7 +184,7 @@ export default function MultiStepForm() {
       <form onSubmit={handleSubmit}>
         <AnimatePresence mode="wait">
           {currentStep === 1 && (
-            <motion.div
+            <m.div
               key="step1"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -250,11 +250,11 @@ export default function MultiStepForm() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </m.div>
           )}
 
           {currentStep === 2 && (
-            <motion.div
+            <m.div
               key="step2"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -293,7 +293,7 @@ export default function MultiStepForm() {
                   </label>
                   <div className="grid grid-cols-2 gap-3">
                     {["Appartement", "Maison", "Immeuble", "Terrain", "Bureau", "Commerce"].map((type) => (
-                      <motion.label
+                      <m.label
                         key={type}
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
@@ -312,16 +312,16 @@ export default function MultiStepForm() {
                           className="sr-only"
                         />
                         {type}
-                      </motion.label>
+                      </m.label>
                     ))}
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </m.div>
           )}
 
           {currentStep === 3 && (
-            <motion.div
+            <m.div
               key="step3"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -357,14 +357,14 @@ export default function MultiStepForm() {
                   </p>
                 </div>
               </div>
-            </motion.div>
+            </m.div>
           )}
         </AnimatePresence>
 
         {/* Navigation Buttons */}
         <div className="flex justify-between mt-8">
           {currentStep > 1 && (
-            <motion.button
+            <m.button
               type="button"
               onClick={prevStep}
               whileHover={{ scale: 1.05, x: -5 }}
@@ -373,11 +373,11 @@ export default function MultiStepForm() {
             >
               <ArrowLeft className="w-5 h-5" />
               Retour
-            </motion.button>
+            </m.button>
           )}
 
           {currentStep < totalSteps ? (
-            <motion.button
+            <m.button
               type="button"
               onClick={nextStep}
               disabled={!isStepValid()}
@@ -391,9 +391,9 @@ export default function MultiStepForm() {
             >
               Suivant
               <ArrowRight className="w-5 h-5" />
-            </motion.button>
+            </m.button>
           ) : (
-            <motion.button
+            <m.button
               type="submit"
               disabled={!isStepValid() || isSubmitting}
               whileHover={isStepValid() && !isSubmitting ? { scale: 1.05 } : {}}
@@ -406,12 +406,12 @@ export default function MultiStepForm() {
             >
               {isSubmitting ? (
                 <>
-                  <motion.div
+                  <m.div
                     animate={{ rotate: 360 }}
                     transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
                   >
                     <Send className="w-5 h-5" />
-                  </motion.div>
+                  </m.div>
                   Envoi...
                 </>
               ) : (
@@ -420,7 +420,7 @@ export default function MultiStepForm() {
                   Envoyer
                 </>
               )}
-            </motion.button>
+            </m.button>
           )}
         </div>
       </form>

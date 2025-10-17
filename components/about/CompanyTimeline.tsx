@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { m, LazyMotion, domAnimation } from "framer-motion"
 import { Calendar, TrendingUp } from "lucide-react"
 import type { LucideIcon } from "lucide-react"
 
@@ -32,7 +32,7 @@ export default function CompanyTimeline({
     <section className="py-16 md:py-24 bg-gradient-to-b from-brand-beige/30 to-white">
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -49,7 +49,7 @@ export default function CompanyTimeline({
           <p className="text-lg md:text-xl text-neutral-dark/70 max-w-2xl mx-auto">
             {subtitle}
           </p>
-        </motion.div>
+        </m.div>
 
         {/* Timeline */}
         <div className="max-w-5xl mx-auto">
@@ -64,7 +64,7 @@ export default function CompanyTimeline({
                 const isEven = index % 2 === 0
 
                 return (
-                  <motion.div
+                  <m.div
                     key={index}
                     initial={{ opacity: 0, x: isEven ? -30 : 30 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -76,7 +76,7 @@ export default function CompanyTimeline({
                   >
                     {/* Content Card */}
                     <div className={`w-full md:w-[calc(50%-4rem)] ${isEven ? "md:pr-8" : "md:pl-8"} pl-20 md:pl-0`}>
-                      <motion.div
+                      <m.div
                         whileHover={{ scale: 1.02, y: -5 }}
                         className={`bg-white rounded-xl p-6 shadow-lg border-2 transition-all duration-300 ${
                           event.highlight
@@ -104,12 +104,12 @@ export default function CompanyTimeline({
                         <p className="text-neutral-dark/80 leading-relaxed">
                           {event.description}
                         </p>
-                      </motion.div>
+                      </m.div>
                     </div>
 
                     {/* Center Icon */}
                     <div className="absolute left-8 md:left-1/2 md:-translate-x-1/2 flex items-center justify-center">
-                      <motion.div
+                      <m.div
                         initial={{ scale: 0, rotate: -180 }}
                         whileInView={{ scale: 1, rotate: 0 }}
                         viewport={{ once: true }}
@@ -122,9 +122,9 @@ export default function CompanyTimeline({
                         }`}
                       >
                         <Icon className="w-8 h-8 text-white" />
-                      </motion.div>
+                      </m.div>
                     </div>
-                  </motion.div>
+                  </m.div>
                 )
               })}
             </div>
@@ -132,7 +132,7 @@ export default function CompanyTimeline({
         </div>
 
         {/* Future Outlook Card */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -141,7 +141,7 @@ export default function CompanyTimeline({
         >
           <div className="bg-gradient-to-br from-brand-teal to-brand-teal/90 rounded-2xl p-8 md:p-12 text-center text-white relative overflow-hidden">
             {/* Floating Background Elements */}
-            <motion.div
+            <m.div
               animate={{
                 y: [0, -20, 0],
                 scale: [1, 1.1, 1],
@@ -168,7 +168,7 @@ export default function CompanyTimeline({
               </p>
             </div>
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   )

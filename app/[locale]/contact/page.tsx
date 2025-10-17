@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, Suspense } from "react"
-import { motion } from "framer-motion"
+import { m, LazyMotion, domAnimation } from "framer-motion"
 import { useTranslation } from "@/hooks/use-translation"
 import { Send, CheckCircle } from "lucide-react"
 import Link from "next/link"
@@ -59,7 +59,7 @@ export default function ContactPage() {
     <>
       <section className="relative min-h-[35vh] bg-gradient-to-b from-brand-teal to-brand-teal/90 pt-16 pb-16 overflow-hidden text-white">
         {/* Floating Background Elements */}
-        <motion.div
+        <m.div
           animate={{
             y: [0, -15, 0],
             x: [0, 15, 0],
@@ -71,7 +71,7 @@ export default function ContactPage() {
           }}
           className="absolute top-10 right-10 w-28 h-28 bg-brand-gold/10 rounded-full blur-2xl"
         />
-        <motion.div
+        <m.div
           animate={{
             y: [0, 18, 0],
             x: [0, -15, 0],
@@ -108,14 +108,14 @@ export default function ContactPage() {
           </div>
           
           <div className="text-center pt-4">
-            <motion.div 
+            <m.div 
               className="w-20 h-1 bg-brand-gold mb-6 mx-auto"
               initial={{ width: 0 }}
               animate={{ width: 80 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             />
             
-            <motion.h1
+            <m.h1
               className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif tracking-tight max-w-4xl leading-tight mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -124,16 +124,16 @@ export default function ContactPage() {
               <span className="bg-gradient-to-r from-white via-brand-gold to-white bg-clip-text text-transparent animate-gradient-shift">
                 {t("contact.title") || "Get in Touch With Us"}
               </span>
-            </motion.h1>
+            </m.h1>
             
-            <motion.p 
+            <m.p 
               className="text-lg md:text-xl text-white/90 max-w-2xl mt-6 font-serif mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               {t("contact.subtitle") || "We're here to answer your questions about real estate investment opportunities in Belgium."}
-            </motion.p>
+            </m.p>
           </div>
         </div>
       </section>
@@ -160,7 +160,7 @@ export default function ContactPage() {
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-gold/5 rounded-full blur-3xl" />
 
         <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -177,16 +177,16 @@ export default function ContactPage() {
             <p className="text-lg md:text-xl text-neutral-dark/70 max-w-2xl mx-auto">
               {t("contact.subtitle") || "We're here to answer your questions about real estate investment opportunities in Belgium."}
             </p>
-          </motion.div>
+          </m.div>
 
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <MultiStepForm />
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
@@ -196,7 +196,7 @@ export default function ContactPage() {
       {/* Contact Information */}
       <section className="py-12 pb-24 bg-brand-beige">
         <div className="container mx-auto px-4">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -209,10 +209,10 @@ export default function ContactPage() {
             <p className="text-lg text-neutral-dark/70">
               {t("contact.quickContact") || "Choose your preferred contact method"}
             </p>
-          </motion.div>
+          </m.div>
 
           <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-            <motion.a
+            <m.a
               href="tel:+32492996561"
               onClick={() => {
                 if (typeof window !== 'undefined' && (window as any).gtag) {
@@ -235,9 +235,9 @@ export default function ContactPage() {
               <h3 className="text-xl font-bold mb-3 border-b-2 border-brand-gold pb-2 font-serif text-brand-teal">{t("contact.info.phone") || "Téléphone"}</h3>
               <p className="text-brand-teal font-semibold text-lg hover:underline font-serif">+32 492 996561</p>
               <p className="text-neutral-dark/60 text-sm mt-2">{t("contact.clickToCall") || "Cliquez pour appeler"}</p>
-            </motion.a>
+            </m.a>
 
-            <motion.a
+            <m.a
               href="mailto:info@switchinvest.com"
               onClick={() => {
                 if (typeof window !== 'undefined' && (window as any).gtag) {
@@ -260,9 +260,9 @@ export default function ContactPage() {
               <h3 className="text-xl font-bold mb-3 border-b-2 border-brand-gold pb-2 font-serif text-brand-teal">{t("contact.info.email") || "Email"}</h3>
               <p className="text-brand-teal font-semibold text-base hover:underline font-serif break-all">info@switchinvest.com</p>
               <p className="text-neutral-dark/60 text-sm mt-2">{t("contact.clickToEmail") || "Cliquez pour envoyer un email"}</p>
-            </motion.a>
+            </m.a>
 
-            <motion.a
+            <m.a
               href="https://www.google.com/maps/search/?api=1&query=Avenue+Louise+251+1000+Bruxelles+Belgique"
               target="_blank"
               rel="noopener noreferrer"
@@ -289,7 +289,7 @@ export default function ContactPage() {
               <p className="text-brand-teal font-semibold hover:underline font-serif">Avenue Louise 251</p>
               <p className="text-brand-teal font-semibold hover:underline font-serif">1000 Bruxelles, Belgique</p>
               <p className="text-neutral-dark/60 text-sm mt-2">{t("contact.clickToMap") || "Cliquez pour voir sur la carte"}</p>
-            </motion.a>
+            </m.a>
           </div>
         </div>
       </section>

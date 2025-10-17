@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { motion, useInView, useMotionValue, useSpring } from "framer-motion"
+import { m, LazyMotion, domAnimation, useInView, useMotionValue, useSpring } from "framer-motion"
 import { TrendingUp, Clock, Shield, Home } from "lucide-react"
 import { useTranslation } from "@/hooks/use-translation"
 
@@ -84,6 +84,7 @@ export default function AnimatedStats() {
   })
 
   return (
+    <LazyMotion features={domAnimation} strict>
     <section className="py-20 md:py-28 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-gradient-to-b from-white via-brand-beige/30 to-white" />
@@ -94,7 +95,7 @@ export default function AnimatedStats() {
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         {/* Section Header */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -107,17 +108,17 @@ export default function AnimatedStats() {
           <p className="text-lg md:text-xl text-neutral-dark/70 max-w-2xl mx-auto">
             {t("home.stats.subtitle") || "Des chiffres qui témoignent de notre engagement envers l'excellence"}
           </p>
-        </motion.div>
+        </m.div>
 
         {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {stats.map((stat, index) => (
-            <motion.div
+            <m.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: index * 0.05 }}
               whileHover={{ y: -8, transition: { duration: 0.2 } }}
               className="group relative"
             >
@@ -127,13 +128,13 @@ export default function AnimatedStats() {
                 <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
 
                 {/* Animated Icon Container */}
-                <motion.div
+                <m.div
                   whileHover={{ rotate: [0, -10, 10, -10, 0], scale: 1.1 }}
                   transition={{ duration: 0.5 }}
                   className={`inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br ${stat.color} text-white mb-6 shadow-lg`}
                 >
                   {stat.icon}
-                </motion.div>
+                </m.div>
 
                 {/* Counter */}
                 <div className="mb-3">
@@ -155,30 +156,31 @@ export default function AnimatedStats() {
                 {/* Decorative Corner */}
                 <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-brand-gold/10 to-transparent rounded-bl-full" />
               </div>
-            </motion.div>
+            </m.div>
           ))}
         </div>
 
         {/* Bottom CTA */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           className="text-center mt-16"
         >
           <p className="text-neutral-dark/70 mb-6">
             {t("home.stats.ctaText") || "Rejoignez des centaines de propriétaires satisfaits"}
           </p>
-          <motion.button
+          <m.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="bg-gradient-to-r from-brand-teal to-cyan-600 text-white font-serif px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all"
           >
             {t("home.stats.ctaButton") || "Commencer Maintenant"}
-          </motion.button>
-        </motion.div>
+          </m.button>
+        </m.div>
       </div>
     </section>
+    </LazyMotion>
   )
 }

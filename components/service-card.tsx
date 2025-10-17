@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { useState, useRef } from "react"
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion"
+import { m, LazyMotion, domAnimation, useMotionValue, useSpring, useTransform } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
@@ -55,7 +55,7 @@ export function ServiceCard({ serviceKey, icon, t }: ServiceCardProps) {
   }
 
   return (
-    <motion.div
+    <m.div
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
@@ -77,7 +77,7 @@ export function ServiceCard({ serviceKey, icon, t }: ServiceCardProps) {
         <div className="absolute inset-0 bg-gradient-to-br from-brand-teal/5 via-brand-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
         {/* 3D shine effect that follows mouse */}
-        <motion.div
+        <m.div
           className="absolute inset-0 opacity-0 group-hover:opacity-30 pointer-events-none transition-opacity duration-300"
           style={{
             background: "radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8) 0%, transparent 60%)",
@@ -95,7 +95,7 @@ export function ServiceCard({ serviceKey, icon, t }: ServiceCardProps) {
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-teal via-brand-gold to-brand-teal transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
 
         <CardHeader className="pb-4 relative z-10" style={{ transform: "translateZ(40px)" }}>
-          <motion.div
+          <m.div
             animate={
               isHovered
                 ? { rotate: 360 }
@@ -115,7 +115,7 @@ export function ServiceCard({ serviceKey, icon, t }: ServiceCardProps) {
             className="w-20 h-20 bg-gradient-to-br from-brand-teal via-cyan-600 to-brand-teal/80 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:shadow-2xl group-hover:scale-110 transition-all duration-300 text-white"
             style={{ transform: isHovered ? "translateZ(60px)" : "translateZ(40px)" }}
           >
-            <motion.div
+            <m.div
               animate={{
                 scale: isHovered ? [1, 1.2, 1] : [1, 1.05, 1],
               }}
@@ -127,8 +127,8 @@ export function ServiceCard({ serviceKey, icon, t }: ServiceCardProps) {
               className="transform"
             >
               {icon}
-            </motion.div>
-          </motion.div>
+            </m.div>
+          </m.div>
           <CardTitle
             className="text-2xl font-bold font-serif text-brand-teal group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-brand-teal group-hover:to-brand-gold transition-all duration-300 text-center"
             style={{ transform: "translateZ(30px)" }}
@@ -148,7 +148,7 @@ export function ServiceCard({ serviceKey, icon, t }: ServiceCardProps) {
             const raw = t(`services.${serviceKey}.features`) as unknown
             const featuresArray: string[] = Array.isArray(raw) ? (raw as string[]) : (raw ?? "").toString().split("\n")
             return featuresArray.map((feature, index) => (
-              <motion.li
+              <m.li
                 key={index}
                 initial={{ opacity: 0, x: -10 }}
                 animate={{
@@ -162,27 +162,27 @@ export function ServiceCard({ serviceKey, icon, t }: ServiceCardProps) {
                   ✓
                 </span>
                 <span className="group-hover/item:text-brand-teal transition-colors">{feature}</span>
-              </motion.li>
+              </m.li>
             ))
           })()}
         </ul>
       </CardContent>
       <CardFooter className="pt-6 pb-6 relative z-10" style={{ transform: "translateZ(30px)" }}>
         <Link href={`/services/${serviceKey.replace('_', '-')}`} className="w-full">
-          <motion.div
+          <m.div
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
             className="flex items-center justify-center gap-2 bg-gradient-to-r from-brand-teal to-cyan-600 group-hover:from-brand-gold group-hover:to-yellow-500 text-white font-semibold text-sm px-6 py-3 rounded-lg cursor-pointer transition-all duration-300 shadow-md hover:shadow-xl"
           >
             <span>{t('services.learnMore')}</span>
             <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-          </motion.div>
+          </m.div>
         </Link>
       </CardFooter>
 
       {/* Bottom accent line */}
       <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-teal via-brand-gold to-brand-teal transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-right" />
     </Card>
-    </motion.div>
+    </m.div>
   )
 }

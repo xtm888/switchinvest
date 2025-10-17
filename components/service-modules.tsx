@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef } from "react"
-import { motion, useInView } from "framer-motion"
+import { m, LazyMotion, domAnimation, useInView } from "framer-motion"
 import { ClipboardCheck, TrendingUp, Cpu } from "lucide-react"
 import { ServiceCard } from "./service-card"
 import { useTranslation } from "@/hooks/use-translation"
@@ -25,7 +25,7 @@ export function ServiceModules() {
   return (
     <section ref={ref} className="py-24">
       <div className="container mx-auto px-4 md:px-6">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
@@ -34,12 +34,12 @@ export function ServiceModules() {
           {/* Changed text-brand-blue to text-brand-teal */}
           <h2 className="text-4xl md:text-5xl font-bold text-brand-teal mb-6 font-serif tracking-tight">{t("services.title")}</h2>
           <p className="text-lg md:text-xl text-neutral-dark/80 max-w-3xl mx-auto font-serif tracking-wide">{t("services.subtitle")}</p>
-        </motion.div>
+        </m.div>
 
         {/* Changed grid layout to 2x2 on medium screens */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           {services.map((service, index) => (
-            <motion.div
+            <m.div
               key={service.key}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
@@ -51,7 +51,7 @@ export function ServiceModules() {
                 icon={service.icon}
                 t={t}
               />
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

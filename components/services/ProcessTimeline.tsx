@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { m, LazyMotion, domAnimation } from "framer-motion"
 import { LucideIcon } from "lucide-react"
 
 /**
@@ -30,7 +30,7 @@ export default function ProcessTimeline({
   return (
     <section className="py-16 md:py-24 bg-white relative overflow-hidden">
       {/* Background decoration */}
-      <motion.div
+      <m.div
         animate={{
           y: [0, -20, 0],
           x: [0, 20, 0],
@@ -45,7 +45,7 @@ export default function ProcessTimeline({
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         {/* Section Header */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -61,7 +61,7 @@ export default function ProcessTimeline({
           <p className="text-lg md:text-xl text-neutral-dark/70 max-w-2xl mx-auto">
             {subtitle}
           </p>
-        </motion.div>
+        </m.div>
 
         {/* Timeline - Desktop: Horizontal, Mobile: Vertical */}
         <div className="max-w-6xl mx-auto">
@@ -69,7 +69,7 @@ export default function ProcessTimeline({
           <div className="hidden md:block">
             <div className="relative">
               {/* Connecting line */}
-              <motion.div
+              <m.div
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true }}
@@ -80,7 +80,7 @@ export default function ProcessTimeline({
               {/* Steps */}
               <div className="grid grid-cols-5 gap-4">
                 {steps.map((step, index) => (
-                  <motion.div
+                  <m.div
                     key={index}
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -90,7 +90,7 @@ export default function ProcessTimeline({
                   >
                     {/* Step indicator */}
                     <div className="relative z-10 mb-6">
-                      <motion.div
+                      <m.div
                         whileHover={{ scale: 1.1, rotate: 5 }}
                         className="w-32 h-32 mx-auto bg-white border-4 border-brand-teal rounded-full flex items-center justify-center shadow-lg hover:shadow-2xl transition-shadow"
                       >
@@ -100,7 +100,7 @@ export default function ProcessTimeline({
                             {step.number}
                           </span>
                         </div>
-                      </motion.div>
+                      </m.div>
                     </div>
 
                     {/* Step content */}
@@ -117,7 +117,7 @@ export default function ProcessTimeline({
                         </span>
                       )}
                     </div>
-                  </motion.div>
+                  </m.div>
                 ))}
               </div>
             </div>
@@ -126,7 +126,7 @@ export default function ProcessTimeline({
           {/* Mobile Timeline */}
           <div className="md:hidden space-y-8">
             {steps.map((step, index) => (
-              <motion.div
+              <m.div
                 key={index}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -140,7 +140,7 @@ export default function ProcessTimeline({
                 )}
 
                 {/* Step indicator */}
-                <motion.div
+                <m.div
                   whileHover={{ scale: 1.1 }}
                   className="absolute left-0 top-0 w-24 h-24 bg-white border-4 border-brand-teal rounded-full flex items-center justify-center shadow-lg"
                 >
@@ -150,7 +150,7 @@ export default function ProcessTimeline({
                       {step.number}
                     </span>
                   </div>
-                </motion.div>
+                </m.div>
 
                 {/* Step content */}
                 <div className="bg-white border border-brand-beige/30 rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow">
@@ -166,13 +166,13 @@ export default function ProcessTimeline({
                     </span>
                   )}
                 </div>
-              </motion.div>
+              </m.div>
             ))}
           </div>
         </div>
 
         {/* CTA Below Timeline */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -182,14 +182,14 @@ export default function ProcessTimeline({
           <p className="text-neutral-dark/70 mb-4">
             Prêt à commencer votre projet ?
           </p>
-          <motion.button
+          <m.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="bg-brand-teal text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-teal/90 transition-colors"
           >
             Demander une Consultation Gratuite
-          </motion.button>
-        </motion.div>
+          </m.button>
+        </m.div>
       </div>
     </section>
   )

@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react"
-import { motion } from "framer-motion"
+import { m, LazyMotion, domAnimation } from "framer-motion"
 import { AlertTriangle, RefreshCw, Home } from "lucide-react"
 import Link from "next/link"
 
@@ -60,7 +60,7 @@ interface ErrorFallbackProps {
 export function ErrorFallback({ error, reset }: ErrorFallbackProps) {
   return (
     <div className="min-h-screen bg-gradient-to-b from-brand-beige/30 to-white flex items-center justify-center px-4">
-      <motion.div
+      <m.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -68,14 +68,14 @@ export function ErrorFallback({ error, reset }: ErrorFallbackProps) {
       >
         <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-12 border border-brand-beige/30">
           {/* Error Icon */}
-          <motion.div
+          <m.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6"
           >
             <AlertTriangle className="w-10 h-10 text-red-600" />
-          </motion.div>
+          </m.div>
 
           {/* Title */}
           <h1 className="text-3xl md:text-4xl font-bold text-brand-teal text-center mb-4 font-serif">
@@ -98,7 +98,7 @@ export function ErrorFallback({ error, reset }: ErrorFallbackProps) {
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <motion.button
+            <m.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => {
@@ -109,17 +109,17 @@ export function ErrorFallback({ error, reset }: ErrorFallbackProps) {
             >
               <RefreshCw className="w-5 h-5" />
               Réessayer
-            </motion.button>
+            </m.button>
 
             <Link href="/">
-              <motion.button
+              <m.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="flex items-center justify-center gap-2 bg-brand-gold hover:bg-brand-gold/90 text-neutral-dark px-6 py-3 rounded-lg font-semibold transition-colors w-full"
               >
                 <Home className="w-5 h-5" />
                 Retour à l'accueil
-              </motion.button>
+              </m.button>
             </Link>
           </div>
 
@@ -131,7 +131,7 @@ export function ErrorFallback({ error, reset }: ErrorFallbackProps) {
             </Link>
           </p>
         </div>
-      </motion.div>
+      </m.div>
     </div>
   )
 }

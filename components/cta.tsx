@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef } from "react"
-import { motion, useInView } from "framer-motion"
+import { m, LazyMotion, domAnimation, useInView } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import { useTranslation } from "@/hooks/use-translation"
@@ -15,7 +15,7 @@ export function CallToAction() {
   return (
     <section ref={ref} className="py-20">
       <div className="container mx-auto px-4 md:px-6">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
           transition={{ duration: 0.6 }}
@@ -36,7 +36,7 @@ export function CallToAction() {
               </Button>
             </Link>
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   )

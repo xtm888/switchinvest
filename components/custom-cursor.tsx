@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { motion } from "framer-motion"
+import { m, LazyMotion, domAnimation } from "framer-motion"
 
 export function CustomCursor() {
   const [position, setPosition] = useState({ x: 0, y: 0 })
@@ -56,7 +56,7 @@ export function CustomCursor() {
   return (
     <>
       {isVisible && (
-        <motion.div
+        <m.div
           className="custom-cursor bg-copper/50"
           style={{
             transform: `translate(${position.x - 10}px, ${position.y - 10}px)`,

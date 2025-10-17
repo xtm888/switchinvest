@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { m, LazyMotion, domAnimation } from "framer-motion"
 import { LucideIcon, ChevronRight } from "lucide-react"
 import Link from "next/link"
 
@@ -35,7 +35,7 @@ export default function ServiceHero({
   return (
     <section className={`relative bg-gradient-to-br ${gradientFrom} ${gradientTo} py-20 md:py-32 text-white overflow-hidden`}>
       {/* Floating Background Elements */}
-      <motion.div
+      <m.div
         animate={{
           y: [0, -20, 0],
           x: [0, 15, 0],
@@ -48,7 +48,7 @@ export default function ServiceHero({
         }}
         className="absolute top-10 right-10 w-40 h-40 bg-brand-gold/10 rounded-full blur-3xl"
       />
-      <motion.div
+      <m.div
         animate={{
           y: [0, 25, 0],
           x: [0, -20, 0],
@@ -61,7 +61,7 @@ export default function ServiceHero({
         }}
         className="absolute bottom-10 left-10 w-48 h-48 bg-white/5 rounded-full blur-3xl"
       />
-      <motion.div
+      <m.div
         animate={{
           y: [0, -15, 0],
           scale: [1, 1.1, 1],
@@ -77,7 +77,7 @@ export default function ServiceHero({
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-5xl mx-auto">
           {/* Breadcrumb */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -92,13 +92,13 @@ export default function ServiceHero({
             </Link>
             <ChevronRight className="w-4 h-4" />
             <span className="text-white font-semibold">{title}</span>
-          </motion.div>
+          </m.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Column: Content */}
             <div>
               {/* Subtitle Badge */}
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
@@ -106,10 +106,10 @@ export default function ServiceHero({
               >
                 {Icon && <Icon className="w-5 h-5 text-brand-gold" />}
                 <span className="text-sm font-semibold text-white">{subtitle}</span>
-              </motion.div>
+              </m.div>
 
               {/* Title */}
-              <motion.h1
+              <m.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
@@ -118,32 +118,32 @@ export default function ServiceHero({
                 <span className="bg-gradient-to-r from-white via-brand-beige to-white bg-clip-text text-transparent animate-gradient-shift">
                   {title}
                 </span>
-              </motion.h1>
+              </m.h1>
 
               {/* Description */}
-              <motion.p
+              <m.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="text-lg md:text-xl text-white/90 leading-relaxed mb-8"
               >
                 {description}
-              </motion.p>
+              </m.p>
 
               {/* CTA Button */}
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
                 <Link href={ctaLink}>
-                  <motion.button
+                  <m.button
                     whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(218, 165, 32, 0.4)" }}
                     whileTap={{ scale: 0.95 }}
                     className="relative bg-brand-gold hover:bg-yellow-500 text-neutral-dark font-bold px-8 py-4 rounded-lg transition-all shadow-xl overflow-hidden group"
                   >
                     {/* Shimmer effect */}
-                    <motion.div
+                    <m.div
                       className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
                       animate={{ x: ['-100%', '100%'] }}
                       transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
@@ -152,13 +152,13 @@ export default function ServiceHero({
                       {ctaText}
                       <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </span>
-                  </motion.button>
+                  </m.button>
                 </Link>
-              </motion.div>
+              </m.div>
             </div>
 
             {/* Right Column: Benefits */}
-            <motion.div
+            <m.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
@@ -169,7 +169,7 @@ export default function ServiceHero({
               </h3>
               <ul className="space-y-4">
                 {benefits.map((benefit, index) => (
-                  <motion.li
+                  <m.li
                     key={index}
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -192,10 +192,10 @@ export default function ServiceHero({
                       </svg>
                     </div>
                     <span className="text-white/90 leading-relaxed">{benefit}</span>
-                  </motion.li>
+                  </m.li>
                 ))}
               </ul>
-            </motion.div>
+            </m.div>
           </div>
         </div>
       </div>

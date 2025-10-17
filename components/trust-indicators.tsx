@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef } from "react"
-import { motion, useInView } from "framer-motion"
+import { m, LazyMotion, domAnimation, useInView } from "framer-motion"
 import Image from "next/image"
 import { useTranslation } from "@/hooks/use-translation"
 
@@ -26,7 +26,7 @@ export function TrustIndicators() {
       </div>
       <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10 mx-auto max-w-4xl">
         {partners.map((partner, index) => (
-          <motion.div
+          <m.div
             key={index}
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 0.8, y: 0 } : { opacity: 0, y: 20 }}
@@ -38,7 +38,7 @@ export function TrustIndicators() {
               <span className="font-medium">{partner.name}</span>
               {partner.location && <span className="text-xs text-brand-beige/70 ml-2">• {partner.location}</span>}
             </div>
-          </motion.div>
+          </m.div>
         ))}
       </div>
     </div>

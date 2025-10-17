@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { motion } from "framer-motion"
+import { m, LazyMotion, domAnimation } from "framer-motion"
 import { Home, Search, Mail, FileText } from "lucide-react"
 import { usePathname } from "next/navigation"
 
@@ -67,21 +67,21 @@ export default function NotFound() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-brand-beige/30 to-white flex items-center justify-center px-4">
       <div className="max-w-4xl w-full">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="text-center"
         >
           {/* 404 Number */}
-          <motion.div
+          <m.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mb-8"
           >
             <div className="relative w-64 h-64 mx-auto">
-              <motion.h1
+              <m.h1
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{
@@ -93,63 +93,63 @@ export default function NotFound() {
                 className="text-9xl font-bold text-brand-teal/10 font-serif"
               >
                 404
-              </motion.h1>
+              </m.h1>
 
               {/* Floating Elements */}
-              <motion.div
+              <m.div
                 animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute top-0 left-0 w-16 h-16 bg-brand-gold/20 rounded-full blur-xl"
               />
-              <motion.div
+              <m.div
                 animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute bottom-0 right-0 w-20 h-20 bg-brand-teal/20 rounded-full blur-xl"
               />
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Title */}
-          <motion.h2
+          <m.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-4xl md:text-5xl font-bold text-brand-teal mb-4 font-serif"
           >
             {t.title}
-          </motion.h2>
+          </m.h2>
 
           {/* Description */}
-          <motion.p
+          <m.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
             className="text-lg md:text-xl text-neutral-dark/70 mb-8 max-w-2xl mx-auto"
           >
             {t.message}
-          </motion.p>
+          </m.p>
 
           {/* Primary Action */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
             className="mb-12"
           >
             <Link href={`/${locale}`}>
-              <motion.button
+              <m.button
                 whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(0,0,0,0.15)" }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center gap-2 bg-brand-teal hover:bg-brand-teal/90 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors shadow-lg"
               >
                 <Home className="w-5 h-5" />
                 {t.backHome}
-              </motion.button>
+              </m.button>
             </Link>
-          </motion.div>
+          </m.div>
 
           {/* Popular Pages Grid */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
@@ -160,7 +160,7 @@ export default function NotFound() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
               {popularPages.map((page, index) => (
                 <Link key={page.href} href={page.href}>
-                  <motion.div
+                  <m.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.3, delay: 0.8 + index * 0.1 }}
@@ -171,14 +171,14 @@ export default function NotFound() {
                     <p className="text-sm font-semibold text-neutral-dark group-hover:text-brand-gold transition-colors">
                       {page.name}
                     </p>
-                  </motion.div>
+                  </m.div>
                 </Link>
               ))}
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Help Text */}
-          <motion.p
+          <m.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 1 }}
@@ -188,8 +188,8 @@ export default function NotFound() {
             <Link href={`/${locale}/contact`} className="text-brand-teal hover:text-brand-gold transition-colors font-semibold">
               {t.contactTeam}
             </Link>
-          </motion.p>
-        </motion.div>
+          </m.p>
+        </m.div>
       </div>
     </div>
   )

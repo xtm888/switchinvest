@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { m, LazyMotion, domAnimation, AnimatePresence } from "framer-motion"
 import { List, ChevronRight } from "lucide-react"
 
 /**
@@ -68,7 +68,7 @@ export default function TableOfContents({ content }: TableOfContentsProps) {
   }
 
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.6, delay: 0.5 }}
@@ -84,18 +84,18 @@ export default function TableOfContents({ content }: TableOfContentsProps) {
             <List className="w-5 h-5" />
             <span className="font-semibold text-sm">Table des Matières</span>
           </div>
-          <motion.div
+          <m.div
             animate={{ rotate: isOpen ? 90 : 0 }}
             transition={{ duration: 0.3 }}
           >
             <ChevronRight className="w-5 h-5" />
-          </motion.div>
+          </m.div>
         </button>
 
         {/* Navigation Links */}
         <AnimatePresence>
           {isOpen && (
-            <motion.nav
+            <m.nav
               initial={{ height: 0 }}
               animate={{ height: "auto" }}
               exit={{ height: 0 }}
@@ -104,7 +104,7 @@ export default function TableOfContents({ content }: TableOfContentsProps) {
             >
               <ul className="p-3 space-y-1 max-h-[60vh] overflow-y-auto">
                 {headings.map((heading, index) => (
-                  <motion.li
+                  <m.li
                     key={heading.id}
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -127,28 +127,28 @@ export default function TableOfContents({ content }: TableOfContentsProps) {
                           : 'text-neutral-dark/70 hover:bg-brand-teal/10 hover:text-brand-teal'
                       }`}
                     >
-                      <motion.div
+                      <m.div
                         whileHover={{ x: 3 }}
                         transition={{ duration: 0.2 }}
                         className="flex items-center gap-2"
                       >
                         {activeId === heading.id && (
-                          <motion.div
+                          <m.div
                             initial={{ scale: 0 }}
                             animate={{ scale: 1 }}
                             className="w-1.5 h-1.5 bg-brand-gold rounded-full"
                           />
                         )}
                         <span className="line-clamp-2">{heading.text}</span>
-                      </motion.div>
+                      </m.div>
                     </a>
-                  </motion.li>
+                  </m.li>
                 ))}
               </ul>
-            </motion.nav>
+            </m.nav>
           )}
         </AnimatePresence>
       </div>
-    </motion.div>
+    </m.div>
   )
 }

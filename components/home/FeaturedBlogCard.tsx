@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { m, LazyMotion, domAnimation } from "framer-motion"
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight, Calendar, Clock, TrendingUp } from "lucide-react"
@@ -27,13 +27,14 @@ export default function FeaturedBlogCard() {
     .slice(0, 3)
 
   return (
+    <LazyMotion features={domAnimation} strict>
     <section className="py-20 md:py-28 bg-white relative overflow-hidden">
       {/* Background Decoration */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-brand-beige/30 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         {/* Section Header */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -51,12 +52,12 @@ export default function FeaturedBlogCard() {
           <p className="text-lg md:text-xl text-neutral-dark/70 max-w-2xl mx-auto">
             {t("home.blog.subtitle") || "Expert analysis, practical guides and Belgian market trends"}
           </p>
-        </motion.div>
+        </m.div>
 
         {/* Featured Posts Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-12">
           {featuredPosts.map((post, index) => (
-            <motion.article
+            <m.article
               key={post.slug}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -65,7 +66,7 @@ export default function FeaturedBlogCard() {
               className="group"
             >
               <Link href={`/blog/${post.slug}`}>
-                <motion.div
+                <m.div
                   whileHover={{ y: -12 }}
                   transition={{ duration: 0.3 }}
                   className="h-full bg-white rounded-2xl shadow-lg hover:shadow-2xl overflow-hidden border border-brand-beige/30 hover:border-brand-gold/50 transition-all duration-300"
@@ -132,14 +133,14 @@ export default function FeaturedBlogCard() {
 
                   {/* Hover Effect Indicator */}
                   <div className="h-1 bg-gradient-to-r from-brand-teal to-brand-gold transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-                </motion.div>
+                </m.div>
               </Link>
-            </motion.article>
+            </m.article>
           ))}
         </div>
 
         {/* CTA to Blog */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -147,17 +148,18 @@ export default function FeaturedBlogCard() {
           className="text-center"
         >
           <Link href="/blog">
-            <motion.button
+            <m.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="group bg-gradient-to-r from-brand-teal to-cyan-600 hover:from-brand-gold hover:to-yellow-500 text-white font-serif px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all inline-flex items-center gap-2"
             >
               {t("home.blog.viewAll") || "View All Articles"}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </motion.button>
+            </m.button>
           </Link>
-        </motion.div>
+        </m.div>
       </div>
     </section>
+    </LazyMotion>
   )
 }

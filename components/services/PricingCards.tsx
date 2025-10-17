@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { m, LazyMotion, domAnimation, AnimatePresence } from "framer-motion"
 import { Check, Star } from "lucide-react"
 import Link from "next/link"
 
@@ -41,7 +41,7 @@ export default function PricingCards({
   return (
     <section className="py-16 md:py-24 bg-gradient-to-b from-brand-beige/30 to-white relative overflow-hidden">
       {/* Background decoration */}
-      <motion.div
+      <m.div
         animate={{
           y: [0, 20, 0],
           x: [0, -20, 0],
@@ -56,7 +56,7 @@ export default function PricingCards({
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         {/* Section Header */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -75,7 +75,7 @@ export default function PricingCards({
 
           {/* Monthly/Yearly Toggle */}
           {showToggle && (
-            <motion.div
+            <m.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -89,7 +89,7 @@ export default function PricingCards({
                 onClick={() => setIsYearly(!isYearly)}
                 className="relative w-16 h-8 bg-brand-teal rounded-full p-1 transition-colors"
               >
-                <motion.div
+                <m.div
                   animate={{ x: isYearly ? 32 : 0 }}
                   transition={{ type: "spring", stiffness: 500, damping: 30 }}
                   className="w-6 h-6 bg-white rounded-full shadow-md"
@@ -101,14 +101,14 @@ export default function PricingCards({
                   -15%
                 </span>
               </span>
-            </motion.div>
+            </m.div>
           )}
-        </motion.div>
+        </m.div>
 
         {/* Pricing Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {plans.map((plan, index) => (
-            <motion.div
+            <m.div
               key={plan.name}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -127,7 +127,7 @@ export default function PricingCards({
               )}
 
               {/* Card */}
-              <motion.div
+              <m.div
                 whileHover={{ y: -8 }}
                 transition={{ duration: 0.3 }}
                 className={`relative h-full bg-white rounded-2xl shadow-xl overflow-hidden ${
@@ -155,7 +155,7 @@ export default function PricingCards({
                   {/* Price */}
                   <div className="mb-6">
                     <AnimatePresence mode="wait">
-                      <motion.div
+                      <m.div
                         key={isYearly ? 'yearly' : 'monthly'}
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -169,14 +169,14 @@ export default function PricingCards({
                         <span className="text-neutral-dark/60">
                           /{isYearly ? 'an' : plan.period}
                         </span>
-                      </motion.div>
+                      </m.div>
                     </AnimatePresence>
                   </div>
 
                   {/* Features List */}
                   <ul className="space-y-3 mb-8">
                     {plan.features.map((feature, idx) => (
-                      <motion.li
+                      <m.li
                         key={idx}
                         initial={{ opacity: 0, x: -10 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -190,13 +190,13 @@ export default function PricingCards({
                         <span className="text-neutral-dark/80 text-sm leading-relaxed">
                           {feature}
                         </span>
-                      </motion.li>
+                      </m.li>
                     ))}
                   </ul>
 
                   {/* CTA Button */}
                   <Link href={plan.ctaLink}>
-                    <motion.button
+                    <m.button
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                       className={`w-full py-3 px-6 rounded-lg font-semibold transition-all ${
@@ -206,16 +206,16 @@ export default function PricingCards({
                       }`}
                     >
                       {plan.cta}
-                    </motion.button>
+                    </m.button>
                   </Link>
                 </div>
-              </motion.div>
-            </motion.div>
+              </m.div>
+            </m.div>
           ))}
         </div>
 
         {/* Trust Badge */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -225,7 +225,7 @@ export default function PricingCards({
           <p className="text-sm text-neutral-dark/60">
             💳 Paiement sécurisé • 🔄 Garantie satisfait ou remboursé 30 jours • 📞 Support client disponible
           </p>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   )

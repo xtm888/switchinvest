@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { m, LazyMotion, domAnimation } from "framer-motion"
 import Image from "next/image"
 import { Linkedin, Mail } from "lucide-react"
 import PlaceholderImage from "@/components/PlaceholderImage"
@@ -27,7 +27,7 @@ interface TeamMemberProps {
 
 export default function TeamMember({ member, index = 0 }: TeamMemberProps) {
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -40,7 +40,7 @@ export default function TeamMember({ member, index = 0 }: TeamMemberProps) {
           <PlaceholderImage variant="team" category={member.role} />
 
           {/* Gradient Overlay on Hover */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0 }}
             whileHover={{ opacity: 1 }}
             className="absolute inset-0 bg-gradient-to-t from-brand-teal/90 via-brand-teal/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -48,7 +48,7 @@ export default function TeamMember({ member, index = 0 }: TeamMemberProps) {
             {/* Social Links - Appear on Hover */}
             <div className="absolute bottom-4 left-4 right-4 flex gap-3 justify-center">
               {member.linkedin && (
-                <motion.a
+                <m.a
                   href={member.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -57,20 +57,20 @@ export default function TeamMember({ member, index = 0 }: TeamMemberProps) {
                   className="p-3 bg-white/10 backdrop-blur-sm rounded-full hover:bg-brand-gold transition-colors"
                 >
                   <Linkedin className="w-5 h-5 text-white" />
-                </motion.a>
+                </m.a>
               )}
               {member.email && (
-                <motion.a
+                <m.a
                   href={`mailto:${member.email}`}
                   whileHover={{ scale: 1.1, y: -3 }}
                   whileTap={{ scale: 0.95 }}
                   className="p-3 bg-white/10 backdrop-blur-sm rounded-full hover:bg-brand-gold transition-colors"
                 >
                   <Mail className="w-5 h-5 text-white" />
-                </motion.a>
+                </m.a>
               )}
             </div>
-          </motion.div>
+          </m.div>
         </div>
 
         {/* Content */}
@@ -103,7 +103,7 @@ export default function TeamMember({ member, index = 0 }: TeamMemberProps) {
         {/* Decorative Corner */}
         <div className="absolute top-0 right-0 w-20 h-20 bg-brand-gold/10 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
-    </motion.div>
+    </m.div>
   )
 }
 
@@ -126,7 +126,7 @@ export function TeamSection({
     <section className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -142,7 +142,7 @@ export function TeamSection({
           <p className="text-lg md:text-xl text-neutral-dark/70 max-w-2xl mx-auto">
             {subtitle}
           </p>
-        </motion.div>
+        </m.div>
 
         {/* Team Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">

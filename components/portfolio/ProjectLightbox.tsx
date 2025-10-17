@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, AnimatePresence } from "framer-motion"
+import { m, LazyMotion, domAnimation, AnimatePresence } from "framer-motion"
 import Image from "next/image"
 import { X, MapPin, Square, Calendar, TrendingUp, Building2, ChevronLeft, ChevronRight } from "lucide-react"
 import { useState } from "react"
@@ -50,7 +50,7 @@ export default function ProjectLightbox({ project, isOpen, onClose }: ProjectLig
       {isOpen && (
         <>
           {/* Backdrop */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -61,7 +61,7 @@ export default function ProjectLightbox({ project, isOpen, onClose }: ProjectLig
           {/* Modal */}
           <div className="fixed inset-0 z-50 overflow-y-auto">
             <div className="min-h-full flex items-center justify-center p-4">
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, scale: 0.9, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -235,7 +235,7 @@ export default function ProjectLightbox({ project, isOpen, onClose }: ProjectLig
                     )}
                   </div>
                 </div>
-              </motion.div>
+              </m.div>
             </div>
           </div>
         </>

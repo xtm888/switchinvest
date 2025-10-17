@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { useTranslation } from '@/hooks/use-translation'
-import { motion, AnimatePresence } from 'framer-motion'
+import { m, LazyMotion, domAnimation, AnimatePresence } from 'framer-motion'
 import { Home, Ruler, Bed, Wrench, MapPin, User, Mail, Phone, CheckCircle2, ArrowRight, ArrowLeft } from 'lucide-react'
 
 type FormDataType = { propertyType: string; size: string; bedrooms: string; condition: string; address: string; postalCode: string; features: string[]; name: string; email: string; phone: string }
@@ -195,7 +195,7 @@ export default function PropertyValuationWidget() {
 
   if (step === 6) {
     return (
-      <motion.form
+      <m.form
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
@@ -212,14 +212,14 @@ export default function PropertyValuationWidget() {
 
         <div className="relative z-10">
           {/* Success Icon */}
-          <motion.div
+          <m.div
             initial={{ scale: 0, rotate: -180 }}
             animate={{ scale: 1, rotate: 0 }}
             transition={{ duration: 0.6, type: "spring" }}
             className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-brand-teal to-cyan-600 rounded-full mb-6 shadow-xl"
           >
             <CheckCircle2 className="w-10 h-10 text-white" />
-          </motion.div>
+          </m.div>
 
           <h3 className='text-3xl font-bold mb-4 bg-gradient-to-r from-brand-teal to-brand-gold bg-clip-text text-transparent font-serif'>
             {t('valuation.thankContact')}
@@ -243,7 +243,7 @@ export default function PropertyValuationWidget() {
           <input type="hidden" name="email" value={form.email} />
           <input type="hidden" name="phone" value={form.phone} />
 
-          <motion.button
+          <m.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             type="submit"
@@ -251,7 +251,7 @@ export default function PropertyValuationWidget() {
           >
             {t('valuation.submit') || 'Soumettre'}
             <ArrowRight className="w-5 h-5" />
-          </motion.button>
+          </m.button>
 
           <button
             type="button"
@@ -261,12 +261,12 @@ export default function PropertyValuationWidget() {
             {t('valuation.newEvaluation') || 'Nouvelle évaluation'}
           </button>
         </div>
-      </motion.form>
+      </m.form>
     )
   }
 
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -284,14 +284,14 @@ export default function PropertyValuationWidget() {
         <div className='mb-8'>
           <div className="flex items-center justify-between mb-4">
             {/* Step icon */}
-            <motion.div
+            <m.div
               key={step}
               initial={{ scale: 0.8, rotate: -10 }}
               animate={{ scale: 1, rotate: 0 }}
               className="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-brand-teal to-cyan-600 rounded-xl shadow-lg"
             >
               <StepIcon className="w-7 h-7 text-white" />
-            </motion.div>
+            </m.div>
 
             {/* Step counter */}
             <div className="text-right">
@@ -302,7 +302,7 @@ export default function PropertyValuationWidget() {
 
           {/* Progress bar */}
           <div className="relative w-full h-3 bg-gradient-to-r from-gray-100 to-gray-200 rounded-full overflow-hidden shadow-inner">
-            <motion.div
+            <m.div
               initial={{ width: 0 }}
               animate={{ width: `${((step - 1) / 4) * 100}%` }}
               transition={{ duration: 0.5, ease: "easeOut" }}
@@ -310,22 +310,22 @@ export default function PropertyValuationWidget() {
             >
               {/* Animated shine on progress bar */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full animate-shine" />
-            </motion.div>
+            </m.div>
           </div>
         </div>
 
         {error && (
-          <motion.p
+          <m.p
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             className='text-red-500 mb-4 bg-red-50 border border-red-200 rounded-lg p-3'
           >
             {t(error) || error}
-          </motion.p>
+          </m.p>
         )}
 
         <AnimatePresence mode="wait">
-          <motion.div
+          <m.div
             key={step}
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -441,7 +441,7 @@ export default function PropertyValuationWidget() {
                     <p id='address-error' className='text-red-500 text-sm mt-1'>{t('valuation.addressRequired') || 'Adresse requise'}</p>
                   )}
                   {showSuggestions && suggestions.length > 0 && (
-                    <motion.ul
+                    <m.ul
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
                       className='absolute z-20 bg-white border-2 border-brand-gold/30 w-full mt-2 max-h-60 overflow-auto rounded-xl shadow-xl backdrop-blur-sm'
@@ -455,7 +455,7 @@ export default function PropertyValuationWidget() {
                           {place.display_name}
                         </li>
                       ))}
-                    </motion.ul>
+                    </m.ul>
                   )}
                 </div>
 
@@ -490,7 +490,7 @@ export default function PropertyValuationWidget() {
                 </legend>
                 <div className='grid grid-cols-2 md:grid-cols-4 gap-3'>
                   {featureList.map(feat => (
-                    <motion.label
+                    <m.label
                       key={feat}
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
@@ -514,15 +514,15 @@ export default function PropertyValuationWidget() {
                         {t(`valuation.featuresOptions.${feat.toLowerCase()}`) || feat}
                       </span>
                       {form.features.includes(feat) && (
-                        <motion.div
+                        <m.div
                           initial={{ scale: 0 }}
                           animate={{ scale: 1 }}
                           className="absolute top-2 right-2"
                         >
                           <CheckCircle2 className="w-4 h-4 text-brand-gold" />
-                        </motion.div>
+                        </m.div>
                       )}
-                    </motion.label>
+                    </m.label>
                   ))}
                 </div>
               </fieldset>
@@ -579,13 +579,13 @@ export default function PropertyValuationWidget() {
                 </label>
               </div>
             )}
-          </motion.div>
+          </m.div>
         </AnimatePresence>
 
         {/* Navigation buttons */}
         <div className='flex justify-between mt-8 gap-4'>
           {step > 1 ? (
-            <motion.button
+            <m.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={handleBack}
@@ -593,13 +593,13 @@ export default function PropertyValuationWidget() {
             >
               <ArrowLeft className="w-5 h-5" />
               {t('valuation.back') || 'Back'}
-            </motion.button>
+            </m.button>
           ) : (
             <div></div>
           )}
 
           {step < 5 ? (
-            <motion.button
+            <m.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={handleNext}
@@ -608,9 +608,9 @@ export default function PropertyValuationWidget() {
             >
               {isLoading ? t('valuation.loading') : t('valuation.next')}
               <ArrowRight className="w-5 h-5" />
-            </motion.button>
+            </m.button>
           ) : (
-            <motion.button
+            <m.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={handleSubmit}
@@ -619,13 +619,13 @@ export default function PropertyValuationWidget() {
             >
               {isLoading ? t('valuation.loading') : t('valuation.submit')}
               <ArrowRight className="w-5 h-5" />
-            </motion.button>
+            </m.button>
           )}
         </div>
       </div>
 
       {/* Bottom accent line */}
       <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-teal via-brand-gold to-brand-teal opacity-50" />
-    </motion.div>
+    </m.div>
   )
 }

@@ -6,7 +6,7 @@ import PropertyValuationWidget from "@/components/property-valuation-widget"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { MapPin, Home, Clock, Euro, CheckCircle2, ArrowRight, Phone, Mail } from "lucide-react"
-import { motion } from "framer-motion"
+import { m, LazyMotion, domAnimation } from "framer-motion"
 
 export default function BruxellesPage() {
   const { t } = useTranslation()
@@ -44,7 +44,7 @@ export default function BruxellesPage() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center text-white">
             {/* Location Badge */}
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -56,10 +56,10 @@ export default function BruxellesPage() {
                   ? "Spécialistes Bruxelles • 150+ Propriétés Achetées"
                   : "Brusselse Specialisten • 150+ Woningen Gekocht"}
               </span>
-            </motion.div>
+            </m.div>
 
             {/* Main Headline */}
-            <motion.h1
+            <m.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -72,10 +72,10 @@ export default function BruxellesPage() {
               <span className="bg-gradient-to-r from-brand-gold via-yellow-400 to-brand-gold bg-clip-text text-transparent">
                 {isFrench ? "Offre Sous 48 Heures" : "Bod Binnen 48 Uur"}
               </span>
-            </motion.h1>
+            </m.h1>
 
             {/* Subtitle */}
-            <motion.p
+            <m.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -84,10 +84,10 @@ export default function BruxellesPage() {
               {isFrench
                 ? "SwitchInvest achète des propriétés dans les 19 communes de Bruxelles. Offre comptant en 24-48h, clôture en 7 jours, zéro commission."
                 : "SwitchInvest koopt woningen in alle 19 Brusselse gemeenten. Contant bod binnen 24-48u, afsluiting in 7 dagen, geen commissie."}
-            </motion.p>
+            </m.p>
 
             {/* CTA Buttons */}
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -105,10 +105,10 @@ export default function BruxellesPage() {
                   {isFrench ? "Appelez Maintenant" : "Bel Nu"}
                 </Button>
               </a>
-            </motion.div>
+            </m.div>
 
             {/* Trust Indicators */}
-            <motion.div
+            <m.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.8 }}
@@ -124,7 +124,7 @@ export default function BruxellesPage() {
                   <span>{indicator}</span>
                 </div>
               ))}
-            </motion.div>
+            </m.div>
           </div>
         </div>
       </section>
@@ -146,7 +146,7 @@ export default function BruxellesPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -158,9 +158,9 @@ export default function BruxellesPage() {
               <div className="text-gray-700 font-medium">
                 {isFrench ? "Prix Moyen à Bruxelles" : "Gemiddelde Prijs in Brussel"}
               </div>
-            </motion.div>
+            </m.div>
 
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -177,9 +177,9 @@ export default function BruxellesPage() {
               <div className="text-sm text-gray-500 mt-2">
                 {isFrench ? "vs 7 jours avec nous" : "vs 7 dagen bij ons"}
               </div>
-            </motion.div>
+            </m.div>
 
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -194,7 +194,7 @@ export default function BruxellesPage() {
               <div className="text-sm text-gray-500 mt-2">
                 {isFrench ? "Depuis 2010" : "Sinds 2010"}
               </div>
-            </motion.div>
+            </m.div>
           </div>
         </div>
       </section>
@@ -217,7 +217,7 @@ export default function BruxellesPage() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
             {brusselsNeighborhoods.map((neighborhood, index) => (
-              <motion.div
+              <m.div
                 key={neighborhood.fr}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -232,7 +232,7 @@ export default function BruxellesPage() {
                 <p className="text-sm text-gray-500 mt-1">
                   {isFrench ? "Nous achetons ici" : "Wij kopen hier"}
                 </p>
-              </motion.div>
+              </m.div>
             ))}
           </div>
         </div>
@@ -281,7 +281,7 @@ export default function BruxellesPage() {
                   : "Biedingen gebaseerd op echte marktprijzen van uw gemeente (Ukkel ≠ Anderlecht). Eerlijke evaluatie rekening houdend met de specifieke kenmerken van elke Brusselse wijk."
               }
             ].map((reason, index) => (
-              <motion.div
+              <m.div
                 key={index}
                 initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -294,7 +294,7 @@ export default function BruxellesPage() {
                   <h3 className="font-semibold text-xl mb-3 text-gray-800">{reason.title}</h3>
                   <p className="text-gray-600 leading-relaxed">{reason.description}</p>
                 </div>
-              </motion.div>
+              </m.div>
             ))}
           </div>
         </div>
@@ -375,7 +375,7 @@ export default function BruxellesPage() {
                     : "Wij kopen ALLE soorten residentiële eigendommen in Brussel: eengezinswoningen, appartementen (studio, 1-2-3+ slaapkamers), penthouses, opbrengsteigendommen, bouwgrond, eigenschappen in mede-eigendom of co-erfenis. Wij kopen ook eigendommen met zittende huurders of die grote renovaties nodig hebben."
                 }
               ].map((faq, index) => (
-                <motion.details
+                <m.details
                   key={index}
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -388,7 +388,7 @@ export default function BruxellesPage() {
                     <span className="text-brand-teal group-open:rotate-180 transition-transform">▼</span>
                   </summary>
                   <p className="mt-4 text-gray-600 leading-relaxed">{faq.a}</p>
-                </motion.details>
+                </m.details>
               ))}
             </div>
           </div>
@@ -398,7 +398,7 @@ export default function BruxellesPage() {
       {/* Final CTA */}
       <section className="py-24 bg-gradient-to-br from-brand-teal via-brand-teal/95 to-brand-gold/20">
         <div className="container mx-auto px-4 text-center">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -434,7 +434,7 @@ export default function BruxellesPage() {
                 info@switchinvest.be
               </a>
             </div>
-          </motion.div>
+          </m.div>
         </div>
       </section>
     </div>

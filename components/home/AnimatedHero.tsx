@@ -100,7 +100,7 @@ export default function AnimatedHero() {
           <m.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0 }}
             className="inline-block mb-6"
           >
             <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-6 py-3 shadow-2xl">
@@ -115,7 +115,7 @@ export default function AnimatedHero() {
           <m.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 font-serif"
           >
             {t("home.hero.title") || "Transformez Votre Propriété"}
@@ -128,17 +128,17 @@ export default function AnimatedHero() {
               <m.div
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
-                transition={{ duration: 0.8, delay: 1 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
                 className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-brand-gold to-yellow-400 origin-left"
               />
             </span>
           </m.h1>
 
-          {/* Subheadline */}
+          {/* Subheadline - LCP ELEMENT - NO DELAY */}
           <m.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
+            transition={{ duration: 0.5, delay: 0 }}
             className="text-xl md:text-2xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed"
           >
             {t("home.hero.subtitle") || "Vente rapide, évaluation transparente en 24-48h."}
@@ -150,7 +150,7 @@ export default function AnimatedHero() {
           <m.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             {/* Primary CTA */}
@@ -187,7 +187,7 @@ export default function AnimatedHero() {
           <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1.6 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
             className="mt-16 flex flex-wrap justify-center items-center gap-8 text-white/80 text-sm"
           >
             {(Array.isArray(t("home.hero.trustIndicators")) ? t("home.hero.trustIndicators") : [
@@ -210,7 +210,7 @@ export default function AnimatedHero() {
       <m.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 2 }}
+        transition={{ duration: 1, delay: 0.5 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
       >
         <m.div

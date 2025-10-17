@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef, useEffect } from "react"
-import { motion, useInView, useAnimation } from "framer-motion"
+import { m, LazyMotion, domAnimation, useInView, useAnimation } from "framer-motion"
 import { useTranslation } from "@/hooks/use-translation"
 
 interface Statistic {
@@ -29,7 +29,7 @@ export function Statistics() {
   }, [isInView, controls])
 
   return (
-    <motion.div
+    <m.div
       ref={ref}
       initial="hidden"
       animate={controls}
@@ -44,7 +44,7 @@ export function Statistics() {
       className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-8 md:gap-12 py-12"
     >
       {statistics.map((stat) => (
-        <motion.div
+        <m.div
           key={stat.key}
           variants={{
             hidden: { opacity: 0, y: 20 },
@@ -58,8 +58,8 @@ export function Statistics() {
             {stat.suffix && <span className="text-brand-gold ml-1">{stat.suffix}</span>}
           </div>
           <div className="text-sm md:text-base text-brand-beige/80 font-serif tracking-wide">{t(`statistics.${stat.key}`)}</div>
-        </motion.div>
+        </m.div>
       ))}
-    </motion.div>
+    </m.div>
   )
 }

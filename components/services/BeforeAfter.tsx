@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { motion } from "framer-motion"
+import { m, LazyMotion, domAnimation } from "framer-motion"
 import Image from "next/image"
 
 /**
@@ -53,7 +53,7 @@ export default function BeforeAfter({
   return (
     <div className="w-full">
       {title && (
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -68,10 +68,10 @@ export default function BeforeAfter({
               {description}
             </p>
           )}
-        </motion.div>
+        </m.div>
       )}
 
-      <motion.div
+      <m.div
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
@@ -124,7 +124,7 @@ export default function BeforeAfter({
           style={{ left: `${sliderPosition}%` }}
         >
           {/* Slider Handle */}
-          <motion.div
+          <m.div
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.9 }}
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-xl flex items-center justify-center cursor-grab active:cursor-grabbing"
@@ -142,24 +142,24 @@ export default function BeforeAfter({
                 d="M8 9l4-4 4 4m0 6l-4 4-4-4"
               />
             </svg>
-          </motion.div>
+          </m.div>
         </div>
 
         {/* Percentage Indicator */}
         {isDragging && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             className="absolute top-4 left-1/2 -translate-x-1/2 bg-brand-gold text-neutral-dark px-3 py-1 rounded-full text-sm font-bold shadow-lg"
           >
             {Math.round(sliderPosition)}%
-          </motion.div>
+          </m.div>
         )}
-      </motion.div>
+      </m.div>
 
       {/* Instructions */}
-      <motion.p
+      <m.p
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
@@ -167,7 +167,7 @@ export default function BeforeAfter({
         className="text-center text-sm text-neutral-dark/60 mt-4"
       >
         👆 Glissez le curseur pour comparer
-      </motion.p>
+      </m.p>
     </div>
   )
 }

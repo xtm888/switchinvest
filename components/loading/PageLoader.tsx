@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { m, LazyMotion, domAnimation } from "framer-motion"
 import { Loader2 } from "lucide-react"
 
 /**
@@ -11,28 +11,28 @@ import { Loader2 } from "lucide-react"
 export default function PageLoader() {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-white">
-      <motion.div
+      <m.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.3 }}
         className="flex flex-col items-center gap-4"
       >
         {/* Animated Logo or Spinner */}
-        <motion.div
+        <m.div
           animate={{ rotate: 360 }}
           transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
           className="w-16 h-16 rounded-full border-4 border-brand-teal/20 border-t-brand-teal"
         />
 
-        <motion.p
+        <m.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
           className="text-brand-teal font-serif text-lg"
         >
           Chargement...
-        </motion.p>
-      </motion.div>
+        </m.p>
+      </m.div>
     </div>
   )
 }

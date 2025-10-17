@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { motion, AnimatePresence } from "framer-motion"
+import { m, LazyMotion, domAnimation, AnimatePresence } from "framer-motion"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { LanguageSelector } from "@/components/language-selector"
@@ -42,6 +42,7 @@ export function Navigation() {
   }
 
   return (
+    <LazyMotion features={domAnimation} strict>
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
@@ -69,14 +70,14 @@ export function Navigation() {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           <div className="relative group">
-            <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
+            <m.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
               <Link href={`/${language}/services`} className="text-brand-teal hover-reveal font-serif flex items-center gap-1">
                 {t("navigation.services")}
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </Link>
-            </motion.div>
+            </m.div>
             {/* Dropdown Menu */}
             <div className="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-brand-beige/30 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
               <div className="py-2">
@@ -95,32 +96,32 @@ export function Navigation() {
               </div>
             </div>
           </div>
-          <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
+          <m.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
             <Link href={`/${language}/portfolio`} className="text-brand-teal hover-reveal font-serif">
               {t("navigation.portfolio")}
             </Link>
-          </motion.div>
-          <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
+          </m.div>
+          <m.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
             <Link href={`/${language}/blog`} className="text-brand-teal hover-reveal font-serif">
               Blog
             </Link>
-          </motion.div>
-          <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
+          </m.div>
+          <m.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
             <Link href={`/${language}/about`} className="text-brand-teal hover-reveal font-serif">
               {t("navigation.about")}
             </Link>
-          </motion.div>
+          </m.div>
 
           <LanguageSelector />
 
           <Link href={`/${language}/contact`}>
-            <motion.div
+            <m.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               <Button className="bg-brand-gold hover:bg-brand-gold/90 text-neutral-dark font-sans relative overflow-hidden group">
                 <span className="relative z-10">{t("navigation.contactUs") || "Contact Us"}</span>
-                <motion.div
+                <m.div
                   className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
                   animate={{
                     x: ['-100%', '100%'],
@@ -132,7 +133,7 @@ export function Navigation() {
                   }}
                 />
               </Button>
-            </motion.div>
+            </m.div>
           </Link>
         </nav>
 
@@ -149,19 +150,19 @@ export function Navigation() {
       {/* Mobile Navigation */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-white/95 backdrop-blur-lg border-t border-brand-teal/10 shadow-xl"
           >
-            <motion.nav
+            <m.nav
               variants={menuVariants}
               initial="hidden"
               animate="visible"
               className="container mx-auto px-4 py-6 flex flex-col space-y-4"
             >
-              <motion.div variants={itemVariants}>
+              <m.div variants={itemVariants}>
                 <Link
                   href={`/${language}/services`}
                   className="block text-brand-teal py-2 hover-reveal font-serif font-bold"
@@ -185,8 +186,8 @@ export function Navigation() {
                     🏗️ {t("services.development.title")}
                   </Link>
                 </div>
-              </motion.div>
-              <motion.div variants={itemVariants}>
+              </m.div>
+              <m.div variants={itemVariants}>
                 <Link
                   href={`/${language}/portfolio`}
                   className="block text-brand-teal py-2 hover-reveal font-serif"
@@ -194,8 +195,8 @@ export function Navigation() {
                 >
                   {t("navigation.portfolio")}
                 </Link>
-              </motion.div>
-              <motion.div variants={itemVariants}>
+              </m.div>
+              <m.div variants={itemVariants}>
                 <Link
                   href={`/${language}/blog`}
                   className="block text-brand-teal py-2 hover-reveal font-serif"
@@ -203,8 +204,8 @@ export function Navigation() {
                 >
                   Blog
                 </Link>
-              </motion.div>
-              <motion.div variants={itemVariants}>
+              </m.div>
+              <m.div variants={itemVariants}>
                 <Link
                   href={`/${language}/about`}
                   className="block text-brand-teal py-2 hover-reveal font-serif"
@@ -212,8 +213,8 @@ export function Navigation() {
                 >
                   {t("navigation.about")}
                 </Link>
-              </motion.div>
-              <motion.div variants={itemVariants}>
+              </m.div>
+              <m.div variants={itemVariants}>
                 <Link
                   href={`/${language}/contact`}
                   className="block text-brand-teal py-2 hover-reveal font-serif"
@@ -221,11 +222,12 @@ export function Navigation() {
                 >
                   {t('valuation.cta') || 'Evaluate Now'}
                 </Link>
-              </motion.div>
-            </motion.nav>
-          </motion.div>
+              </m.div>
+            </m.nav>
+          </m.div>
         )}
       </AnimatePresence>
     </header>
+    </LazyMotion>
   )
 }

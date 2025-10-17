@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { m, LazyMotion, domAnimation } from "framer-motion"
 import { Facebook, Twitter, Linkedin, Link2, Mail } from "lucide-react"
 import { useState } from "react"
 
@@ -58,7 +58,7 @@ export default function ShareButtons({ title, slug }: ShareButtonsProps) {
   ]
 
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.6, delay: 0.5 }}
@@ -70,7 +70,7 @@ export default function ShareButtons({ title, slug }: ShareButtonsProps) {
         </p>
         <div className="flex flex-col gap-2">
           {shareButtons.map((button) => (
-            <motion.a
+            <m.a
               key={button.name}
               href={button.url}
               target="_blank"
@@ -81,11 +81,11 @@ export default function ShareButtons({ title, slug }: ShareButtonsProps) {
               title={`Partager sur ${button.name}`}
             >
               <button.icon className="w-5 h-5" />
-            </motion.a>
+            </m.a>
           ))}
 
           {/* Copy Link Button */}
-          <motion.button
+          <m.button
             onClick={handleCopyLink}
             whileHover={{ scale: 1.1, x: 5 }}
             whileTap={{ scale: 0.95 }}
@@ -94,18 +94,18 @@ export default function ShareButtons({ title, slug }: ShareButtonsProps) {
           >
             <Link2 className="w-5 h-5" />
             {copied && (
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
                 className="absolute -right-20 top-1/2 -translate-y-1/2 bg-neutral-dark text-white text-xs px-2 py-1 rounded whitespace-nowrap"
               >
                 Copié!
-              </motion.div>
+              </m.div>
             )}
-          </motion.button>
+          </m.button>
         </div>
       </div>
-    </motion.div>
+    </m.div>
   )
 }

@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { motion, useScroll, useSpring } from "framer-motion"
+import { m, LazyMotion, domAnimation, useScroll, useSpring } from "framer-motion"
 
 /**
  * Reading Progress Indicator
@@ -19,7 +19,7 @@ export default function ReadingProgress() {
   return (
     <>
       {/* Fixed progress bar at top */}
-      <motion.div
+      <m.div
         className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-brand-teal via-brand-gold to-brand-teal origin-left z-50"
         style={{ scaleX }}
       />
