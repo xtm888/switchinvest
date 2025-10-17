@@ -15,6 +15,7 @@ export default function BlogPage() {
   const { t } = useTranslation()
 
   return (
+    <LazyMotion features={domAnimation} strict>
     <m.main
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -178,5 +179,6 @@ export default function BlogPage() {
         </div>
       </section>
     </m.main>
+    </LazyMotion>
   )
 }

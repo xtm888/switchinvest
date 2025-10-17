@@ -54,8 +54,9 @@ export default function ContactPage() {
       [name]: value
     }))
   }
-  
+
   return (
+    <LazyMotion features={domAnimation} strict>
     <>
       <section className="relative min-h-[35vh] bg-gradient-to-b from-brand-teal to-brand-teal/90 pt-16 pb-16 overflow-hidden text-white">
         {/* Floating Background Elements */}
@@ -294,5 +295,6 @@ export default function ContactPage() {
         </div>
       </section>
     </>
+    </LazyMotion>
   )
 }

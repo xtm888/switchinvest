@@ -41,6 +41,7 @@ export default function TechnologiesPage() {
   ]
 
   return (
+    <LazyMotion features={domAnimation} strict>
     <>
       <section className="py-20">
         <div className="container mx-auto px-4 md:px-6">
@@ -89,5 +90,6 @@ export default function TechnologiesPage() {
         </div>
       </section>
     </>
+    </LazyMotion>
   )
 }

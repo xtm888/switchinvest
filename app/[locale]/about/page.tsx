@@ -136,6 +136,7 @@ export default function AboutPage() {
   ];
 
   return (
+    <LazyMotion features={domAnimation} strict>
     <m.main
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -405,5 +406,6 @@ export default function AboutPage() {
         </div>
       </section>
     </m.main>
+    </LazyMotion>
   )
 }

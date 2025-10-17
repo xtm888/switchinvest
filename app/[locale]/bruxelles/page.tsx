@@ -30,6 +30,7 @@ export default function BruxellesPage() {
   const isFrench = language === 'fr'
 
   return (
+    <LazyMotion features={domAnimation} strict>
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative min-h-[85vh] flex items-center justify-center bg-gradient-to-br from-brand-teal via-brand-teal/95 to-brand-gold/30 overflow-hidden">
@@ -438,5 +439,6 @@ export default function BruxellesPage() {
         </div>
       </section>
     </div>
+    </LazyMotion>
   )
 }

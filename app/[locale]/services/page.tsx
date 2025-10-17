@@ -16,6 +16,7 @@ export default function ServicesPage() {
   ]
 
   return (
+    <LazyMotion features={domAnimation} strict>
     <m.main
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -102,5 +103,6 @@ export default function ServicesPage() {
         </div>
       </section>
     </m.main>
+    </LazyMotion>
   )
 }

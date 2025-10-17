@@ -23,44 +23,27 @@ interface TrustBadge {
 export default function TrustBadges() {
   const { t } = useTranslation()
 
-  const trustBadges: TrustBadge[] = [
-    {
-      icon: Shield,
-      title: t("home.trustBadges.gdpr.title") || "GDPR Compliant",
-      description: t("home.trustBadges.gdpr.description") || "Your data is fully protected under EU regulations",
-      color: "from-green-500 to-emerald-600"
-    },
-    {
-      icon: Lock,
-      title: t("home.trustBadges.encryption.title") || "AES-256 Encryption",
-      description: t("home.trustBadges.encryption.description") || "Bank-level security for all transactions",
-      color: "from-blue-500 to-cyan-600"
-    },
-    {
-      icon: FileCheck,
-      title: t("home.trustBadges.certified.title") || "Certified Real Estate",
-      description: t("home.trustBadges.certified.description") || "Licensed and insured professionals",
-      color: "from-brand-gold to-yellow-500"
-    },
-    {
-      icon: Award,
-      title: t("home.trustBadges.quality.title") || "Quality Guaranteed",
-      description: t("home.trustBadges.quality.description") || "Transparent process and fair pricing",
-      color: "from-purple-500 to-pink-500"
-    },
-    {
-      icon: CheckCircle2,
-      title: t("home.trustBadges.verified.title") || "Verified Reviews",
-      description: t("home.trustBadges.verified.description") || "Real feedback from satisfied clients",
-      color: "from-brand-teal to-cyan-700"
-    },
-    {
-      icon: Globe,
-      title: t("home.trustBadges.national.title") || "National Coverage",
-      description: t("home.trustBadges.national.description") || "Serving all Belgian regions",
-      color: "from-indigo-500 to-blue-600"
-    }
+  // Get badges from translations as array
+  const badgesDataRaw = t("home.trustBadges.items")
+  const badgesData = Array.isArray(badgesDataRaw) ? badgesDataRaw : []
+
+  // Map icons to the badges
+  const icons = [Shield, Lock, FileCheck, Award, CheckCircle2, Globe]
+  const colors = [
+    "from-green-500 to-emerald-600",
+    "from-blue-500 to-cyan-600",
+    "from-brand-gold to-yellow-500",
+    "from-purple-500 to-pink-500",
+    "from-brand-teal to-cyan-700",
+    "from-indigo-500 to-blue-600"
   ]
+
+  const trustBadges: TrustBadge[] = badgesData.map((badge: any, index: number) => ({
+    icon: icons[index % icons.length],
+    title: badge.title || "Trust Badge",
+    description: badge.description || "Security and reliability",
+    color: colors[index % colors.length]
+  }))
 
   return (
     <LazyMotion features={domAnimation} strict>
