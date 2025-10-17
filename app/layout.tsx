@@ -100,12 +100,12 @@ export default function RootLayout({
         <link rel="preload" href="/images/logo-180w.avif" as="image" type="image/avif" fetchPriority="high" />
       </head>
       <body className="bg-white flex flex-col min-h-screen">
-        {/* Google Analytics 4 */}
+        {/* Google Analytics 4 - Deferred for better performance */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-BP7KNJXL5G"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}

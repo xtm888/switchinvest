@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { m, LazyMotion, domAnimation } from "framer-motion"
 import Link from "next/link"
 import { ArrowRight, Play } from "lucide-react"
 import { useEffect, useRef, useState } from "react"
@@ -54,6 +54,7 @@ export default function AnimatedHero() {
   }, [shouldLoadVideo])
 
   return (
+    <LazyMotion features={domAnimation} strict>
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
       {/* Background Video or Animated Pattern */}
       <div className="absolute inset-0 z-0">
@@ -96,7 +97,7 @@ export default function AnimatedHero() {
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-5xl mx-auto text-center">
           {/* Animated Badge */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -108,10 +109,10 @@ export default function AnimatedHero() {
                 {t("home.hero.badge") || "500+ Properties Purchased Directly"}
               </span>
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Main Headline - Staggered Animation */}
-          <motion.h1
+          <m.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -124,17 +125,17 @@ export default function AnimatedHero() {
                 {t("home.hero.titleHighlight") || "en Possibilités"}
               </span>
               {/* Animated underline */}
-              <motion.div
+              <m.div
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
                 transition={{ duration: 0.8, delay: 1 }}
                 className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-brand-gold to-yellow-400 origin-left"
               />
             </span>
-          </motion.h1>
+          </m.h1>
 
           {/* Subheadline */}
-          <motion.p
+          <m.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
@@ -143,10 +144,10 @@ export default function AnimatedHero() {
             {t("home.hero.subtitle") || "Vente rapide, évaluation transparente en 24-48h."}
             <br className="hidden md:block" />
             {t("home.hero.features") || "Zéro commission • Aucune réparation requise"}
-          </motion.p>
+          </m.p>
 
           {/* CTA Buttons with Hover Effects */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2 }}
@@ -154,7 +155,7 @@ export default function AnimatedHero() {
           >
             {/* Primary CTA */}
             <Link href="/contact">
-              <motion.button
+              <m.button
                 whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(218, 165, 32, 0.4)" }}
                 whileTap={{ scale: 0.95 }}
                 className="group relative bg-gradient-to-r from-brand-gold to-yellow-500 text-neutral-dark font-serif px-8 py-4 rounded-lg font-semibold shadow-2xl overflow-hidden min-w-[280px]"
@@ -166,24 +167,24 @@ export default function AnimatedHero() {
                   {t("home.hero.ctaPrimary") || "Évaluation Gratuite Maintenant"}
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </span>
-              </motion.button>
+              </m.button>
             </Link>
 
             {/* Secondary CTA */}
             <Link href="#how-it-works">
-              <motion.button
+              <m.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="group bg-white/10 backdrop-blur-md hover:bg-white/20 text-white font-serif px-8 py-4 rounded-lg font-semibold border-2 border-white/30 hover:border-white/50 transition-all min-w-[280px] flex items-center justify-center gap-2"
               >
                 <Play className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 {t("home.hero.ctaSecondary") || "Voir Comment Ça Marche"}
-              </motion.button>
+              </m.button>
             </Link>
-          </motion.div>
+          </m.div>
 
           {/* Trust Indicators - Animated on Scroll */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1.6 }}
@@ -201,18 +202,18 @@ export default function AnimatedHero() {
                 <span>{indicator}</span>
               </div>
             ))}
-          </motion.div>
+          </m.div>
         </div>
       </div>
 
       {/* Scroll Indicator */}
-      <motion.div
+      <m.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 2 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
       >
-        <motion.div
+        <m.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
           className="text-white/60 flex flex-col items-center gap-2"
@@ -221,8 +222,9 @@ export default function AnimatedHero() {
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
-        </motion.div>
-      </motion.div>
+        </m.div>
+      </m.div>
     </section>
+    </LazyMotion>
   )
 }

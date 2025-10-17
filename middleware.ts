@@ -30,9 +30,9 @@ export function middleware(request: NextRequest) {
     return NextResponse.next()
   }
 
-  // Redirect root to default locale
+  // Redirect root to default locale with 307 (Temporary Redirect) for better caching
   if (pathname === '/') {
-    return NextResponse.redirect(new URL(`/${defaultLocale}`, request.url))
+    return NextResponse.redirect(new URL(`/${defaultLocale}`, request.url), 307)
   }
 
   // Detect browser language and redirect
@@ -46,8 +46,8 @@ export function middleware(request: NextRequest) {
     else if (lang.includes('de')) preferredLocale = 'de'
   }
 
-  // Redirect to locale-prefixed URL
-  return NextResponse.redirect(new URL(`/${preferredLocale}${pathname}`, request.url))
+  // Redirect to locale-prefixed URL with 307 for performance
+  return NextResponse.redirect(new URL(`/${preferredLocale}${pathname}`, request.url), 307)
 }
 
 export const config = {

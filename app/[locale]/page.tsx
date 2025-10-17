@@ -35,11 +35,12 @@ import AnimatedStats from "@/components/home/AnimatedStats"
 import StructuredData from '@/components/structured-data'
 
 // Lazy load heavy components to reduce initial bundle
+// Map is completely deferred until user scrolls near it
 const EnhancedMapSection = dynamic(
   () => import("@/components/home/EnhancedMapSection"),
   {
     ssr: false,
-    loading: () => <div className="h-[500px] bg-gray-100 animate-pulse" />
+    loading: () => <div className="h-[500px] bg-gradient-to-br from-brand-beige/30 to-brand-teal/10 animate-pulse rounded-lg" />
   }
 )
 
