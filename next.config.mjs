@@ -64,12 +64,9 @@ const nextConfig = {
   // Webpack optimizations for bundle size reduction
   webpack: (config, { isServer }) => {
     if (!isServer) {
-      // Client-side optimizations
+      // Client-side optimizations - Keep it simple to avoid conflicts
       config.optimization = {
         ...config.optimization,
-        minimize: true,
-        usedExports: true, // Enable tree shaking
-        sideEffects: false, // Assume all modules are side-effect free
         splitChunks: {
           chunks: 'all',
           cacheGroups: {
