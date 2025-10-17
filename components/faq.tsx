@@ -19,6 +19,7 @@ export function FAQ() {
   const faqItems = t("faqs") as Array<{ question: string; answer: string }>
 
   return (
+    <LazyMotion features={domAnimation} strict>
     <section ref={ref} className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 md:px-6">
         <m.div
@@ -66,5 +67,6 @@ export function FAQ() {
         </m.div>
       </div>
     </section>
+    </LazyMotion>
   )
 }

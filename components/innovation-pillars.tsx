@@ -26,6 +26,7 @@ export function InnovationPillars() {
   ]
 
   return (
+    <LazyMotion features={domAnimation} strict>
     <section ref={ref} className="py-20">
       <div className="container mx-auto px-4 md:px-6">
         <m.div
@@ -57,5 +58,6 @@ export function InnovationPillars() {
         </div>
       </div>
     </section>
+    </LazyMotion>
   )
 }

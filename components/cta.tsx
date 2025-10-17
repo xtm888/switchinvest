@@ -13,6 +13,7 @@ export function CallToAction() {
   const { t } = useTranslation()
 
   return (
+    <LazyMotion features={domAnimation} strict>
     <section ref={ref} className="py-20">
       <div className="container mx-auto px-4 md:px-6">
         <m.div
@@ -39,5 +40,6 @@ export function CallToAction() {
         </m.div>
       </div>
     </section>
+    </LazyMotion>
   )
 }
