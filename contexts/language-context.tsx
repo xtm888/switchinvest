@@ -12,14 +12,32 @@ type LanguageContextType = {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  // Initialize with French or stored preference
-  const [language, setLanguage] = useState<Language>("fr")
+interface LanguageProviderProps {
+  children: ReactNode
+  initialLocale?: string
+}
 
-  // Save language preference when it changes
+export function LanguageProvider({ children, initialLocale }: LanguageProviderProps) {
+  // Initialize with locale from URL (for SEO) or fallback to French
+  const [language, setLanguage] = useState<Language>((initialLocale as Language) || "fr")
+
+  // Sync language state with URL changes - this is critical for navigation to work
   useEffect(() => {
-    localStorage.setItem("language", language)
-    document.documentElement.lang = language
+    if (initialLocale && initialLocale !== language) {
+      setLanguage(initialLocale as Language)
+    }
+  }, [initialLocale, language])
+
+  // Update document language when language changes
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      document.documentElement.lang = language
+    }
+
+    // Optional: Save preference to localStorage for future visits
+    if (typeof window !== 'undefined') {
+      localStorage.setItem("language", language)
+    }
   }, [language])
 
   return <LanguageContext.Provider value={{ language, setLanguage }}>{children}</LanguageContext.Provider>

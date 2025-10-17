@@ -9,6 +9,8 @@ import CaseStudiesSection, { CaseStudy } from "@/components/services/CaseStudyCa
 import FAQAccordion, { FAQItem } from "@/components/services/FAQAccordion"
 import { Search, FileText, Users, Key, Home, TrendingUp, Clock, Euro, Star } from "lucide-react"
 
+export const dynamic = 'force-dynamic'
+
 export default function RealEstatePage() {
   const { t } = useTranslation()
 

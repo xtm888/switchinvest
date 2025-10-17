@@ -8,17 +8,28 @@ import { useTranslation } from "@/hooks/use-translation"
 import { useLanguage } from "@/contexts/language-context"
 import SectionDivider from "@/components/home/SectionDivider"
 import { useState } from "react"
+import { useRouter, usePathname } from "next/navigation"
 
 export function Footer() {
   const { t } = useTranslation()
-  const { setLanguage } = useLanguage()
+  const { language, setLanguage } = useLanguage()
   const [email, setEmail] = useState("")
+  const router = useRouter()
+  const pathname = usePathname()
 
   const handleNewsletterSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     // Newsletter subscription logic would go here
     console.log("Newsletter signup:", email)
     setEmail("")
+  }
+
+  const handleLanguageSwitch = (newLanguage: string) => {
+    // Replace current locale in pathname with new locale
+    const currentPath = pathname || `/${language}`
+    const newPath = currentPath.replace(`/${language}`, `/${newLanguage}`)
+    // Navigate to new URL - the LanguageProvider will update from the URL
+    router.push(newPath)
   }
 
   return (
@@ -182,14 +193,14 @@ export function Footer() {
               <ul className="space-y-2">
                 <li>
                   <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
-                    <Link href="/services/real-estate" className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
+                    <Link href={`/${language}/services/real-estate`} className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
                       {t("services.real_estate.title") || "We Buy Your Property"}
                     </Link>
                   </motion.div>
                 </li>
                 <li>
                   <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
-                    <Link href="/services/development" className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
+                    <Link href={`/${language}/services/development`} className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
                       {t("services.development.title") || "Turnkey Renovations"}
                     </Link>
                   </motion.div>
@@ -207,28 +218,28 @@ export function Footer() {
               <ul className="space-y-2">
                 <li>
                   <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
-                    <Link href="/about" className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
+                    <Link href={`/${language}/about`} className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
                       {t("footer.company.about")}
                     </Link>
                   </motion.div>
                 </li>
                 <li>
                   <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
-                    <Link href="/portfolio" className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
+                    <Link href={`/${language}/portfolio`} className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
                       {t("portfolio.title") || "Portfolio"}
                     </Link>
                   </motion.div>
                 </li>
                 <li>
                   <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
-                    <Link href="/blog" className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
+                    <Link href={`/${language}/blog`} className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
                       {t("notFound.links.blog") || "Blog"}
                     </Link>
                   </motion.div>
                 </li>
                 <li>
                   <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
-                    <Link href="/contact" className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
+                    <Link href={`/${language}/contact`} className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
                       {t("footer.company.contact")}
                     </Link>
                   </motion.div>
@@ -246,28 +257,28 @@ export function Footer() {
               <ul className="space-y-2">
                 <li>
                   <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
-                    <Link href="/privacy-policy" className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
+                    <Link href={`/${language}/privacy-policy`} className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
                       {t("footer.legal.privacy")}
                     </Link>
                   </motion.div>
                 </li>
                 <li>
                   <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
-                    <Link href="/terms" className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
+                    <Link href={`/${language}/terms`} className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
                       {t("footer.legal.terms")}
                     </Link>
                   </motion.div>
                 </li>
                 <li>
                   <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
-                    <Link href="/privacy-policy#cookies" className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
+                    <Link href={`/${language}/privacy-policy#cookies`} className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
                       {t("footer.legal.cookies")}
                     </Link>
                   </motion.div>
                 </li>
                 <li>
                   <motion.div whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
-                    <Link href="/privacy-policy#gdpr" className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
+                    <Link href={`/${language}/privacy-policy#gdpr`} className="hover-reveal text-brand-beige/80 hover:text-brand-gold transition-colors">
                       {t("footer.legal.gdpr")}
                     </Link>
                   </motion.div>
@@ -298,7 +309,7 @@ export function Footer() {
               <div className="flex gap-3">
                 <motion.button
                   type="button"
-                  onClick={() => setLanguage("nl")}
+                  onClick={() => handleLanguageSwitch("nl")}
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   className="px-4 py-2 min-w-[44px] min-h-[44px] text-sm font-semibold bg-white/10 hover:bg-brand-gold hover:text-neutral-dark rounded-md transition-colors cursor-pointer border border-white/20"
@@ -309,7 +320,7 @@ export function Footer() {
                 </motion.button>
                 <motion.button
                   type="button"
-                  onClick={() => setLanguage("fr")}
+                  onClick={() => handleLanguageSwitch("fr")}
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   className="px-4 py-2 min-w-[44px] min-h-[44px] text-sm font-semibold bg-white/10 hover:bg-brand-gold hover:text-neutral-dark rounded-md transition-colors cursor-pointer border border-white/20"
@@ -320,7 +331,7 @@ export function Footer() {
                 </motion.button>
                 <motion.button
                   type="button"
-                  onClick={() => setLanguage("de")}
+                  onClick={() => handleLanguageSwitch("de")}
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   className="px-4 py-2 min-w-[44px] min-h-[44px] text-sm font-semibold bg-white/10 hover:bg-brand-gold hover:text-neutral-dark rounded-md transition-colors cursor-pointer border border-white/20"
@@ -331,7 +342,7 @@ export function Footer() {
                 </motion.button>
                 <motion.button
                   type="button"
-                  onClick={() => setLanguage("en")}
+                  onClick={() => handleLanguageSwitch("en")}
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   className="px-4 py-2 min-w-[44px] min-h-[44px] text-sm font-semibold bg-white/10 hover:bg-brand-gold hover:text-neutral-dark rounded-md transition-colors cursor-pointer border border-white/20"

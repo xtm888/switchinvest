@@ -1,66 +1,48 @@
-import { MetadataRoute } from 'next';
+import { MetadataRoute } from 'next'
 
-// Define all pages that should be in the sitemap
+const locales = ['fr', 'nl', 'en', 'de']
+const baseUrl = 'https://switchinvest.be'
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://switchinvest.be';
-  const currentDate = new Date();
+  const currentDate = new Date()
 
-  // High priority pages (homepage and main services)
-  const highPriorityPages = [
-    { route: '', priority: 1.0, changeFrequency: 'daily' as const },
-    { route: '/services', priority: 0.9, changeFrequency: 'weekly' as const },
-    { route: '/contact', priority: 0.9, changeFrequency: 'monthly' as const },
-    { route: '/portfolio', priority: 0.9, changeFrequency: 'weekly' as const },
-    { route: '/blog', priority: 0.9, changeFrequency: 'weekly' as const },
-  ].map(({ route, priority, changeFrequency }) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: currentDate,
-    changeFrequency,
-    priority,
-  }));
+  // Define all routes that should be in sitemap
+  const routes = [
+    { path: '', priority: 1.0, changeFrequency: 'daily' as const },
+    { path: '/about', priority: 0.7, changeFrequency: 'monthly' as const },
+    { path: '/services', priority: 0.9, changeFrequency: 'weekly' as const },
+    { path: '/services/real-estate', priority: 0.9, changeFrequency: 'weekly' as const },
+    { path: '/services/development', priority: 0.8, changeFrequency: 'weekly' as const },
+    { path: '/contact', priority: 0.9, changeFrequency: 'monthly' as const },
+    { path: '/portfolio', priority: 0.9, changeFrequency: 'weekly' as const },
+    { path: '/blog', priority: 0.9, changeFrequency: 'weekly' as const },
+    { path: '/bruxelles', priority: 0.95, changeFrequency: 'weekly' as const }, // NEW Brussels page
+    { path: '/technologies', priority: 0.6, changeFrequency: 'monthly' as const },
+    { path: '/privacy-policy', priority: 0.3, changeFrequency: 'yearly' as const },
+    { path: '/terms', priority: 0.3, changeFrequency: 'yearly' as const },
+  ]
 
-  // Service pages
-  const servicePages = [
-    '/services/real-estate',
-    '/services/investment',
-    '/services/development',
-    '/services/management',
-  ].map(route => ({
-    url: `${baseUrl}${route}`,
-    lastModified: currentDate,
-    changeFrequency: 'weekly' as const,
-    priority: 0.8,
-  }));
+  const sitemapEntries: MetadataRoute.Sitemap = []
 
-  // Information pages
-  const infoPages = [
-    '/about',
-    '/technologies',
-  ].map(route => ({
-    url: `${baseUrl}${route}`,
-    lastModified: currentDate,
-    changeFrequency: 'monthly' as const,
-    priority: 0.7,
-  }));
+  // Generate URLs for each locale
+  locales.forEach((locale) => {
+    routes.forEach(({ path, priority, changeFrequency }) => {
+      sitemapEntries.push({
+        url: `${baseUrl}/${locale}${path}`,
+        lastModified: currentDate,
+        changeFrequency,
+        priority,
+        alternates: {
+          languages: {
+            fr: `${baseUrl}/fr${path}`,
+            nl: `${baseUrl}/nl${path}`,
+            en: `${baseUrl}/en${path}`,
+            de: `${baseUrl}/de${path}`,
+          },
+        },
+      })
+    })
+  })
 
-  // Legal pages
-  const legalPages = [
-    '/privacy-policy',
-    '/terms',
-  ].map(route => ({
-    url: `${baseUrl}${route}`,
-    lastModified: currentDate,
-    changeFrequency: 'yearly' as const,
-    priority: 0.3,
-  }));
-
-  // Combine all pages
-  const allPages = [
-    ...highPriorityPages,
-    ...servicePages,
-    ...infoPages,
-    ...legalPages,
-  ];
-
-  return allPages;
+  return sitemapEntries
 }

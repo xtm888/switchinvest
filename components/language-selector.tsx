@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { useLanguage, type Language } from "@/contexts/language-context"
 import { useTranslation } from "@/hooks/use-translation"
+import { useRouter, usePathname } from "next/navigation"
 
 // Define the languages with their regional information
 const languages = [
@@ -21,6 +22,16 @@ interface LanguageSelectorProps {
 export function LanguageSelector({ variant = "ghost", mobile = false }: LanguageSelectorProps) {
   const { language, setLanguage } = useLanguage()
   const { t } = useTranslation()
+  const router = useRouter()
+  const pathname = usePathname()
+
+  const handleLanguageSwitch = (newLanguage: string) => {
+    // Replace current locale in pathname with new locale
+    const currentPath = pathname || `/${language}`
+    const newPath = currentPath.replace(`/${language}`, `/${newLanguage}`)
+    // Navigate to new URL - the LanguageProvider will update from the URL
+    router.push(newPath)
+  }
 
   return (
     <DropdownMenu>
@@ -39,7 +50,7 @@ export function LanguageSelector({ variant = "ghost", mobile = false }: Language
         {languages.map((lang) => (
           <DropdownMenuItem
             key={lang.code}
-            onClick={() => setLanguage(lang.code as Language)}
+            onClick={() => handleLanguageSwitch(lang.code)}
             className={`font-serif text-gray-800 hover:bg-gray-100 flex items-center justify-between ${
               language === lang.code ? "bg-brand-teal/10" : ""
             }`}

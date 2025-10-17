@@ -83,7 +83,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${playfair.variable} ${GeistSans.variable} ${GeistMono.variable}`}>
+    <html lang="fr" suppressHydrationWarning className={`${playfair.variable} ${GeistSans.variable} ${GeistMono.variable}`}>
       <head>
         <meta name="theme-color" content="#ffffff" />
         {/* Resource hints for performance */}
@@ -112,30 +112,15 @@ export default function RootLayout({
             gtag('config', 'G-BP7KNJXL5G');
           `}
         </Script>
-        {/* Skip to main content link for accessibility */}
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-brand-gold focus:text-neutral-dark focus:rounded-lg focus:font-semibold"
-        >
-          Aller au contenu principal
-        </a>
+        {/* Google Tag Manager (noscript) */}
+        <noscript><iframe src={`https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GTM_ID}`}
+          height="0" width="0" style={{ display: 'none', visibility: 'hidden' }}></iframe></noscript>
+        {/* End Google Tag Manager (noscript) */}
         <ClientLayoutWrapper>
-          <LanguageProvider>
-            {/* Google Tag Manager (noscript) */}
-            <noscript><iframe src={`https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GTM_ID}`}
-              height="0" width="0" style={{ display: 'none', visibility: 'hidden' }}></iframe></noscript>
-            {/* End Google Tag Manager (noscript) */}
-            <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
-              <CustomCursor />
-              <Navigation />
-              <main id="main-content" className="pt-24 flex-grow">
-                {children}
-              </main>
-              <Footer />
-              <StickyCTA />
-              <CookieConsent />
-            </ThemeProvider>
-          </LanguageProvider>
+          <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+            <CustomCursor />
+            {children}
+          </ThemeProvider>
         </ClientLayoutWrapper>
       </body>
     </html>

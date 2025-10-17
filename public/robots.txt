@@ -1,57 +1,18 @@
-# robots.txt for SwitchInvest.be
-# Optimized for Belgian real estate SEO - 2025
+# robots.txt for SwitchInvest
+# Allow all crawlers to access the site
 
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /client-portal/
 
-# Sitemap location
+# Sitemaps
 Sitemap: https://switchinvest.be/sitemap.xml
 
-# Allow crawling of important pages
-Allow: /about
-Allow: /services
-Allow: /portfolio
-Allow: /contact
-Allow: /technologies
-
-# Block admin and private areas
-Disallow: /api/
-Disallow: /client-portal/
-Disallow: /_next/
-Disallow: /admin/
-
-# Block query parameters that don't add value
-Disallow: /*?sort=
-Disallow: /*?filter=
-Disallow: /*?page=
-
-# Crawl delay for polite bots
-Crawl-delay: 0
-
-# Specific bot rules
+# Specific crawl rates for major search engines
 User-agent: Googlebot
-Allow: /
 Crawl-delay: 0
-
-User-agent: Googlebot-Image
-Allow: /images/
-Allow: /public/
 
 User-agent: Bingbot
-Allow: /
-Crawl-delay: 0
-
-User-agent: Slurp
-Allow: /
 Crawl-delay: 1
-
-# Block bad bots
-User-agent: SemrushBot
-Crawl-delay: 5
-
-User-agent: AhrefsBot
-Crawl-delay: 5
-
-# Mobile
-User-agent: Googlebot-Mobile
-Allow: /

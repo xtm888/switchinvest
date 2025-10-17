@@ -8,11 +8,13 @@ import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { LanguageSelector } from "@/components/language-selector"
 import { useTranslation } from "@/hooks/use-translation"
+import { useLanguage } from "@/contexts/language-context"
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const { t } = useTranslation()
+  const { language } = useLanguage()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,7 +50,7 @@ export function Navigation() {
       } py-4`}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-center md:justify-between relative">
-        <Link href="/" className="flex items-center">
+        <Link href={`/${language}`} className="flex items-center">
           <div
             className="relative transition-all duration-300 w-[180px] h-[60px]"
           >
@@ -67,7 +69,7 @@ export function Navigation() {
         <nav className="hidden md:flex items-center space-x-8">
           <div className="relative group">
             <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-              <Link href="/services" className="text-brand-teal hover-reveal font-serif flex items-center gap-1">
+              <Link href={`/${language}/services`} className="text-brand-teal hover-reveal font-serif flex items-center gap-1">
                 {t("navigation.services")}
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -78,13 +80,13 @@ export function Navigation() {
             <div className="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-brand-beige/30 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
               <div className="py-2">
                 <Link
-                  href="/services/real-estate"
+                  href={`/${language}/services/real-estate`}
                   className="block px-4 py-2 text-sm text-neutral-dark hover:bg-brand-beige/20 hover:text-brand-gold transition-colors"
                 >
                   🏠 {t("services.real_estate.title")}
                 </Link>
                 <Link
-                  href="/services/development"
+                  href={`/${language}/services/development`}
                   className="block px-4 py-2 text-sm text-neutral-dark hover:bg-brand-beige/20 hover:text-brand-gold transition-colors"
                 >
                   🏗️ {t("services.development.title")}
@@ -93,24 +95,24 @@ export function Navigation() {
             </div>
           </div>
           <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-            <Link href="/portfolio" className="text-brand-teal hover-reveal font-serif">
+            <Link href={`/${language}/portfolio`} className="text-brand-teal hover-reveal font-serif">
               {t("navigation.portfolio")}
             </Link>
           </motion.div>
           <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-            <Link href="/blog" className="text-brand-teal hover-reveal font-serif">
+            <Link href={`/${language}/blog`} className="text-brand-teal hover-reveal font-serif">
               Blog
             </Link>
           </motion.div>
           <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.2 }}>
-            <Link href="/about" className="text-brand-teal hover-reveal font-serif">
+            <Link href={`/${language}/about`} className="text-brand-teal hover-reveal font-serif">
               {t("navigation.about")}
             </Link>
           </motion.div>
 
           <LanguageSelector />
 
-          <Link href="/contact">
+          <Link href={`/${language}/contact`}>
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -160,7 +162,7 @@ export function Navigation() {
             >
               <motion.div variants={itemVariants}>
                 <Link
-                  href="/services"
+                  href={`/${language}/services`}
                   className="block text-brand-teal py-2 hover-reveal font-serif font-bold"
                   onClick={() => setIsOpen(false)}
                 >
@@ -168,14 +170,14 @@ export function Navigation() {
                 </Link>
                 <div className="pl-4 space-y-2 mt-2">
                   <Link
-                    href="/services/real-estate"
+                    href={`/${language}/services/real-estate`}
                     className="block text-brand-teal/80 py-1 hover-reveal text-sm"
                     onClick={() => setIsOpen(false)}
                   >
                     🏠 {t("services.real_estate.title")}
                   </Link>
                   <Link
-                    href="/services/development"
+                    href={`/${language}/services/development`}
                     className="block text-brand-teal/80 py-1 hover-reveal text-sm"
                     onClick={() => setIsOpen(false)}
                   >
@@ -185,7 +187,7 @@ export function Navigation() {
               </motion.div>
               <motion.div variants={itemVariants}>
                 <Link
-                  href="/portfolio"
+                  href={`/${language}/portfolio`}
                   className="block text-brand-teal py-2 hover-reveal font-serif"
                   onClick={() => setIsOpen(false)}
                 >
@@ -194,7 +196,7 @@ export function Navigation() {
               </motion.div>
               <motion.div variants={itemVariants}>
                 <Link
-                  href="/blog"
+                  href={`/${language}/blog`}
                   className="block text-brand-teal py-2 hover-reveal font-serif"
                   onClick={() => setIsOpen(false)}
                 >
@@ -203,7 +205,7 @@ export function Navigation() {
               </motion.div>
               <motion.div variants={itemVariants}>
                 <Link
-                  href="/about"
+                  href={`/${language}/about`}
                   className="block text-brand-teal py-2 hover-reveal font-serif"
                   onClick={() => setIsOpen(false)}
                 >
@@ -212,7 +214,7 @@ export function Navigation() {
               </motion.div>
               <motion.div variants={itemVariants}>
                 <Link
-                  href="/contact"
+                  href={`/${language}/contact`}
                   className="block text-brand-teal py-2 hover-reveal font-serif"
                   onClick={() => setIsOpen(false)}
                 >

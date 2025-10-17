@@ -7,6 +7,8 @@ import CaseStudiesSection, { CaseStudy } from "@/components/services/CaseStudyCa
 import FAQAccordion, { FAQItem } from "@/components/services/FAQAccordion"
 import { Compass, PenTool, Hammer, Key, Building2, Clock, Euro, Star, TrendingUp } from "lucide-react"
 
+export const dynamic = 'force-dynamic'
+
 export default function DevelopmentPage() {
   const { t } = useTranslation()
 

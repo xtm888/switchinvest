@@ -1,18 +1,67 @@
 "use client"
 
 import Link from "next/link"
-import { useTranslation } from "@/hooks/use-translation"
 import { motion } from "framer-motion"
 import { Home, Search, Mail, FileText } from "lucide-react"
+import { usePathname } from "next/navigation"
+
+// Static translations for the not-found page
+const translations = {
+  fr: {
+    title: "Page Introuvable",
+    message: "Désolé, la page que vous recherchez n'existe pas ou a été déplacée.",
+    backHome: "Retour à l'accueil",
+    popularPagesTitle: "Pages Populaires",
+    needHelp: "Besoin d'aide ?",
+    contactTeam: "Contactez notre équipe",
+    links: { home: "Accueil", services: "Services", blog: "Blog", contact: "Contact" }
+  },
+  en: {
+    title: "Page Not Found",
+    message: "Sorry, the page you are looking for does not exist or has been moved.",
+    backHome: "Back to Home",
+    popularPagesTitle: "Popular Pages",
+    needHelp: "Need help?",
+    contactTeam: "Contact our team",
+    links: { home: "Home", services: "Services", blog: "Blog", contact: "Contact" }
+  },
+  nl: {
+    title: "Pagina Niet Gevonden",
+    message: "Sorry, de pagina die u zoekt bestaat niet of is verplaatst.",
+    backHome: "Terug naar Home",
+    popularPagesTitle: "Populaire Pagina's",
+    needHelp: "Hulp nodig?",
+    contactTeam: "Neem contact op met ons team",
+    links: { home: "Home", services: "Diensten", blog: "Blog", contact: "Contact" }
+  },
+  de: {
+    title: "Seite Nicht Gefunden",
+    message: "Entschuldigung, die gesuchte Seite existiert nicht oder wurde verschoben.",
+    backHome: "Zurück zur Startseite",
+    popularPagesTitle: "Beliebte Seiten",
+    needHelp: "Brauchen Sie Hilfe?",
+    contactTeam: "Kontaktieren Sie unser Team",
+    links: { home: "Startseite", services: "Dienstleistungen", blog: "Blog", contact: "Kontakt" }
+  }
+}
 
 export default function NotFound() {
-  const { t } = useTranslation()
+  const pathname = usePathname()
+
+  // Detect locale from pathname
+  const locale = pathname?.startsWith('/fr') ? 'fr'
+    : pathname?.startsWith('/en') ? 'en'
+    : pathname?.startsWith('/nl') ? 'nl'
+    : pathname?.startsWith('/de') ? 'de'
+    : 'fr' // default
+
+  const t = translations[locale]
 
   const popularPages = [
-    { name: t("notFound.links.home") || "Home", href: "/", icon: Home },
-    { name: t("notFound.links.services") || "Services", href: "/services", icon: Search },
-    { name: t("notFound.links.blog") || "Blog", href: "/blog", icon: FileText },
-    { name: t("notFound.links.contact") || "Contact", href: "/contact", icon: Mail }
+    { name: t.links.home, href: `/${locale}`, icon: Home },
+    { name: t.links.services, href: `/${locale}/services`, icon: Search },
+    { name: t.links.blog, href: `/${locale}/blog`, icon: FileText },
+    { name: t.links.contact, href: `/${locale}/contact`, icon: Mail }
   ]
 
   return (
@@ -67,7 +116,7 @@ export default function NotFound() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-4xl md:text-5xl font-bold text-brand-teal mb-4 font-serif"
           >
-            {t("notFound.title") || "Page Introuvable"}
+            {t.title}
           </motion.h2>
 
           {/* Description */}
@@ -77,7 +126,7 @@ export default function NotFound() {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="text-lg md:text-xl text-neutral-dark/70 mb-8 max-w-2xl mx-auto"
           >
-            {t("notFound.message") || "Désolé, la page que vous recherchez n'existe pas ou a été déplacée."}
+            {t.message}
           </motion.p>
 
           {/* Primary Action */}
@@ -87,14 +136,14 @@ export default function NotFound() {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="mb-12"
           >
-            <Link href="/">
+            <Link href={`/${locale}`}>
               <motion.button
                 whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(0,0,0,0.15)" }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-flex items-center gap-2 bg-brand-teal hover:bg-brand-teal/90 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors shadow-lg"
               >
                 <Home className="w-5 h-5" />
-                {t("notFound.backHome") || "Retour à l'accueil"}
+                {t.backHome}
               </motion.button>
             </Link>
           </motion.div>
@@ -106,7 +155,7 @@ export default function NotFound() {
             transition={{ duration: 0.6, delay: 0.7 }}
           >
             <h3 className="text-lg font-semibold text-neutral-dark mb-6">
-              {t("notFound.popularPagesTitle") || "Pages Populaires"}
+              {t.popularPagesTitle}
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
               {popularPages.map((page, index) => (
@@ -135,9 +184,9 @@ export default function NotFound() {
             transition={{ duration: 0.6, delay: 1 }}
             className="text-sm text-neutral-dark/60 mt-12"
           >
-            {t("notFound.needHelp") || "Besoin d'aide ?"}{" "}
-            <Link href="/contact" className="text-brand-teal hover:text-brand-gold transition-colors font-semibold">
-              {t("notFound.contactTeam") || "Contactez notre équipe"}
+            {t.needHelp}{" "}
+            <Link href={`/${locale}/contact`} className="text-brand-teal hover:text-brand-gold transition-colors font-semibold">
+              {t.contactTeam}
             </Link>
           </motion.p>
         </motion.div>
