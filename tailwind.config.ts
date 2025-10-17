@@ -6,7 +6,21 @@ const config: Config = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./hooks/**/*.{js,ts,jsx,tsx}",
+    "./contexts/**/*.{js,ts,jsx,tsx}",
     "*.{js,ts,jsx,tsx,mdx}",
+  ],
+  // Safelist dynamic classes that might be generated
+  safelist: [
+    // Animation classes
+    'animate-pulse',
+    'animate-spin',
+    'animate-bounce',
+    // Brand colors used dynamically
+    'bg-brand-teal',
+    'bg-brand-gold',
+    'text-brand-teal',
+    'text-brand-gold',
   ],
   theme: {
     container: {

@@ -108,11 +108,20 @@ const nextConfig = {
     ],
     unoptimized: process.env.NODE_ENV !== 'production',
     minimumCacheTTL: 60,
+    dangerouslyAllowSVG: true,
+    contentDispositionType: 'attachment',
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   // Enable performance optimization features
   reactStrictMode: true,
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
+  },
+  // Modern JavaScript - Modularize imports for tree shaking
+  modularizeImports: {
+    'lodash': {
+      transform: 'lodash/{{member}}',
+    },
   },
   // Disable powered by header
   poweredByHeader: false,
