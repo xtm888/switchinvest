@@ -91,12 +91,13 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-        {/* Preconnect for map tiles - saves 300ms each */}
-        <link rel="preconnect" href="https://a.basemaps.cartocdn.com" />
-        <link rel="preconnect" href="https://b.basemaps.cartocdn.com" />
-        <link rel="preconnect" href="https://c.basemaps.cartocdn.com" />
-        {/* Preload critical assets */}
-        <link rel="preload" href="/images/logo.png" as="image" type="image/png" fetchPriority="high" />
+        {/* Preconnect for map tiles - deferred for better LCP */}
+        <link rel="dns-prefetch" href="https://a.basemaps.cartocdn.com" />
+        <link rel="dns-prefetch" href="https://b.basemaps.cartocdn.com" />
+        <link rel="dns-prefetch" href="https://c.basemaps.cartocdn.com" />
+        {/* Preload critical optimized assets for LCP improvement */}
+        <link rel="preload" href="/images/logo-180w.webp" as="image" type="image/webp" fetchPriority="high" />
+        <link rel="preload" href="/images/logo-180w.avif" as="image" type="image/avif" fetchPriority="high" />
       </head>
       <body className="bg-white flex flex-col min-h-screen">
         {/* Google Analytics 4 */}

@@ -124,7 +124,7 @@ export function Footer() {
               transition={{ duration: 0.6, delay: 0.1 }}
             >
               <Image
-                src="/images/logo.png"
+                src="/images/logo-180w.webp"
                 alt="SwitchInvest"
                 width={180}
                 height={60}

@@ -1,3 +1,9 @@
+import bundleAnalyzer from '@next/bundle-analyzer'
+
+const withBundleAnalyzer = bundleAnalyzer({
+  enabled: process.env.ANALYZE === 'true',
+})
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   eslint: {
@@ -47,15 +53,46 @@ const nextConfig = {
   // Performance optimizations
   experimental: {
     optimizeCss: true,
-    optimizePackageImports: ['lucide-react'],
+    optimizePackageImports: [
+      'lucide-react',
+      'framer-motion',
+      '@radix-ui/react-accordion',
+      '@radix-ui/react-dropdown-menu',
+      'date-fns'
+    ],
   },
-  // Webpack optimizations - Keep it simple
+  // Webpack optimizations for bundle size reduction
   webpack: (config, { isServer }) => {
     if (!isServer) {
-      // Only optimize for client-side
+      // Client-side optimizations
       config.optimization = {
         ...config.optimization,
         minimize: true,
+        usedExports: true, // Enable tree shaking
+        sideEffects: false, // Assume all modules are side-effect free
+        splitChunks: {
+          chunks: 'all',
+          cacheGroups: {
+            default: false,
+            vendors: false,
+            // Vendor chunk for stable caching
+            vendor: {
+              name: 'vendor',
+              chunks: 'all',
+              test: /node_modules/,
+              priority: 20
+            },
+            // Common chunk for shared code
+            common: {
+              name: 'common',
+              minChunks: 2,
+              chunks: 'all',
+              priority: 10,
+              reuseExistingChunk: true,
+              enforce: true
+            }
+          }
+        }
       };
     }
 
@@ -86,4 +123,4 @@ const nextConfig = {
   compress: true,
 }
 
-export default nextConfig
+export default withBundleAnalyzer(nextConfig)

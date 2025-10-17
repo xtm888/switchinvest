@@ -58,9 +58,10 @@ export function Navigation() {
               alt="SWITCHinvest"
               fill
               style={{ objectFit: "contain" }}
-              src="/images/logo.png"
+              src="/images/logo-180w.webp"
               sizes="180px"
               priority
+              fetchPriority="high"
             />
           </div>
         </Link>

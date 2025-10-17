@@ -30,12 +30,13 @@ export default function AnimatedHero() {
     checkMobile()
     window.addEventListener('resize', checkMobile)
 
-    // Delay video loading until after initial render for better LCP
+    // Delay video loading until after LCP for better performance
+    // Only load video after user has seen initial content
     const timer = setTimeout(() => {
       if (!isMobile) {
         setShouldLoadVideo(true)
       }
-    }, 1000)
+    }, 2000) // Increased delay to 2s to prioritize LCP
 
     return () => {
       window.removeEventListener('resize', checkMobile)
@@ -56,7 +57,7 @@ export default function AnimatedHero() {
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
       {/* Background Video or Animated Pattern */}
       <div className="absolute inset-0 z-0">
-        {/* Only load video on desktop and after initial render */}
+        {/* Only load video on desktop and after LCP */}
         {shouldLoadVideo && !isMobile && (
           <video
             ref={videoRef}
@@ -65,7 +66,6 @@ export default function AnimatedHero() {
             loop
             playsInline
             preload="none"
-            poster="/images/hero-poster.jpg"
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
               videoLoaded ? 'opacity-20' : 'opacity-0'
             }`}
@@ -74,18 +74,17 @@ export default function AnimatedHero() {
           >
             <source src="/videos/hero-bg.mp4" type="video/mp4" />
             <source src="/videos/hero-bg.webm" type="video/webm" />
-            <track kind="captions" src="/videos/hero-captions.vtt" srcLang="en" label="English" />
           </video>
         )}
 
-        {/* Animated CSS Gradient Fallback - Always visible */}
+        {/* Animated CSS Gradient - Optimized for LCP (no video poster needed) */}
         <div className="absolute inset-0 bg-gradient-to-br from-brand-teal via-brand-teal/95 to-brand-gold/30 animate-gradient-shift" />
 
-        {/* Premium Overlay Pattern */}
+        {/* Lightweight SVG Pattern (inline for better performance) */}
         <div
           className="absolute inset-0 opacity-10"
           style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E")`,
           }}
         />
 
