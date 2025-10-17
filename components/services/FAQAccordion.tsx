@@ -42,6 +42,7 @@ export default function FAQAccordion({
   }
 
   return (
+    <LazyMotion features={domAnimation} strict>
     <section className="py-16 md:py-24 bg-gradient-to-b from-white to-brand-beige/30">
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
@@ -189,5 +190,6 @@ export default function FAQAccordion({
         </div>
       </div>
     </section>
+    </LazyMotion>
   )
 }

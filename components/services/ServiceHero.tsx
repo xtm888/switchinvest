@@ -33,6 +33,7 @@ export default function ServiceHero({
   icon: Icon
 }: ServiceHeroProps) {
   return (
+    <LazyMotion features={domAnimation} strict>
     <section className={`relative bg-gradient-to-br ${gradientFrom} ${gradientTo} py-20 md:py-32 text-white overflow-hidden`}>
       {/* Floating Background Elements */}
       <m.div
@@ -214,5 +215,6 @@ export default function ServiceHero({
         </svg>
       </div>
     </section>
+    </LazyMotion>
   )
 }

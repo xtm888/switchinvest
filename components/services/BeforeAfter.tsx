@@ -51,6 +51,7 @@ export default function BeforeAfter({
   const handleMouseUp = () => setIsDragging(false)
 
   return (
+    <LazyMotion features={domAnimation} strict>
     <div className="w-full">
       {title && (
         <m.div
@@ -169,5 +170,6 @@ export default function BeforeAfter({
         👆 Glissez le curseur pour comparer
       </m.p>
     </div>
+    </LazyMotion>
   )
 }

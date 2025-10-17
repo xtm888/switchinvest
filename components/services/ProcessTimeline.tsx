@@ -28,6 +28,7 @@ export default function ProcessTimeline({
   subtitle = "Une approche structurée pour garantir votre succès"
 }: ProcessTimelineProps) {
   return (
+    <LazyMotion features={domAnimation} strict>
     <section className="py-16 md:py-24 bg-white relative overflow-hidden">
       {/* Background decoration */}
       <m.div
@@ -192,5 +193,6 @@ export default function ProcessTimeline({
         </m.div>
       </div>
     </section>
+    </LazyMotion>
   )
 }

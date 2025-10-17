@@ -39,6 +39,7 @@ export default function PricingCards({
   const [isYearly, setIsYearly] = useState(false)
 
   return (
+    <LazyMotion features={domAnimation} strict>
     <section className="py-16 md:py-24 bg-gradient-to-b from-brand-beige/30 to-white relative overflow-hidden">
       {/* Background decoration */}
       <m.div
@@ -228,5 +229,6 @@ export default function PricingCards({
         </m.div>
       </div>
     </section>
+    </LazyMotion>
   )
 }

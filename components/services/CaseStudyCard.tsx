@@ -36,6 +36,7 @@ interface CaseStudyCardProps {
 
 export function CaseStudyCard({ caseStudy, index = 0 }: CaseStudyCardProps) {
   return (
+    <LazyMotion features={domAnimation} strict>
     <m.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -160,6 +161,7 @@ export function CaseStudyCard({ caseStudy, index = 0 }: CaseStudyCardProps) {
         </div>
       </m.div>
     </m.div>
+    </LazyMotion>
   )
 }
 
@@ -180,6 +182,7 @@ export default function CaseStudiesSection({
   subtitle = "Découvrez comment nous avons aidé nos clients à atteindre leurs objectifs"
 }: CaseStudiesSectionProps) {
   return (
+    <LazyMotion features={domAnimation} strict>
     <section className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
@@ -213,5 +216,6 @@ export default function CaseStudiesSection({
         </div>
       </div>
     </section>
+    </LazyMotion>
   )
 }
