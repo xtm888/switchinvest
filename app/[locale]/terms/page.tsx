@@ -101,7 +101,7 @@ export default function TermsOfServicePage() {
               </p>
               <p>
                 Email: <a href="mailto:info@switchinvest.com" className="text-brand-teal hover:underline font-semibold">info@switchinvest.com</a><br />
-                Address: Avenue Louise 251, 1000 Bruxelles, Belgique<br />
+                Address: Avenue Louise 251, 1050 Ixelles, Belgique<br />
                 Phone: <a href="tel:+32492996598" className="text-brand-teal hover:underline font-semibold">+32 492 996598</a>
               </p>
             </div>

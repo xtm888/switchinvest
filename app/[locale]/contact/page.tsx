@@ -270,7 +270,7 @@ export default function ContactPage() {
               onClick={() => {
                 if (typeof window !== 'undefined' && (window as any).gtag) {
                   (window as any).gtag('event', 'address_click', {
-                    address: 'Avenue Louise 251, 1000 Bruxelles',
+                    address: 'Avenue Louise 251, 1050 Ixelles',
                     location: 'contact_page'
                   })
                 }
@@ -288,7 +288,7 @@ export default function ContactPage() {
               </div>
               <h3 className="text-xl font-bold mb-3 border-b-2 border-brand-gold pb-2 font-serif text-brand-teal">{t("contact.info.address") || "Adresse"}</h3>
               <p className="text-brand-teal font-semibold hover:underline font-serif">Avenue Louise 251</p>
-              <p className="text-brand-teal font-semibold hover:underline font-serif">1000 Bruxelles, Belgique</p>
+              <p className="text-brand-teal font-semibold hover:underline font-serif">1050 Ixelles, Belgique</p>
               <p className="text-neutral-dark/60 text-sm mt-2">{t("contact.clickToMap") || "Cliquez pour voir sur la carte"}</p>
             </m.a>
           </div>
