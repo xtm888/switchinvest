@@ -100,7 +100,7 @@ export default function BruxellesPage() {
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
-              <a href="tel:+32492996561">
+              <a href="tel:+32492996598">
                 <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-brand-teal px-8 py-4 text-lg">
                   <Phone className="mr-2 w-5 h-5" />
                   {isFrench ? "Appelez Maintenant" : "Bel Nu"}
@@ -422,10 +422,10 @@ export default function BruxellesPage() {
                   <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
-              <a href="tel:+32492996561">
+              <a href="tel:+32492996598">
                 <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-brand-teal px-10 py-6 text-xl">
                   <Phone className="mr-2 w-6 h-6" />
-                  +32 492 996561
+                  +32 492 996598
                 </Button>
               </a>
             </div>

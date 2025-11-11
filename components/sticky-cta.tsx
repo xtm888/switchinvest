@@ -31,7 +31,7 @@ export function StickyCTA() {
     // Track phone click with GA4
     if (typeof window !== 'undefined' && (window as any).gtag) {
       (window as any).gtag('event', 'phone_call_click', {
-        phone_number: '+32 492 996561',
+        phone_number: '+32 492 996598',
         location: 'sticky_cta'
       })
     }
@@ -41,7 +41,7 @@ export function StickyCTA() {
     // Track WhatsApp click with GA4
     if (typeof window !== 'undefined' && (window as any).gtag) {
       (window as any).gtag('event', 'whatsapp_click', {
-        phone_number: '+32 492 996561',
+        phone_number: '+32 492 996598',
         location: 'sticky_cta'
       })
     }
@@ -90,7 +90,7 @@ export function StickyCTA() {
 
                   {/* Contact Options */}
                   <a
-                    href="tel:+32492996561"
+                    href="tel:+32492996598"
                     onClick={handlePhoneClick}
                     className="block"
                   >
@@ -103,7 +103,7 @@ export function StickyCTA() {
                       </div>
                       <div className="text-left flex-1">
                         <p className="text-xs text-neutral-dark/60 font-normal">{t("contact.info.phone") || "Téléphone"}</p>
-                        <p className="text-brand-teal font-serif font-semibold">+32 492 996561</p>
+                        <p className="text-brand-teal font-serif font-semibold">+32 492 996598</p>
                       </div>
                     </Button>
                   </a>
@@ -128,7 +128,7 @@ export function StickyCTA() {
                   </a>
 
                   <a
-                    href="https://wa.me/32492996561"
+                    href="https://wa.me/32492996598"
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={handleWhatsAppClick}

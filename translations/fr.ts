@@ -770,7 +770,7 @@ export const fr: Translation = {
     tagline: "Nous Sommes L'Acheteur - Pas Une Agence",
     subtitle: "Recevez notre offre d'achat transparente en 24-48h et concluez selon votre calendrier — zéro commissions, zéro réparations, zéro attente d'acheteurs.",
     primaryButton: "Obtenez Votre Offre Comptant en 2 Minutes →",
-    secondaryText: "Des questions sur la vente à nous ? Appelez-nous au +32 2 123 45 67 ou envoyez un email à info@switchinvest.be",
+    secondaryText: "Des questions sur la vente à nous ? Appelez-nous au +32 492 996598 ou envoyez un email à info@switchinvest.be",
     consultation: "Vendez-Nous Votre Bien",
     explore: "Voir Comment Nous Achetons"
   },

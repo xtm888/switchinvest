@@ -868,7 +868,7 @@ export const de: Translation = {
     tagline: "Wir Sind Der Käufer - Keine Agentur",
     subtitle: "Erhalten Sie unser transparentes Kaufangebot in 24-48h und schließen Sie nach Ihrem Zeitplan ab — null Provisionen, null Reparaturen, null Warten auf Käufer.",
     primaryButton: "Holen Sie Sich Ihr Barangebot in 2 Minuten →",
-    secondaryText: "Fragen zum Verkauf an uns? Rufen Sie uns an unter +32 2 123 45 67 oder schreiben Sie an info@switchinvest.be",
+    secondaryText: "Fragen zum Verkauf an uns? Rufen Sie uns an unter +32 492 996598 oder schreiben Sie an info@switchinvest.be",
     consultation: "Verkaufen Sie Ihre Immobilie An Uns",
     explore: "Sehen Sie Wie Wir Kaufen"
   },

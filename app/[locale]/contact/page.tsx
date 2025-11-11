@@ -214,11 +214,11 @@ export default function ContactPage() {
 
           <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
             <m.a
-              href="tel:+32492996561"
+              href="tel:+32492996598"
               onClick={() => {
                 if (typeof window !== 'undefined' && (window as any).gtag) {
                   (window as any).gtag('event', 'phone_call_click', {
-                    phone_number: '+32 492 996561',
+                    phone_number: '+32 492 996598',
                     location: 'contact_page'
                   })
                 }
@@ -234,7 +234,7 @@ export default function ContactPage() {
                 </svg>
               </div>
               <h3 className="text-xl font-bold mb-3 border-b-2 border-brand-gold pb-2 font-serif text-brand-teal">{t("contact.info.phone") || "Téléphone"}</h3>
-              <p className="text-brand-teal font-semibold text-lg hover:underline font-serif">+32 492 996561</p>
+              <p className="text-brand-teal font-semibold text-lg hover:underline font-serif">+32 492 996598</p>
               <p className="text-neutral-dark/60 text-sm mt-2">{t("contact.clickToCall") || "Cliquez pour appeler"}</p>
             </m.a>
 

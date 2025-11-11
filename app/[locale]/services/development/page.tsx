@@ -5,7 +5,7 @@ import ServiceHero from "@/components/services/ServiceHero"
 import ProcessTimeline from "@/components/services/ProcessTimeline"
 import CaseStudiesSection, { CaseStudy } from "@/components/services/CaseStudyCard"
 import FAQAccordion, { FAQItem } from "@/components/services/FAQAccordion"
-import { Compass, PenTool, Hammer, Key, Building2, Clock, Euro, Star, TrendingUp } from "lucide-react"
+import { Compass, PenTool, Hammer, Key, Building2, Clock, Euro, Star, TrendingUp, CheckCircle } from "lucide-react"
 
 export const dynamic = 'force-dynamic'
 
@@ -17,7 +17,7 @@ export default function DevelopmentPage() {
     number: `0${index + 1}`,
     title: step.title,
     description: step.description,
-    icon: [Compass, PenTool, Hammer, Key, Building2][index],
+    icon: [Compass, PenTool, Hammer, Key, Building2, CheckCircle][index],
     duration: step.duration || ""
   }))
 

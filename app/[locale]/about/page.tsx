@@ -321,13 +321,13 @@ export default function AboutPage() {
       <CompanyTimeline events={timeline} />
 
       {/* Section Divider */}
-      <SectionDivider variant="wave" />
+      {/* <SectionDivider variant="wave" /> */}
 
-      {/* Team Section */}
-      <TeamSection team={team} />
+      {/* Team Section - Hidden per client request */}
+      {/* <TeamSection team={team} /> */}
 
       {/* Section Divider */}
-      <SectionDivider variant="dots" />
+      {/* <SectionDivider variant="dots" /> */}
 
       {/* Stats Section */}
       <section className="py-16 md:py-24 bg-gradient-to-r from-brand-teal to-brand-teal/90 text-white">

@@ -23,7 +23,7 @@ const organizationSchema = {
     postalCode: '1050',
     addressCountry: 'BE'
   },
-  telephone: '+32 2 123 45 67',
+  telephone: '+32 492 996598',
   email: 'info@switchinvest.be',
   sameAs: [
     'https://www.linkedin.com/company/switchinvest',
@@ -186,7 +186,7 @@ export const localBusinessSchema = {
   name: 'SwitchInvest',
   image: 'https://switchinvest.be/images/logo.png',
   url: 'https://switchinvest.be',
-  telephone: '+32 2 123 45 67',
+  telephone: '+32 492 996598',
   email: 'info@switchinvest.be',
   address: {
     '@type': 'PostalAddress',

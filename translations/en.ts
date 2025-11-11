@@ -771,7 +771,7 @@ export const en: Translation = {
     tagline: "We Are The Buyer. Direct Purchase. Fast Cash.",
     subtitle: "Sell directly to SwitchInvest—no agents, no waiting for other buyers, no repairs needed, no hidden fees.",
     primaryButton: "Get Your Cash Offer Now →",
-    secondaryText: "Questions? Call us at +32 2 123 45 67 or email info@switchinvest.be",
+    secondaryText: "Questions? Call us at +32 492 996598 or email info@switchinvest.be",
     consultation: "Sell Your Property To Us",
     explore: "See How We Buy Properties"
   },
